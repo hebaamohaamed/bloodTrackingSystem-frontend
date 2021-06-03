@@ -1,13 +1,14 @@
-import HomeHeader from '../headers/home'
+
+import HospitalHeader from '../../headers/hospital'
 import {useHistory} from 'react-router-dom'
 
-function HomeContent() {
+function HospitalContent() {
   let history = useHistory();
     return (
       <div>
-        <HomeHeader />
-        <h1>Home Content</h1>
-        <button onClick={()=>{history.push("/hospital");}}>go to hospital</button>
+        <HospitalHeader />
+        <h1>Hospital Content</h1>
+        <button onClick={()=>{history.push("/home");}}>go to home</button>
         <button onClick={()=>{history.push("/bloodbank");}}>go to bloodbank</button>
         <button onClick={()=>{history.push("/supervision");}}>go to supervision</button>
         <button onClick={()=>{history.push("/user");}}>go to user</button>
@@ -15,4 +16,4 @@ function HomeContent() {
     );
   }
   
-  export default HomeContent;
+  export default HospitalContent;
