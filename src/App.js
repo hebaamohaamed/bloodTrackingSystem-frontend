@@ -5,7 +5,7 @@ import BloodBankContent from './components/contents/bloodbank/maincontent'
 import SuperContent from './components/contents/supervision/maincontent'
 import UserContent from './components/contents/users/maincontent'
 import Footer from './components/footer'
-import './App.css';
+
 
 function App() {
   return (
