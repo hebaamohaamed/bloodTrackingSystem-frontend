@@ -1,0 +1,7 @@
+to start the app:
+npm start
+
+you may need these command if it doesn't start properly:
+npm install react-scripts --save
+npm install
+npm i react-router-dom --save
