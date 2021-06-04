@@ -1,5 +1,6 @@
 
 import HospitalHeader from '../../headers/hospital'
+import HospitalLogin from '../hospital/login'
 import {useHistory} from 'react-router-dom'
 
 function HospitalContent() {
