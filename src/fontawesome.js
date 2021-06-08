@@ -1,7 +1,15 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faHospital } from '@fortawesome/free-solid-svg-icons';
+import { faHospital,faClinicMedical, faUser } from '@fortawesome/free-solid-svg-icons';
+import { fab, faGoogle, faYahoo, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+
 
 library.add(
-  faHospital 
+  faHospital,
+  faClinicMedical,
+  faUser,
+  faGoogle,
+  faYahoo, 
+  faLinkedinIn,
+  fab
   );
