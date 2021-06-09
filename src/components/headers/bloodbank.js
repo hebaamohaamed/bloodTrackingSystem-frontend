@@ -1,7 +1,14 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import HomeContent from '../contents/home'
+import BloodBankHelp from '../contents/bloodbank/help'
+import BloodBankLogin from '../contents/bloodbank/login'
 
 function BloodBankHeader() {
+  let history = useHistory();
     return (
+      <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="bloodbankNav">
         <div className="container">
           <a className="navbar-brand" id="navbar-brand1" >Blood</a>
@@ -13,18 +20,19 @@ function BloodBankHeader() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link">Home
+                <Link className="nav-link">Home
                       <span className="sr-only">(current)</span>
-                    </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" id="help" >Help</a>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
               </li>
               <li><i  id="icon" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
             </ul>
           </div>
         </div>
       </nav>
+       </div>
     );
   }
   
