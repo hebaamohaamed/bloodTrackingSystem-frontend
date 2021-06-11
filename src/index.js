@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './fontawesome';
 import './css/headers.css';
 import './css/login.css';
+import './css/options.css';
 
 import App from './App';
 

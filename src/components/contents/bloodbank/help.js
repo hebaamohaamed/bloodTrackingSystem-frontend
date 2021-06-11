@@ -5,7 +5,6 @@ function BloodBankHelp() {
   let history = useHistory();
     return (
       <div>
-        <BloodBankHeader />
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <h1>Help</h1>
       </div>

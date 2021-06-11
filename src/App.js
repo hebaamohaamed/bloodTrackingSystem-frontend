@@ -5,6 +5,7 @@ import BloodBankContent from './components/contents/bloodbank/maincontent'
 import SuperContent from './components/contents/supervision/maincontent'
 import UserContent from './components/contents/users/maincontent'
 import Footer from './components/footer'
+import BloodBankOptions from './components/contents/bloodbank/options'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/bloodbank" component={BloodBankContent}></Route>
         <Route exact path="/supervision" component={SuperContent}></Route>
         <Route exact path="/user" component={UserContent}></Route>
+        <Route exact path="/options" component={BloodBankOptions}></Route>
       </Router>
       <Footer />
     </div>

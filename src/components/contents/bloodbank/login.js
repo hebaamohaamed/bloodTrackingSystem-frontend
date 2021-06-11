@@ -7,7 +7,6 @@ function BloodBankLogin() {
  
     return (
         <div>
-             <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
              <h1>login form</h1>
 
         </div>
