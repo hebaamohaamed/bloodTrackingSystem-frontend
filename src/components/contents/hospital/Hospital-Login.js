@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HospitalHeader from "../../headers/hospital";
 
 function hospitalLogin(){
@@ -11,11 +12,11 @@ function hospitalLogin(){
       <center>
         <div className="flex-c-m">
         <a href="#" class="login100-social-item bg1">
-          <i className="fab fa-linkedin-in"></i>
+          <i><FontAwesomeIcon icon = "fab fa-linkedin-in"/></i>
         </a>
   
         <a href="#" class="login100-social-item bg2">
-          <i className="fab fa-google"></i>
+          <i><FontAwesomeIcon icon = "Google"/></i>
         </a>
   
         <a href="#" class="login100-social-item bg3">
