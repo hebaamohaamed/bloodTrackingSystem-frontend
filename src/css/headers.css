@@ -24,3 +24,27 @@
     position: relative; top: 5px; left: 1px;
 }
 /*--------------------------------------------------------------------*/
+/*Blood bank navbar*/
+
+#bloodbankNav #navbar-brand1{
+    position: relative; top: -10px; color: black; font-family:Helvetica;
+}
+#bloodbankNav #navbar-brand2{
+    position: relative; top: 10px; right: 50px; color: #C31313; font-family:Helvetica;
+}
+#bloodbankNav #navbar-brand3{
+    position: relative; top: 10px; right: 60px; color:black; font-family:Helvetica;
+}
+#bloodbankNav #navbarResponsive .nav-link{
+    position: relative; left: -20px;
+}
+
+#bloodbankNav #help{
+    position: relative; left: -20px;
+}
+
+#bloodbankNav #icon{
+    position: relative; top: 5px; left: 1px;
+}
+
+/*--------------------------------------------------------------------*/

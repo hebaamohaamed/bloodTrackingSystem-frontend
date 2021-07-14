@@ -1,16 +1,29 @@
 import {useHistory} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+
 import BloodBankHeader from '../../headers/bloodbank'
+import HomeContent from '../home'
+import BloodBankHelp from './help'
+import BloodBankLogin from './login'
+import BloodBankDonation from './donation'
+import BloodBankOptions from './options'
+
 
 function BloodBankContent() {
   let history = useHistory();
     return (
       <div>
-        <BloodBankHeader />
-        <h1>Blood bank Content</h1>
-        <button onClick={()=>{history.push("/home");}}>go to home</button>
-        <button onClick={()=>{history.push("/hospital");}}>go to hospital</button>
-        <button onClick={()=>{history.push("/supervision");}}>go to supervision</button>
-        <button onClick={()=>{history.push("/user");}}>go to user</button>
+        <Router>
+        <BloodBankHeader /> 
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <button onClick={()=>{history.push("/options");}}>go to options</button>
+        <switch>
+          <Route exact path="/bloodbank/help"><BloodBankHelp /> </Route>
+          <Route exact path="/bloodbank/login"><BloodBankLogin /></Route>
+          <Route exact path="/bloodbank"><BloodBankLogin /></Route>
+       </switch>
+       </Router>
+      
       </div>
     );
   }
