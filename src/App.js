@@ -6,6 +6,9 @@ import SuperContent from './components/contents/supervision/maincontent'
 import UserContent from './components/contents/users/maincontent'
 import Footer from './components/footer'
 import BloodBankOptions from './components/contents/bloodbank/options'
+import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
+import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
+import hospitalLogin from './components/contents/hospital/Hospital-Login'
 
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
         <Route exact path="/supervision" component={SuperContent}></Route>
         <Route exact path="/user" component={UserContent}></Route>
         <Route exact path="/options" component={BloodBankOptions}></Route>
+        <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
+        <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
+        <Route exact path="/HospitalLogin" component={hospitalLogin}></Route>
       </Router>
       <Footer />
     </div>
