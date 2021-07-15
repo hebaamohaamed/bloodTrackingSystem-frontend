@@ -8,6 +8,10 @@ import Footer from './components/footer'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
 import hospitalLogin from './components/contents/hospital/Hospital-Login'
+import hospitalOptions from './components/contents/hospital/Hospital-Options'
+import hospitalTrackBloodBagInfo from './components/contents/hospital/Hospital-TrackBloodBagInfo'
+import hospitalTrackingBlood from './components/contents/hospital/Hospital-TrackingBlood'
+import retrieveBloodBags from './components/contents/hospital/RetrieveBloodBags'
 
 
 function App() {
@@ -23,6 +27,10 @@ function App() {
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
         <Route exact path="/HospitalLogin" component={hospitalLogin}></Route>
+        <Route exact path="/HospitalOptions" component={hospitalOptions}></Route>
+        <Route exact path="/HospitalTrackBloodBagInfo" component={hospitalTrackBloodBagInfo}></Route>
+        <Route exact path="/HospitalTrackingBlood" component={hospitalTrackingBlood}></Route>
+        <Route exact path="/RetrieveBloodBag" component={retrieveBloodBags}></Route>
       </Router>
       <Footer />
     </div>

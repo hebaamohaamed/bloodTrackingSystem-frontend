@@ -23,4 +23,12 @@
 #hospitalNav #icon{
     position: relative; top: 5px; left: 1px;
 }
+#hospitalNav #icon1{
+    position: relative; 
+    top: 5px; left: 1px; 
+}
+#hospitalNav #hospital{
+    margin-left: 8px; 
+    margin-top: 8px; 
+}
 /*--------------------------------------------------------------------*/

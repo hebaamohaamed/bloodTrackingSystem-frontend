@@ -12,15 +12,15 @@ function hospitalLogin(){
       <center>
         <div className="flex-c-m">
         <a href="#" class="login100-social-item bg1">
-          <i><FontAwesomeIcon icon = "fab fa-linkedin-in"/></i>
+          <i><FontAwesomeIcon icon = {['fab' ,'yahoo']}/></i>
         </a>
   
         <a href="#" class="login100-social-item bg2">
-          <i><FontAwesomeIcon icon = "Google"/></i>
+          <i><FontAwesomeIcon icon = {['fab' ,'google']}/></i>
         </a>
   
         <a href="#" class="login100-social-item bg3">
-          <i className="fab fa-yahoo"></i>
+          <i><FontAwesomeIcon icon = {['fab' ,'linkedin']}/></i>
         </a>
       </div>
     </center>

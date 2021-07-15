@@ -23,6 +23,8 @@ function HospitalHeader() {
                 <a className="nav-link" id="help" href="#" >Help</a>
               </li>
               <li><i id="icon"><FontAwesomeIcon icon="hospital"  /></i></li>
+              <li><i id="icon1"><FontAwesomeIcon icon ="hospital fa-2x"/></i></li>
+          <li id ="hospital">Giza Hospital</li>
             </ul>
           </div>
         </div>
