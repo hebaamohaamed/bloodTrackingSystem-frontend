@@ -46,5 +46,18 @@
 #bloodbankNav #icon{
     position: relative; top: 5px; left: 1px;
 }
-
 /*--------------------------------------------------------------------*/
+/*Home navbar*/
+#homeHeader #word1{
+    position: relative; top: -10px; color: black; font-family:Helvetica;
+}
+#homeHeader #word2{
+    position: relative; top: 10px; right: 50px; color: #C31313; font-family:Helvetica;
+}
+#homeHeader #word3{
+    position: relative; top: 10px; right: 60px; color:black; font-family:Helvetica;
+}
+#homeHeader{
+    background-color: white;
+}
+body{background-color:#EAEDED;}
