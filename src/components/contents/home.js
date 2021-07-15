@@ -4,6 +4,11 @@ import bloodTesting from '../../imgs/blood testing.jpg'
 import blank from '../../imgs/blank.jpg'
 import {Carousel, Row, Col, Card, CardGroup} from 'react-bootstrap'
 import { Component } from 'react'
+import slide1 from '../../imgs/slide1.jpg'
+import slide2 from '../../imgs/slide2.jpg'
+import slide3 from '../../imgs/slide3.jpg'
+import slide4 from '../../imgs/slide4.jpg'
+import slide5 from '../../imgs/slide5.jpg'
 
 class HomeContent extends Component {
  
@@ -54,34 +59,34 @@ class HomeContent extends Component {
           <Carousel.Item interval={2000}>
             <img
               className="image"
-              src={blank}
+              src={slide1}
               alt="First slide"
             />
             <Carousel.Caption>
               <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p>Search For Blood Type At The Nearest Hospital</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
             <img
               className="image"
-              src={blank}
+              src={slide5}
               alt="Second slide"
             />
             <Carousel.Caption>
               <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Track Your Donated Blood With Our Trusted Technology</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
             <img
               className="image"
-              src={blank}
+              src={slide3}
               alt="Third slide"
             />
             <Carousel.Caption>
               <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <p>Make Sure The Blood Is 100% Safe With Our Trusted Technology</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

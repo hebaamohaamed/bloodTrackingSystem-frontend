@@ -1,7 +1,7 @@
 import {useHistory} from 'react-router-dom'
 import BloodBankHeader from '../../headers/bloodbank'
 import newDonationImg from '../../../imgs/new donation.jpg'
-import trackBloodImg from '../../../imgs/track blood.jpg'
+import trackBloodImg from '../../../imgs/slide1.jpg'
 import sendBagImg from '../../../imgs/send bag.jpg'
 
 
