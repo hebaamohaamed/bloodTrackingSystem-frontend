@@ -1,76 +1,135 @@
 import HospitalHeader from "../../headers/hospital";
 import bagImg from '../../../imgs/bag.png'
 import newBagImg from '../../../imgs/bag2.png'
+import { Component } from "react";
 
-function retrieveBloodBags(){
+
+class retrieveBloodBags extends Component{
+  
+render(){    
 return(
     <div>
         <HospitalHeader/>
-        <main class="py-4">
-    <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-md-12">
-            <div className="card">
-                <div className="card-header">
-                    All Bags
-                </div>
-                <div className="card-body">
-                    <div className="placeholders" >
-                        <input type="text" id="filter0" placeholder="Filter By Bag ID"/>
-                        <input type="text" id="filter1" placeholder="Filter By Blood Type"/>
-                        <input type="text" id="filter2" placeholder="Filter By Donor ID"/>
-                        <input type="text" id="filter3" placeholder="Filter By Safety"/>
-                        <input type="text" id="filter4" placeholder="Filter By Expirey"/>
-                    </div>
-                    <table id="filter" class="table">
-                        <thead>
-                            <tr>
-                                <th>Bag ID</th>
-                                <th>Blood Type</th>
-                                <th>Donor ID</th>
-                                <th>Safe</th>
-                                <th>Expired</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>82376893</td>
-                                <td>A</td>
-                                <td>D876</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>            
-                            <tr>
-                                <td>45698127</td>
-                                <td>O</td>
-                                <td>D765</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>39481625</td>
-                                <td>O</td>
-                                <td>D426</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>560978215</td>
-                                <td>AB</td>
-                                <td>D539</td>
-                                <td>No</td>
-                                <td>Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>    
-            </div>
-        </div>
-    </div>  
-    </main>
+        <div className="container">
+<h1>Bootstrap Table</h1>
+<p> Mémo pour les options du Bootstrap Table : <a href="http://bootstrap-table.wenzhixin.net.cn/documentation/">Bootstrap Table Documentation</a></p>
+<p>Eléments de Bootstrap Table utilisés : <a href="http://jsfiddle.net/wenyi/e3nk137y/3178/">Data Checkbox</a>, pour cocher les éléments à sélectionner, <a href="https://github.com/wenzhixin/bootstrap-table-examples/blob/master/extensions/filter-control.html">extension Filter control</a>, pour les filtres via les colonnes, <a href="https://github.com/kayalshri/tableExport.jquery.plugin">extension Data export</a> pour exporter</p>
+
+<div id="toolbar">
+		<select className="form-control">
+				<option value="">Export Basic</option>
+				<option value="all">Export All</option>
+				<option value="selected">Export Selected</option>
+		</select>
+</div>
+
+<table id="table" 
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true" 
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+	<thead>
+		<tr>
+			<th data-field="state" data-checkbox="true"></th>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">Prénom</th>
+			<th data-field="date" data-filter-control="select" data-sortable="true">Date</th>
+			<th data-field="examen" data-filter-control="select" data-sortable="true">Examen</th>
+			<th data-field="note" data-sortable="true">Note</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td className="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox" /></td>
+			<td>Valérie</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>12/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox" /></td>
+			<td>Eric</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>8/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox" /></td>
+			<td>Valentin</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>4/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox" /></td>
+			<td>Valérie</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>10/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox" /></td>
+			<td>Eric</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="5" name="btSelectItem" type="checkbox" /></td>
+			<td>Valérie</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>19/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="6" name="btSelectItem" type="checkbox" /></td>
+			<td>Valentin</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>11/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="7" name="btSelectItem" type="checkbox" /></td>
+			<td>Eric</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>8/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="8" name="btSelectItem" type="checkbox" /></td>
+			<td>Valentin</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="9" name="btSelectItem" type="checkbox" /></td>
+			<td>Valérie</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>12/20</td>
+		</tr>
+		<tr>
+			<td className="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox" /></td>
+			<td>Eric</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+		<td className="bs-checkbox "><input data-index="11" name="btSelectItem" type="checkbox" /></td>
+			<td>Valentin</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>10/20</td>
+		</tr>
+	</tbody>
+</table>
+</div>
     </div>
 
 );
+}
 }
 export default retrieveBloodBags;
