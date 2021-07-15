@@ -6,31 +6,42 @@ import {Carousel, Row, Col, Card, CardGroup} from 'react-bootstrap'
 import { Component } from 'react'
 
 class HomeContent extends Component {
-  tabLinks = document.querySelectorAll(".tablinks");
-  tabContent = document.querySelectorAll(".tabcontent");
+ 
+  componentDidMount() {
+    const script = document.createElement("script");
+
+    script.src = "js/myScript.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+    var tabLinks = document.querySelectorAll(".tablinks");
+    var tabContent = document.querySelectorAll(".tabcontent");
 
 
-  tabLinks.f(function(el) {
-   el.addEventListener("click", openTabs);
-});
+    tabLinks.forEach(function(el) {
+      el.addEventListener("click", openTabs);
+    });
 
 
-function openTabs(el) {
-   var btnTarget = el.currentTarget;
-   var country = btnTarget.dataset.country;
+    function openTabs(el) {
+      var btnTarget = el.currentTarget;
+      var country = btnTarget.dataset.country;
 
-   tabContent.forEach(function(el) {
-      el.classList.remove("active");
-   });
+      tabContent.forEach(function(el) {
+          el.classList.remove("active");
+      });
 
-   tabLinks.forEach(function(el) {
-      el.classList.remove("active");
-   });
+      tabLinks.forEach(function(el) {
+          el.classList.remove("active");
+      });
 
-   document.querySelector("#" + country).classList.add("active");
-   
-   btnTarget.classList.add("active");
+      document.querySelector("#" + country).classList.add("active");
+      
+      btnTarget.classList.add("active");
 }
+
+
+  }
     render(){
     return (
       <div>
@@ -39,7 +50,7 @@ function openTabs(el) {
         <br></br> <br></br> <br></br> <br></br>
       </div>
 
-        <Carousel id="Carousel">
+        <Carousel id="Carousel" style={{ position: 'relative' }} fade={true}>
           <Carousel.Item interval={2000}>
             <img
               className="image"
@@ -183,8 +194,10 @@ function openTabs(el) {
             
             <div class="wrapper_tabcontent">
               <div id="London" class="tabcontent active">
+                  <b>
                   <h3>London</h3>
-                  <p>London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London. </p>
+                  <p>London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London.London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London. </p>
+                  </b>
               </div>
 
               <div id="Paris" class="tabcontent">

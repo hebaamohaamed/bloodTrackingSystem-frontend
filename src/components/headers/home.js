@@ -18,7 +18,7 @@ function HomeHeader() {
                 </Link>
           </li>
           <li className="nav-item ">
-            <Link smooth className="nav-link" to="#about">About Us</Link>
+            <Link smooth className="nav-link" to="#about">About</Link>
           </li>
           <li className="nav-item">
             <Link smooth className="nav-link" to="#ourTeam">Our team</Link>
