@@ -9,6 +9,12 @@ import BloodBankOptions from './components/contents/bloodbank/options'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
 import hospitalLogin from './components/contents/hospital/Hospital-Login'
+import userLogin from './components/contents/users/User-Login'
+import userOptions from './components/contents/users/User-Options'
+import userRetrieveBloodBags from './components/contents/users/User-RetrieveBloodBags'
+import userTrackingBlood from './components/contents/users/User-TrackingBlood'
+import userTrackingBoodBagInfo from './components/contents/users/User-TrackingBoodBagInfo'
+import viewHospitalByBloodType from './components/contents/users/ViewHospitalByBloodType'
 
 
 function App() {
@@ -25,6 +31,12 @@ function App() {
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
         <Route exact path="/HospitalLogin" component={hospitalLogin}></Route>
+        <Route exact path="/UserLogin" component={userLogin}></Route>
+        <Route exact path="/UserOption" component={userOptions}></Route>
+        <Route exact path="/UserRetrieveBloodBags" component={userRetrieveBloodBags}></Route>
+        <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
+        <Route exact path="/UserTrackingBloodInfo" component={userTrackingBoodBagInfo}></Route>
+        <Route exact path="/ViewHospitalBloodType" component={viewHospitalByBloodType}></Route>
       </Router>
       <Footer />
     </div>

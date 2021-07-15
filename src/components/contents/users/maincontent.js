@@ -6,11 +6,13 @@ function UserContent() {
     return (
       <div>
         <UserHeader />
-        <h1>User Content</h1>
-        <button onClick={()=>{history.push("/home");}}>go to home</button>
-        <button onClick={()=>{history.push("/hospital");}}>go to hospital</button>
-        <button onClick={()=>{history.push("/bloodbank");}}>go to bloodbank</button>
-        <button onClick={()=>{history.push("/supervision");}}>go to supervision</button>
+        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <button onClick={()=>{history.push("/UserLogin");}}>User Login</button>
+        <button onClick={()=>{history.push("/UserOption");}}>User Option</button>
+        <button onClick={()=>{history.push("/UserRetrieveBloodBags");}}>Retrieve Blood Bags</button>
+        <button onClick={()=>{history.push("/UserTrackingBlood");}}>Tracking Blood Bags</button>
+        <button onClick={()=>{history.push("/UserTrackingBloodInfo");}}>Tracking Blood Bag Info</button>
+        <button onClick={()=>{history.push("/ViewHospitalBloodType");}}>View Hospital Blood type</button>
       </div>
     );
   }

@@ -2,6 +2,7 @@
 
 #carouselMultiItemExample .carousel-inner{
     position: relative;
+    top: 80px;
 }
 #carouselMultiItemExample #newDonation{
     position: relative; height: 1000px;
@@ -12,6 +13,10 @@
 #carouselMultiItemExample #trackBlood{
     position: relative; height: 600px;
 }
-
-
 /*----------------------------------------------*/
+#carouselMultiItemExample2 #row1{
+    position: relative; height: 300px; left: 150px;
+}
+#carouselMultiItemExample2 #row2{
+    position: relative; height: 600px; left: 250px;
+}

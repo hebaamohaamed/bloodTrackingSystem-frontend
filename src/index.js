@@ -10,6 +10,7 @@ import './css/options.css';
 import './css/headers.css'
 import './css/Hospital-Bag-Recieved.css'
 import './css/Login-form.css'
+import './css/User-RetrieveBloodBags.css'
 
 
 import App from './App';
