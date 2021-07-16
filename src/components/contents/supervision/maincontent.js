@@ -11,6 +11,8 @@ function SuperContent() {
         <button onClick={()=>{history.push("/hospital");}}>go to hospital</button>
         <button onClick={()=>{history.push("/bloodbank");}}>go to bloodbank</button>
         <button onClick={()=>{history.push("/user");}}>go to user</button>
+        <button onClick={()=>{history.push("/RetrieveAll");}}>retrieve all bags</button>
+        <button onClick={()=>{history.push("/supervisionLogin");}}>login</button>
       </div>
     );
   }

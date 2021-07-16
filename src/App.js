@@ -9,6 +9,8 @@ import BloodBankOptions from './components/contents/bloodbank/options'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
 import hospitalLogin from './components/contents/hospital/Hospital-Login'
+import retrieveAll from './components/contents/supervision/RetrieveAll'
+import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
         <Route exact path="/HospitalLogin" component={hospitalLogin}></Route>
+        <Route exact path="/RetrieveAll" component={retrieveAll}></Route>
+        <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
       </Router>
       <Footer />
     </div>
