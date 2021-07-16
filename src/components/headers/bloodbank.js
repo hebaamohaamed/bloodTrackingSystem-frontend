@@ -2,7 +2,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import HomeContent from '../contents/home'
-import BloodBankHelp from '../contents/bloodbank/help'
 import BloodBankLogin from '../contents/bloodbank/login'
 
 function BloodBankHeader() {
