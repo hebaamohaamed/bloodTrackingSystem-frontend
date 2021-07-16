@@ -1,6 +1,7 @@
 #carouselMultiItemExample .carousel-inner{
     position: relative;
-     top: 80px;
+    top: 80px;
+
 }
 #carouselMultiItemExample #col-lg-44{
     position: relative; 
@@ -8,9 +9,16 @@
 }
 #carouselMultiItemExample #col-lg-43{
     position: relative;
-     height: 600px;
+    height: 600px;
 }
 #carouselMultiItemExample #col-lg-42{
     position: relative; 
     height: 900px;
 }
+#carouselMultiItemExample #col-lg-41{
+    position: relative; 
+    height: 900px;
+}
+/* .card{
+    width: 100px;
+} */

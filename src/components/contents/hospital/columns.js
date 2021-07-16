@@ -1,7 +1,7 @@
 import {FilterCol} from './filter'
 export const COLUMNS = [
     {
-        Header: 'Bage ID',
+        Header: 'Bag ID',
         accessor: 'id',
         Filter: FilterCol
     },
