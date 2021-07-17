@@ -12,6 +12,9 @@ import bloodBankRetrieveBloodBags from './components/contents/bloodbank/Blood-Ba
 import bloodBankSendBags from './components/contents/bloodbank/Blood-Bank-SendBag'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
+import hospitalLogin from './components/contents/hospital/Hospital-Login'
+import retrieveAll from './components/contents/supervision/RetrieveAll'
+import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
 import hospitalOptions from './components/contents/hospital/Hospital-Options'
 import hospitalTrackBloodBagInfo from './components/contents/hospital/Hospital-TrackBloodBagInfo'
 import hospitalTrackingBlood from './components/contents/hospital/Hospital-TrackingBlood'
@@ -20,6 +23,7 @@ import hospitalBagHistory from './components/contents/hospital/Hospital-BagHisto
 import {RetrieveBloodBags} from './components/contents/hospital/RetrieveBloodBags'
 import {RetrieveProcesses} from './components/contents/hospital/Hospital-RetrieveProcesses'
 import {HospitalLogin} from './components/contents/hospital/Hospital-Login'
+
 
 
 function App() {
@@ -39,6 +43,9 @@ function App() {
         <Route exact path="/bloodBagSendBag" component={bloodBankSendBags}></Route>
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
+
+        <Route exact path="/RetrieveAll" component={retrieveAll}></Route>
+        <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
         <Route exact path="/HospitalOptions" component={hospitalOptions}></Route>
         <Route exact path="/HospitalTrackBloodBagInfo" component={hospitalTrackBloodBagInfo}></Route>
         <Route exact path="/HospitalTrackingBlood" component={hospitalTrackingBlood}></Route>
@@ -46,6 +53,7 @@ function App() {
         <Route exact path="/RetrieveBloodBag" component={RetrieveBloodBags}></Route>
         <Route exact path="/RetrieveProcesses" component={RetrieveProcesses}></Route>
         <Route exact path="/HospitalLogin" component={HospitalLogin}></Route>
+
       </Router>
       <Footer />
     </div>
