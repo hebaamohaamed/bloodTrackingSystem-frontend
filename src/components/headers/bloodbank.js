@@ -24,6 +24,12 @@ function BloodBankHeader() {
                 </Link>
               </li>
               <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">BloodBags</Link>
+              </li>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">Processes</Link>
+              </li>
+              <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
               </li>
               <li><i  id="icon" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
