@@ -17,6 +17,7 @@ function HospitalContent() {
             <button onClick={()=>{history.push("/HospitalTrackBloodBagInfo");}}>Track blood bag info</button>
             <button onClick={()=>{history.push("/HospitalTrackingBlood");}}>Track blood </button>
             <button onClick={()=>{history.push("/RetrieveBloodBag");}}>Retrieve Blood Bag </button>
+            <button onClick={()=>{history.push("/HospitalBagHistory");}}>hospital bag history </button>
         </Router>
 
        

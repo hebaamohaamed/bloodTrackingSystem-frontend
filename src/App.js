@@ -12,6 +12,7 @@ import hospitalOptions from './components/contents/hospital/Hospital-Options'
 import hospitalTrackBloodBagInfo from './components/contents/hospital/Hospital-TrackBloodBagInfo'
 import hospitalTrackingBlood from './components/contents/hospital/Hospital-TrackingBlood'
 import retrieveBloodBags from './components/contents/hospital/RetrieveBloodBags'
+import hospitalBagHistory from './components/contents/hospital/Hospital-BagHistory'
 
 
 
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/HospitalTrackBloodBagInfo" component={hospitalTrackBloodBagInfo}></Route>
         <Route exact path="/HospitalTrackingBlood" component={hospitalTrackingBlood}></Route>
         <Route exact path="/RetrieveBloodBag" component={retrieveBloodBags}></Route>
+        <Route exact path="/HospitalBagHistory" component={hospitalBagHistory}></Route>
       </Router>
       <Footer />
     </div>
