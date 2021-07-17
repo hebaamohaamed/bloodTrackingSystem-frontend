@@ -20,6 +20,12 @@ function HospitalHeader() {
                     </a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" id="boodbags" href="#" >BloodBags</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" id="processes" href="#" >Processes</a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" id="help" href="#" >Help</a>
               </li>
               <li><i id="icon"><FontAwesomeIcon icon="hospital"/></i></li>

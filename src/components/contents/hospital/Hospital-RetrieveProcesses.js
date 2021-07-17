@@ -1,9 +1,9 @@
 import {useTable, useFilters} from 'react-table'
-import Data from './Hospital-RetrieveBloodBagsData.json'
-import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
+import Data from './Hospital-RetrieveProcessesData.json'
+import {COLUMNS} from './Hospital-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 
-export const RetrieveBloodBags = () =>{
+export const RetrieveProcesses = () =>{
 	
 	const columns = useMemo(()=> COLUMNS, []);
 	const data = useMemo(()=> Data, []);
@@ -28,7 +28,7 @@ export const RetrieveBloodBags = () =>{
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    All Bags
+                    All Processes
                 </div>
                 <div class="card-body">
                        
