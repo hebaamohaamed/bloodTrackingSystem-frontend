@@ -32,7 +32,7 @@ export const RetrieveProcesses = () =>{
                 </div>
                 <div class="card-body">
                        
-		<table {...getTableProps()}>
+		<table {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -63,7 +63,7 @@ export const RetrieveProcesses = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td>{}</td>
+								<td><a href="/" style={{color: "#C31313"}}>track</a></td>
 							</tr>
 						)
 					})

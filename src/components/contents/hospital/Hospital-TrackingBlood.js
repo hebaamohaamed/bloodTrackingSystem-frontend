@@ -8,12 +8,12 @@ function hospitalTrackingBlood(){
     return(
         <div>
             <HospitalHeader/>
-        
+            <div class="container px-1 px-md-4 py-5 mx-auto">
     <div className="card" id="trackingBlood">
         <div className="row d-flex justify-content-between px-3 top">
           <div>
             <a href="/">
-              <i className="info"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
+              <i className="info fa-2x"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
             </a>
           </div>
             <div className="container">
@@ -57,6 +57,7 @@ function hospitalTrackingBlood(){
         
         
     </div>
+</div>
 </div>
     );
 }

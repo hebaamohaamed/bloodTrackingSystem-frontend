@@ -1,11 +1,11 @@
-
 .card {
     z-index: 0;
-    background-color: #ECEFF1;
+    background-color: white;
     padding-bottom: 20px;
     margin-top: 90px;
     margin-bottom: 90px;
-    border-radius: 5px
+    border-radius: 5px;
+    width:1400px
 }
 
 .top {
@@ -15,11 +15,13 @@
     padding-right: 15% !important
 }
 
-.info {
+#trackingBlood .info {
+    color: #C31313;
     position: relative;
-    left: 1050px;
+    left: 675px;
     top: -25px;
- 
+    size: 1000px;
+    
 }
 
 #progressbar {
@@ -41,7 +43,7 @@
 
 #progressbar .step0:before {
     font-family: FontAwesome;
-    content: "\f10c";
+    content: "";
     color: #fff
 }
 
@@ -104,7 +106,7 @@
 
 #progressbar li.active:before {
     font-family: FontAwesome;
-    content: "\f00c"
+    content: ""
 }
 
 .icon {
@@ -135,6 +137,3 @@
 }
 
 
-#trackingBlood .info{
-    color: #C31313;
-}

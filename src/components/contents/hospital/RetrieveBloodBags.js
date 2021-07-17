@@ -2,8 +2,10 @@ import {useTable, useFilters} from 'react-table'
 import Data from './Hospital-RetrieveBloodBagsData.json'
 import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
+import HospitalHeader from '../../headers/hospital'
 
 export const RetrieveBloodBags = () =>{
+	
 	
 	const columns = useMemo(()=> COLUMNS, []);
 	const data = useMemo(()=> Data, []);
@@ -22,6 +24,8 @@ export const RetrieveBloodBags = () =>{
 		prepareRow 
 	}=tableInstance
 	return(
+		<div>
+		<HospitalHeader/>
 	<main class="py-4">
     <div class="container">
         <div class="row justify-content-center">
@@ -32,7 +36,7 @@ export const RetrieveBloodBags = () =>{
                 </div>
                 <div class="card-body">
                        
-		<table {...getTableProps()}>
+		<table {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -63,7 +67,7 @@ export const RetrieveBloodBags = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td>{}</td>
+								<td><a href="/" style={{color: "#C31313"}}>track</a></td>
 							</tr>
 						)
 					})
@@ -76,6 +80,7 @@ export const RetrieveBloodBags = () =>{
         </div>
     </div>    
 </main>
+</div>
 	)
 
 }

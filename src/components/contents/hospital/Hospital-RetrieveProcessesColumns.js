@@ -1,33 +1,33 @@
-import {FilterCol} from './filter'
+import {FilterCol2} from './filter'
 export const COLUMNS = [
     {
         Header: 'Blood Bag Number',
         accessor: 'number',
-        Filter: FilterCol
+        Filter: FilterCol2
     },
     {
         Header: 'Date',
         accessor: 'date',
-        Filter: FilterCol
+        Filter: FilterCol2
     },
     {
         Header: 'Owner ID',
         accessor: 'owner',
-        Filter: FilterCol
+        Filter: FilterCol2
     },
     {
         Header: 'Process ID',
         accessor: 'id',
-        Filter: FilterCol
+        Filter: FilterCol2
     },
     {
         Header: 'Process Type',
         accessor: 'type',
-        Filter: FilterCol
+        Filter: FilterCol2
     },
     {
         Header: 'User ID',
         accessor: 'userId',
-        Filter: FilterCol
+        Filter: FilterCol2
     }
 ]
