@@ -11,11 +11,6 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
-        Header: 'Donor ID',
-        accessor: 'donor',
-        Filter: FilterCol
-    },
-    {
         Header: 'Safe',
         accessor: 'safe',
         Filter: FilterCol
