@@ -1,76 +1,82 @@
-import HospitalHeader from "../../headers/hospital";
-import bagImg from '../../../imgs/bag.png'
-import newBagImg from '../../../imgs/bag2.png'
+import {useTable, useFilters} from 'react-table'
+import Data from './data.json'
+import {COLUMNS} from './columns'
+import { useMemo } from 'react'
 
-function retrieveBloodBags(){
-return(
-    <div>
-        <HospitalHeader/>
-        <main class="py-4">
-    <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-md-12">
-            <div className="card">
-                <div className="card-header">
+export const RetrieveBloodBags = () =>{
+	
+	const columns = useMemo(()=> COLUMNS, []);
+	const data = useMemo(()=> Data, []);
+
+	const tableInstance = useTable({
+		columns,
+		data,
+		},
+		useFilters
+	)
+	const {
+		getTableProps, 
+		getTableBodyProps, 
+		headerGroups, 
+		rows, 
+		prepareRow 
+	}=tableInstance
+	return(
+	<main class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
                     All Bags
                 </div>
-                <div className="card-body">
-                    <div className="placeholders" >
-                        <input type="text" id="filter0" placeholder="Filter By Bag ID"/>
-                        <input type="text" id="filter1" placeholder="Filter By Blood Type"/>
-                        <input type="text" id="filter2" placeholder="Filter By Donor ID"/>
-                        <input type="text" id="filter3" placeholder="Filter By Safety"/>
-                        <input type="text" id="filter4" placeholder="Filter By Expirey"/>
-                    </div>
-                    <table id="filter" class="table">
-                        <thead>
-                            <tr>
-                                <th>Bag ID</th>
-                                <th>Blood Type</th>
-                                <th>Donor ID</th>
-                                <th>Safe</th>
-                                <th>Expired</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>82376893</td>
-                                <td>A</td>
-                                <td>D876</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>            
-                            <tr>
-                                <td>45698127</td>
-                                <td>O</td>
-                                <td>D765</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>39481625</td>
-                                <td>O</td>
-                                <td>D426</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>560978215</td>
-                                <td>AB</td>
-                                <td>D539</td>
-                                <td>No</td>
-                                <td>Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="card-body">
+                       
+		<table {...getTableProps()}>
+			<thead>
+				{
+					headerGroups.map(headerGroup => (
+						<tr {...headerGroup.getHeaderGroupProps()}>
+							{headerGroup.headers.map((column)=>(
+									
+									<th {...column.getHeaderProps()}>
+										<div>{column.canFilter ? column.render('Filter') : null}</div>
+										<br></br>
+										{column.render('Header')}
+										
+									</th>
+								))
+							}
+							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
+						</tr>
+					))
+				}
+			</thead>
+			<tbody {...getTableBodyProps()}>
+				{
+					rows.map(row=>{
+						prepareRow(row)
+						return(
+							<tr {...row.getRowProps()}>
+								{
+									row.cells.map(cell => {
+										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+									})
+								}
+								<td>{}</td>
+							</tr>
+						)
+					})
+				}
+			</tbody>
+		</table>
+		</div>
             </div>    
             </div>
         </div>
-    </div>  
-    </main>
-    </div>
+    </div>    
+</main>
+	)
 
-);
 }
-export default retrieveBloodBags;
+
