@@ -38,13 +38,7 @@
   }
   
   .login-box a:hover {
-    background: #C31313;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #FFFAFA,
-                0 0 25px #FFFAFA,
-                0 0 50px #FFFAFA,
-                0 0 100px #FFFAFA;
+  transform: scale(1.1);
   }
   
  

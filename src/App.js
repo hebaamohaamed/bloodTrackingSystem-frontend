@@ -8,7 +8,7 @@ import Footer from './components/footer'
 import BloodBankOptions from './components/contents/bloodbank/options'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
-import hospitalLogin from './components/contents/hospital/Hospital-Login'
+import {HospitalLogin} from './components/contents/hospital/Hospital-Login'
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/options" component={BloodBankOptions}></Route>
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
-        <Route exact path="/HospitalLogin" component={hospitalLogin}></Route>
+        <Route exact path="/HospitalLogin" component={HospitalLogin}></Route>
       </Router>
       <Footer />
     </div>
