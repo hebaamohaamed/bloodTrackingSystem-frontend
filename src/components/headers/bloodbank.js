@@ -2,7 +2,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import HomeContent from '../contents/home'
-import BloodBankHelp from '../contents/bloodbank/help'
 import BloodBankLogin from '../contents/bloodbank/login'
 
 function BloodBankHeader() {
@@ -23,6 +22,12 @@ function BloodBankHeader() {
                 <Link className="nav-link">Home
                       <span className="sr-only">(current)</span>
                 </Link>
+              </li>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">BloodBags</Link>
+              </li>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">Processes</Link>
               </li>
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
