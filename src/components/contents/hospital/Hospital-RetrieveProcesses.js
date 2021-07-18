@@ -2,6 +2,7 @@ import {useTable, useFilters} from 'react-table'
 import Data from './Hospital-RetrieveProcessesData.json'
 import {COLUMNS} from './Hospital-RetrieveProcessesColumns'
 import { useMemo } from 'react'
+import HospitalHeader from '../../headers/hospital'
 
 export const RetrieveProcesses = () =>{
 	
@@ -22,6 +23,8 @@ export const RetrieveProcesses = () =>{
 		prepareRow 
 	}=tableInstance
 	return(
+		<div>
+			<HospitalHeader/>
 	<main class="py-4">
     <div class="container">
         <div class="row justify-content-center">
@@ -76,6 +79,7 @@ export const RetrieveProcesses = () =>{
         </div>
     </div>    
 </main>
+</div>
 	)
 
 }
