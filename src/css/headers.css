@@ -47,15 +47,12 @@
 }
 #bloodbankNav #navbarResponsive .nav-link{
     position: relative; left: -20px;
+    margin-top: 4px;
 }
 
-#bloodbankNav #help{
-    position: relative; left: -20px;
+#bloodbankNav #bloodbank{
+    margin-left: 1px; 
+    margin-top: 15px; 
 }
-
-#bloodbankNav #icon{
-    position: relative; top: 5px; left: 1px;
-}
-
 /*--------------------------------------------------------------------*/
 
