@@ -21,7 +21,7 @@ function BloodBankLogin() {
             <h2>Blood-Bank login</h2>
             <form>
             <center>
-              <a href="#">
+              <br></br> <br></br> <br></br>
               <GoogleLogin 
                     clientId="882732752469-hfbm5chah7e0usf6p3c6t6kv20dbpv25.apps.googleusercontent.com"
                     onSuccess={onSuccess}
@@ -30,7 +30,7 @@ function BloodBankLogin() {
                     isSignedIn={false}
                   >
                   </GoogleLogin>
-              </a>
+                  <br></br>
             </center>
             </form>
           </div>
