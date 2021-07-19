@@ -34,12 +34,14 @@ function BloodBankHeader() {
               </li>
               
               <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
+              <li id="dropdown">
               <NavDropdown
                   id ="bloodbank"
                   title="Central BB"
                 >
                   <NavDropdown.Item><Link to='/bloodBankLogout' >Logout </Link> </NavDropdown.Item>
                 </NavDropdown> 
+                </li>
             </ul>
           </div>
         </div>
