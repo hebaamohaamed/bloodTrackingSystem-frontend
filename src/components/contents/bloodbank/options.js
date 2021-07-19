@@ -10,14 +10,14 @@ function BloodBankOptions() {
   return(
     <div>
         <BloodBankHeader/>
-        <div id="carouselMultiItemExample" className="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+        <div id="BBcarouselMultiItemExample" className="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
 
 <div className="carousel-inner py-4" >
 
 <div className="carousel-item active">
 <div className="container">
   <div className="row" id='row'>
-    <div className="col-lg-4" id ="col-lg-44">
+    <div className="col-lg-4" id ="newDonation">
       <div className="card">
         <img
           src={newDonationImg}
@@ -34,7 +34,7 @@ function BloodBankOptions() {
       </div>
     </div>
 
-    <div className="col-lg-4 d-none d-lg-block" id="col-lg-43">
+    <div className="col-lg-4 d-none d-lg-block" id="trackBlood">
       <div className="card">
         <img
           src={trackBloodImg}
@@ -51,7 +51,7 @@ function BloodBankOptions() {
       </div>
     </div>
 
-    <div className="col-lg-4 d-none d-lg-block" id="col-lg-42">
+    <div className="col-lg-4 d-none d-lg-block" id="sendBag">
       <div className="card">
         <img
           src={sendBagImg}

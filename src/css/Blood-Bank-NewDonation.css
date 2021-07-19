@@ -23,50 +23,50 @@ body {
   max-width: 900px;
 }
 
-.right-container {
+#BBDonationCard .right-container {
   background: #C31313;
   display: grid;
   grid-template-areas: "." ".";
   width: 500px;
   border-radius: 10px;
 }
-.right-container h1:nth-of-type(1) {
+#BBDonationCard .right-container h1:nth-of-type(1) {
   color: white;
   font-size: 28px;
   font-weight: 600;
   text-align: center;
 }
-.right-container .set {
+#BBDonationCard .right-container .set {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
-.right-container input {
+#BBDonationCard .right-container input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   height: 38px;
   line-height: 38px;
   padding-left: 5px;
 }
-.right-container input, .right-container label {
+#BBDonationCard .right-container input, .right-container label {
   color: rgba(0, 0, 0, 0.8);
 }
-.right-container header {
+#BBDonationCard .right-container header {
   padding: 40px;
 }
 
-.right-container .longInput .radio-container {
+#BBDonationCard .right-container .longInput .radio-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.right-container footer {
+#BBDonationCard .right-container footer {
   align-items: center;
   background: #FBFCFC  ;
   display: grid;
   padding: 5px 40px;
 }
-.right-container footer a {
+#BBDonationCard .right-container footer a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -78,29 +78,29 @@ body {
     margin-top: 5px;
     border-radius: 5px;
 }
-.right-container footer #new {
+#BBDonationCard .right-container footer #new {
   background: #C31313;
   transition: 0.2s all ease-in-out;
 }
-.right-container footer #new:hover {
+#BBDonationCard .right-container footer #new:hover {
   background: #807182;
   color: white;
 }
-.right-container footer #existing {
+#BBDonationCard .right-container footer #existing {
   background: #C31313;
   border: 1px solid transparent;
   color: #fff;
 }
-.right-container footer #existing:hover {
+#BBDonationCard .right-container footer #existing:hover {
   background: #807182;
 }
 
-.Date label, .Expire label, .Test label, .Temperature label, .longInput label {
+#BBDonationCard .Date label, .Expire label, .Test label, .Temperature label, .longInput label {
   display: block;
   margin-bottom: 5px;
 }
 
-.radio-container {
+#BBDonationCard .radio-container {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -108,7 +108,7 @@ body {
   padding: 5px;
 }
 
-.radio-container label {
+#BBDonationCard .radio-container label {
   background: transparent;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -122,18 +122,18 @@ body {
   width: 50px;
 }
 
-.radio-container input[type=radio] {
+#BBDonationCard .radio-container input[type=radio] {
   display: none;
 }
 
-.radio-container input[type=radio]:checked + label {
+#BBDonationCard .radio-container input[type=radio]:checked + label {
   background: #C31313;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.radio-container #Millimeters{
+#BBDonationCard .radio-container #Millimeters{
     border: black;
 }
-.radio-container #Email{
+#BBDonationCard .radio-container #Email{
     border: black;
 }
