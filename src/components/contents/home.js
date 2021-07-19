@@ -2,12 +2,13 @@ import HomeHeader from '../headers/home'
 import blank from '../../imgs/blank.png'
 import {Carousel, Row, Col, Card, CardGroup} from 'react-bootstrap'
 import { Component } from 'react'
-import bloodDonation from '../../imgs/blood-donation.jpg'
-import bloodRecieve from '../../imgs/blood-recieve.jpg'
-import bloodTypes from '../../imgs/blood-types.jpg'
-import bloodTypes2 from '../../imgs/blood-types2.jpg'
-import bloodTested from '../../imgs/blood-tested.jpg'
-import hospital from '../../imgs/hospital.jpg'
+import bloodDonation from '../../imgs/blood-donation2.jpg'
+import bloodRecieve from '../../imgs/blood-recieve5.jpg'
+import bloodTypes from '../../imgs/blood-types7.jpg'
+import hospital from '../../imgs/hospital2.jpg'
+import user from '../../imgs/donor.png'
+import supervision from '../../imgs/supervision.jpg'
+import bloodbank from '../../imgs/bloodbank3.jpg'
 class HomeContent extends Component {
  
   componentDidMount() {
@@ -47,9 +48,9 @@ class HomeContent extends Component {
   }
     render(){
     return (
-      <div>
+      <div id="home">
         <HomeHeader />
-        <div id="home">
+        <div >
         <br></br> <br></br> <br></br> <br></br>
       </div>
 
@@ -61,8 +62,8 @@ class HomeContent extends Component {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Search For Blood Type At The Nearest Hospital</p>
+              <h3>Search For Blood Bags</h3>
+              <p>Find Blood Type At The Nearest Hospital</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
@@ -72,8 +73,8 @@ class HomeContent extends Component {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Track Your Donated Blood With Our Trusted Technology</p>
+              <h3>Trace Your Blood</h3>
+              <p>Make Sure That Your Blood Goes To The Right Places</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
@@ -83,8 +84,8 @@ class HomeContent extends Component {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Make Sure The Blood Is 100% Safe With Our Trusted Technology</p>
+              <h3>Know Blood History</h3>
+              <p>Make Sure The Blood Is 100% Safe And Where It Was</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
@@ -100,7 +101,7 @@ class HomeContent extends Component {
             <Card.Body>
               <Card.Title>HOSPITAL</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to.
+                login as a hospital organization<br></br> trace blood history and confirm it's usage
                 
               </Card.Text>
               <a href="#">
@@ -113,11 +114,11 @@ class HomeContent extends Component {
             </Card.Body>
           </Card>
           <Card className="col-md-3">
-            <Card.Img variant="top" src={blank} />
+            <Card.Img variant="top" src={bloodbank}/>
             <Card.Body>
               <Card.Title>BLOODBANK</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to add.
+              login as a blood bank organization<br></br> add new donations and send to hospitals
               </Card.Text>
               <a href="#">
                 <span></span>
@@ -130,11 +131,11 @@ class HomeContent extends Component {
             
           </Card>
           <Card className="col-md-3">
-            <Card.Img variant="top" src={blank} />
+            <Card.Img variant="top" src={supervision} />
             <Card.Body>
               <Card.Title>SUPERVISION</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to.
+              login as a ministry organization<br></br> trace blood hisotry with no ristrictions
               </Card.Text>
               <a href="#">
                 <span></span>
@@ -147,11 +148,11 @@ class HomeContent extends Component {
             
           </Card>
           <Card className="col-md-3">
-            <Card.Img variant="top" src={blank} />
+            <Card.Img variant="top" src={user} />
             <Card.Body>
               <Card.Title>DONOR/PATIENT</Card.Title>
               <Card.Text>
-              This card has supporting text below as a natural lead-in to addition.
+              login as a donor or patient<br></br>trace blood, search for blood in hospitals
               </Card.Text>
             
                 <a href="#">
@@ -188,36 +189,30 @@ class HomeContent extends Component {
         <div class="content">
            
             <div class="tabs">
-              <button class="tablinks active" data-country="London"><p data-title="London">London</p></button>
-              <button class="tablinks" data-country="Paris"><p data-title="Paris">Paris</p></button>
-              <button class="tablinks" data-country="Barcelona"><p data-title="Barcelona">Barcelona</p></button>
-              <button class="tablinks" data-country="Madrid"><p data-title="Madrid">Madrid</p></button>
+              <button class="tablinks active" data-country="London"><p data-title="London">Our Technology</p></button>
+              <button class="tablinks" data-country="Paris"><p data-title="Paris">Blood Search</p></button>
+              <button class="tablinks" data-country="Barcelona"><p data-title="Barcelona">Blood Tracing</p></button>
             </div>
 
             
             <div class="wrapper_tabcontent">
               <div id="London" class="tabcontent active">
                   <b>
-                  <h3>London</h3>
-                  <p>London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London.London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London. </p>
+                  <h3>Technology</h3>
+                  <p> </p>
                   </b>
               </div>
 
               <div id="Paris" class="tabcontent">
-                  <h3>Paris</h3>
-                  <p>Paris is in the Paris department of the Paris-Isle-of-France region The French historic, political and economic capital, with a population of only 2.5 million is located in the northern part of France. One of the most beautiful cities in the world. Home to historical monuments such as Notre Dame, the Eiffel tower (320m), Bastille, Louvre and many more. </p>
+                  <h3>Search</h3>
+                  <p>As a patient or a donor you can search for blood type in your city with blockchain technology </p>
               </div>
 
               <div id="Barcelona" class="tabcontent">
-                  <h3>Barcelona</h3>
+                  <h3>Tracing</h3>
                   <p>Barcelona has been an urban laboratory since the high Medieval Ages. A place of diversity, a backdrop for a multiplicity of social and cultural processes on multiple scales that reflect different ways of constructing the future, a city with a long experience of urban life and social innovations. </p>
               </div>
 
-              <div id="Madrid" class="tabcontent">
-                  <h3>Madrid</h3>
-                  <p>Madrid is in the middle of Spain, in the Community of Madrid. The Community is a large area that includes the city as well as small towns and villages outside the city. 7 million people live in the Community. More than 3 million live in the city itself. 
-                  </p>
-              </div>
             </div>
         </div>
       </section>
@@ -230,8 +225,7 @@ class HomeContent extends Component {
             <div class="container text-center">
                 <h2>Our
                     <span>Team</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    <br></br>incididunt ut labore et dolore magna aliqua.</p>
+                <p><br></br></p>
                 <div class="row">
                    
                     <div class="member" id="first">

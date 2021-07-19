@@ -1,35 +1,38 @@
 
-#Carousel{
+#home #Carousel{
     width: 90%;
     margin-left: 5%;
     
 }
-.carousel-caption{
+#home .carousel-caption{
     color: black;
     background-color: #f5f5dc7a;
 }
-#Carousel .image{
+#home #Carousel .image{
     width: 100%;
     height: 600px;
 }
- #cards{
+#home #cards{
      width: 90%;
      margin-left: 5%;
     
  }
- #cards .card-title, .card-text:last-child, .card-body {
+ #home #cards .card-title, .card-text:last-child, .card-body {
     text-align: center;
  }
- .card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top{
+ #home .card-group>.card:not(:first-child) .card-header, .card-group>.card:not(:first-child) .card-img-top{
     margin-top: 20px;
+	height: 300px;
  }
- .card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
+ #home .card-group>.card:not(:last-child) .card-header, .card-group>.card:not(:last-child) .card-img-top {
     margin-top: 20px;
+	height: 300px;
  }
- .card-group>.card {
+ #home .card-group>.card {
      margin-right: 20px;
+	 border: solid 0.01rem rgb(218, 213, 213);
  }
- #cards a {
+ #home  #cards a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -42,13 +45,13 @@
     margin-top: 40px;
     letter-spacing: 4px;
 }
-#cards a {
+#home #cards a {
     color:white;
     text-decoration: none;
     background-color: #C31313;
     -webkit-text-decoration-skip: objects;
 }
-#cards a:hover, a::after{
+#home #cards a:hover, a::after{
     background-color: white;
     color: #C31313;
     border:2px solid #C31313;
@@ -352,7 +355,7 @@
 	 border: none;
 	 outline: none;
 	 cursor: pointer;
-	 width: 25%;
+	 width: 35%;
 	/*change depending on the number of tabs*/
 	 height: 80px;
 	 position: relative;
