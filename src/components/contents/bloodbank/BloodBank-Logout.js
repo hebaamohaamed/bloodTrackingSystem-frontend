@@ -17,10 +17,10 @@ function BloodBankLogout() {
             <center>
               <GoogleLogout 
                     clientId="882732752469-hfbm5chah7e0usf6p3c6t6kv20dbpv25.apps.googleusercontent.com"
-                    onSuccess={onSuccess}
-                    style={{color:"black"}}
+                    onlLogoutSuccess={onSuccess}
+                    buttonText="Logout With Google"
                   >
-                  </GoogleLogout>
+            </GoogleLogout>
             </center>
             </form>
           </div>

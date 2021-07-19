@@ -28,6 +28,7 @@ function BloodBankLogin() {
                     onFailure={onFailure}
                     cookiePolicy='single_host_origin'
                     isSignedIn={false}
+                    buttonText="Login With Google"
                   >
                   </GoogleLogin>
                   <br></br>
