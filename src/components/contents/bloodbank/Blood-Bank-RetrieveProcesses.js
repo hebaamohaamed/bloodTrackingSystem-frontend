@@ -1,11 +1,10 @@
 import {useTable, useFilters} from 'react-table'
-import Data from './Blood-Bank-RetrieveBloodBagsData.json'
-import {COLUMNS} from './Blood-Bank-RetrieveBloodBagsColumns'
+import Data from './Blood-Bank-RetrieveProcessesData.json'
+import {COLUMNS} from './Blood-Bank-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 import BloodBankHeader from '../../headers/bloodbank'
 
-export const BloodBankRetrieveBloodBags = () =>{
-	
+export const BloodBankRetrieveProcesses = () =>{
 	
 	const columns = useMemo(()=> COLUMNS, []);
 	const data = useMemo(()=> Data, []);
@@ -25,14 +24,14 @@ export const BloodBankRetrieveBloodBags = () =>{
 	}=tableInstance
 	return(
 		<div>
-		<BloodBankHeader/>
+			<BloodBankHeader/>
 	<main class="py-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    All Bags
+                    All Processes
                 </div>
                 <div class="card-body">
                        
@@ -51,7 +50,7 @@ export const BloodBankRetrieveBloodBags = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px", paddingLeft:"50px"}}><br></br><br></br>Track</th>
+							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
 						</tr>
 					))
 				}
@@ -67,7 +66,7 @@ export const BloodBankRetrieveBloodBags = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313", paddingLeft:"50px"}}>track</a></td>
+								<td><a href="/" style={{color: "#C31313"}}>track</a></td>
 							</tr>
 						)
 					})
@@ -85,5 +84,4 @@ export const BloodBankRetrieveBloodBags = () =>{
 
 }
 
-export default BloodBankRetrieveBloodBags;
-
+export default BloodBankRetrieveProcesses;

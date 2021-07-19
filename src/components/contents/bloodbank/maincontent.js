@@ -21,6 +21,7 @@ function BloodBankContent() {
         <button onClick={()=>{history.push("/bloodBagRetrieve");}}>Blood Bags Retrieve</button>
         <button onClick={()=>{history.push("/bloodBagSendBag");}}>send Blood bag</button>
         <button onClick={()=>{history.push("/bloodTracking");}}>Blood Tracking</button>
+        <button onClick={()=>{history.push("/retrieveProcesses");}}>retrieve processes</button>
        </Router>
       
       </div>
