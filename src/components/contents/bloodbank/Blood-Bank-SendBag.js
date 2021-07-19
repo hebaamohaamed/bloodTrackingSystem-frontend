@@ -18,7 +18,7 @@ class bloodBankSendBags extends Component{
     return(
     <div>
         <BloodBankHeader/>
-        <div class="login-box">
+        <div id="BBsendingBloodBag" class="login-box">
     <h2>Info Needed</h2>
     <form>
       <div className="user-box">

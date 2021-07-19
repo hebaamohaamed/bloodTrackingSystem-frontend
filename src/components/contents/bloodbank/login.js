@@ -9,7 +9,7 @@ function BloodBankLogin() {
     return (
         <div>
           <BloodBankHeader/>
-          <div className="login-box">
+          <div className="login-box ">
     <h2>Blood-Bank login</h2>
     <form>
       <center>

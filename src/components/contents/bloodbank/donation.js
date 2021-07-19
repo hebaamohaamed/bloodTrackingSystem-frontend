@@ -28,7 +28,7 @@ class BloodBankDonation extends Component {
     return (
       <div>
         <BloodBankHeader/>
-    <div className='signup-container'>
+    <div id="BBDonationCard" className='signup-container'>
       <div className='right-container'>
         <header>
           <h1>Blood Info, Be careful!</h1>

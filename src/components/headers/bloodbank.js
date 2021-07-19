@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import HomeContent from '../contents/home'
 import BloodBankLogin from '../contents/bloodbank/login'
-
+import {NavDropdown} from 'react-bootstrap'
 function BloodBankHeader() {
   let history = useHistory();
     return (
@@ -32,8 +32,16 @@ function BloodBankHeader() {
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
               </li>
+              
               <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
-              <li id ="bloodbank">Central BB</li>
+              <li id="dropdown">
+              <NavDropdown
+                  id ="bloodbank"
+                  title="Central BB"
+                >
+                  <NavDropdown.Item><Link to='/bloodBankLogout' >Logout </Link> </NavDropdown.Item>
+                </NavDropdown> 
+                </li>
             </ul>
           </div>
         </div>

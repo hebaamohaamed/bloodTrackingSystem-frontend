@@ -1,31 +1,31 @@
-.card {
+.TrackingBloodPage .card {
     z-index: 0;
     background-color: white;
     padding-bottom: 20px;
     margin-top: 90px;
     margin-bottom: 90px;
     border-radius: 5px;
-    width:1400px;
-    margin-left: -160px;
+    width: 1300px;
+    text-align: center;
+    margin-left: -100px;
 }
 
-.top {
+.TrackingBloodPage .top {
     padding-bottom: 40px;
     padding-top: 40px;
     padding-left: 15% !important;
     padding-right: 15% !important
 }
 
-#trackingBlood .info {
-    color: #C31313;
+.TrackingBloodPage .info {
     position: relative;
-    left: 1120px;
-    top: -25px;
-    size: 1000px;
-    
+    left: 537px;
+    top: -19px;
+    color: #C31313;
+ 
 }
 
-#progressbar {
+.TrackingBloodPage #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
     color: #455A64;
@@ -33,7 +33,7 @@
     margin-top: 30px
 }
 
-#progressbar li {
+.TrackingBloodPage #progressbar li {
     list-style-type: none;
     font-size: 13px;
     width: 25%;
@@ -42,13 +42,13 @@
     font-weight: 400
 }
 
-#progressbar .step0:before {
+.TrackingBloodPage #progressbar .step0:before {
     font-family: FontAwesome;
-    content: "";
+    content: "\f10c";
     color: #fff
 }
 
-#progressbar li:before {
+.TrackingBloodPage #progressbar li:before {
     width: 40px;
     height: 40px;
     line-height: 45px;
@@ -60,7 +60,7 @@
     padding: 0px
 }
 
-#progressbar li:after {
+.TrackingBloodPage #progressbar li:after {
     content: '';
     width: 100%;
     height: 12px;
@@ -71,55 +71,53 @@
     z-index: -1
 }
 
-#progressbar li:last-child:after {
+.TrackingBloodPage #progressbar li:last-child:after {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     position: absolute;
     left: -50%
 }
 
-#progressbar li:nth-child(2):after,
+.TrackingBloodPage #progressbar li:nth-child(2):after,
 #progressbar li:nth-child(3):after {
     left: -50%
 }
 
-#progressbar li:first-child:after {
+.TrackingBloodPage #progressbar li:first-child:after {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: absolute;
     left: 50%
 }
 
-#progressbar li:last-child:after {
+.TrackingBloodPage #progressbar li:last-child:after {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px
 }
 
-#progressbar li:first-child:after {
+.TrackingBloodPage #progressbar li:first-child:after {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px
 }
 
-#progressbar li.active:before,
-#progressbar li.active:after {
+.TrackingBloodPage #progressbar li.active:before,
+.TrackingBloodPage #progressbar li.active:after {
     background: #C31313
 }
 
-#progressbar li.active:before {
+.TrackingBloodPage #progressbar li.active:before {
     font-family: FontAwesome;
-    content: ""
+    content: "\f00c"
 }
 
-#trackingBlood .icon {
+.TrackingBloodPage .icon {
     width: 60px;
-    height: 30px;
-    margin-right: 15px;
+    height: 60px;
+    margin-right: 15px
 }
 
-#trackingBlood .icon-content {
-    padding-bottom: 20px;
-    text-align: center;
-    
+.TrackingBloodPage .icon-content {
+    padding-bottom: 20px
 }
 
 @media screen and (max-width: 992px) {
@@ -127,7 +125,3 @@
         width: 50%
     }
 }
-
-
-
-
