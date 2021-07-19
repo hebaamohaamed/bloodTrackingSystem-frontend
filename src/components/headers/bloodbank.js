@@ -32,7 +32,7 @@ function BloodBankHeader() {
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
               </li>
-              <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
+              <li><Link to='/bloodBankLogout' ><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></Link></li>
               <li id ="bloodbank">Central BB</li>
             </ul>
           </div>

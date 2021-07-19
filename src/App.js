@@ -6,7 +6,8 @@ import SuperContent from './components/contents/supervision/maincontent'
 import UserContent from './components/contents/users/maincontent'
 import Footer from './components/footer'
 import BloodBankOptions from './components/contents/bloodbank/options'
-import BloodBankLogin from './components/contents/bloodbank/login'
+import BloodBankLogin from './components/contents/bloodbank/Blood-Bank-Login'
+import BloodBankLogout from './components/contents/bloodbank/BloodBank-Logout'
 import BloodBankDonation from './components/contents/bloodbank/donation'
 import BloodBankRetrieveBloodBags from './components/contents/bloodbank/Blood-Bank-RetrieveBloodBags'
 import bloodBankSendBags from './components/contents/bloodbank/Blood-Bank-SendBag'
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/user" component={UserContent}></Route>
         <Route exact path="/options" component={BloodBankOptions}></Route>
         <Route exact path="/bloodBankLogin" component={BloodBankLogin}></Route>
+        <Route exact path="/bloodBankLogout" component={BloodBankLogout}></Route>
         <Route exact path="/donation" component={BloodBankDonation}></Route>
         <Route exact path="/bloodBagRetrieve" component={BloodBankRetrieveBloodBags}></Route>
         <Route exact path="/bloodBagSendBag" component={bloodBankSendBags}></Route>
