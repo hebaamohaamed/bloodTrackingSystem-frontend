@@ -49,10 +49,9 @@
     position: relative; left: -20px;
     margin-top: 4px;
 }
-
-#bloodbankNav #bloodbank{
-    margin-left: 1px; 
-    margin-top: 15px; 
+#bloodbankNav #dropdown{
+    margin-left: 15px;
+    margin-top: 3px;
 }
 /*--------------------------------------------------------------------*/
 
