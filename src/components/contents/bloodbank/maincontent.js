@@ -16,7 +16,7 @@ function BloodBankContent() {
         <BloodBankHeader /> 
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <button onClick={()=>{history.push("/options");}}>go to options</button>
-        <button onClick={()=>{history.push("/login");}}>login</button>
+        <button onClick={()=>{history.push("/bloodBankLogin");}}>login</button>
         <button onClick={()=>{history.push("/donation");}}>New Donation</button>
         <button onClick={()=>{history.push("/bloodBagRetrieve");}}>Blood Bags Retrieve</button>
         <button onClick={()=>{history.push("/bloodBagSendBag");}}>send Blood bag</button>
