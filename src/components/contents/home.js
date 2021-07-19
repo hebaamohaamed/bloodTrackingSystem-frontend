@@ -1,5 +1,4 @@
 import HomeHeader from '../headers/home'
-import blank from '../../imgs/blank.png'
 import {Carousel, Row, Col, Card, CardGroup} from 'react-bootstrap'
 import { Component } from 'react'
 import bloodDonation from '../../imgs/blood-donation2.jpg'
@@ -9,6 +8,7 @@ import hospital from '../../imgs/hospital2.jpg'
 import user from '../../imgs/donor.png'
 import supervision from '../../imgs/supervision.jpg'
 import bloodbank from '../../imgs/bloodbank3.jpg'
+import { Link } from 'react-router-dom';
 class HomeContent extends Component {
  
   componentDidMount() {
@@ -43,6 +43,8 @@ class HomeContent extends Component {
       
       btnTarget.classList.add("active");
 }
+
+  
 
 
   }
@@ -104,13 +106,9 @@ class HomeContent extends Component {
                 login as a hospital organization<br></br> trace blood history and confirm it's usage
                 
               </Card.Text>
-              <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                LOGIN
-              </a>
+              <Link to="/HospitalLogin">
+               LOGIN
+              </Link>
             </Card.Body>
           </Card>
           <Card className="col-md-3">
@@ -120,13 +118,9 @@ class HomeContent extends Component {
               <Card.Text>
               login as a blood bank organization<br></br> add new donations and send to hospitals
               </Card.Text>
-              <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                LOGIN
-              </a>
+              <Link to="bloodBankLogin">
+               LOGIN
+              </Link>
             </Card.Body>
             
           </Card>
@@ -137,13 +131,9 @@ class HomeContent extends Component {
               <Card.Text>
               login as a ministry organization<br></br> trace blood hisotry with no ristrictions
               </Card.Text>
-              <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                LOGIN
-              </a>
+              <Link to="/SupervisionLogin">
+               LOGIN
+              </Link>
             </Card.Body>
             
           </Card>
@@ -154,14 +144,9 @@ class HomeContent extends Component {
               <Card.Text>
               login as a donor or patient<br></br>trace blood, search for blood in hospitals
               </Card.Text>
-            
-                <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                LOGIN
-              </a>
+              <Link to="/user">
+               LOGIN
+              </Link>
             </Card.Body>
           </Card>
         </CardGroup>

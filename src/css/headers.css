@@ -59,6 +59,10 @@
 
 /*--------------------------------------------------------------------*/
 
+#homeHeader{
+    background-color: white;
+}
+
 #homeHeader #navbar-brand1{
     position: relative; top: -10px; color: black; font-family:Helvetica;
 }

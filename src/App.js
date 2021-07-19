@@ -35,7 +35,7 @@ function App() {
         <Route exact path="/supervision" component={SuperContent}></Route>
         <Route exact path="/user" component={UserContent}></Route>
         <Route exact path="/options" component={BloodBankOptions}></Route>
-        <Route exact path="/login" component={BloodBankLogin}></Route>
+        <Route exact path="/bloodBankLogin" component={BloodBankLogin}></Route>
         <Route exact path="/donation" component={BloodBankDonation}></Route>
         <Route exact path="/bloodBagRetrieve" component={bloodBankRetrieveBloodBags}></Route>
         <Route exact path="/bloodBagSendBag" component={bloodBankSendBags}></Route>
