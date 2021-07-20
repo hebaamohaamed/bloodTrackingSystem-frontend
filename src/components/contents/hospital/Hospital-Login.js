@@ -50,3 +50,5 @@ export class HospitalLogin extends Component{
     );
       }
 }
+
+export default HospitalLogin;
