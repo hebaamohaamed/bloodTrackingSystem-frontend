@@ -1,17 +1,32 @@
 import HospitalHeader from "../../headers/hospital";
+import {Component} from 'react'
+const TrigerAxios = require("./Hospital-TrackingBlood")
 
-function hospitalTrackBloodBagInfo(){
+class hospitalTrackBloodBagInfo extends Component{
+  constructor(props){
+    super(props)
+    this.state={
+      bNumber: null,
+    }
+  }
+  handleInputChange(value){
+    this.setState({
+      bNumber: value
+    })
+  }
+
+    render(){
     return(
         <div>
             <HospitalHeader />
-            <div class="login-box">
+            <div class="InfoNedded">
     <h2>Info Needed</h2>
     <form>
       <div class="user-box">
-        <input type="text" name="" required=""/>
+        <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="button" href="#" >
+      <a id="trackBagInfoSubmit" href="/HospitalTrackingBlood" >
         <span></span>
         <span></span>
         <span></span>
@@ -23,5 +38,6 @@ function hospitalTrackBloodBagInfo(){
         </div>
         
     );
+    }
 }
 export default hospitalTrackBloodBagInfo;
