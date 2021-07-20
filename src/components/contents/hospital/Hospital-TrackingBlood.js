@@ -4,7 +4,24 @@ import shippedImg from '../../../imgs/Shipped.png'
 import deliveredImg from '../../../imgs/delivered.png'
 import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function hospitalTrackingBlood(){
+import axios from 'axios'
+import {Component} from 'react'
+
+class hospitalTrackingBlood extends Component{
+    
+    TrigerAxios(event,bNumber){
+        event.preventDefault();
+        axios.get(`http://localhost:5001/get/hsitory?id=${bNumber}`)
+        .then(response =>{
+          let output = Object.values(response.data);
+          alert("DONE")
+          console.log("Change State Confirmed")
+        })
+        .catch(error=>{
+          console.log("TEST ERROR", error)
+        })
+      }
+    render(){
     return(
         <div>
             <HospitalHeader/>
@@ -60,5 +77,6 @@ function hospitalTrackingBlood(){
 </div>
 </div>
     );
+    }
 }
 export default hospitalTrackingBlood;
