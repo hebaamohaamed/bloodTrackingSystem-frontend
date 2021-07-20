@@ -4,7 +4,7 @@ function hospitalBagHistory(){
     return(
         <div>
             <HospitalHeader />
-            <div className="container">
+            <div className="container bagHistory">
     <div className="row">
         <div className="col-md-offset-1 col-md-10">
             <div className="panel">
