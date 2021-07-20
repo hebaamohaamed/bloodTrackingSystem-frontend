@@ -20,7 +20,7 @@ function UserHeader() {
               <li className="nav-item">
                 <a className="nav-link" id="help" href="#" >Help</a>
               </li>
-              <li><i id="icon"><FontAwesomeIcon icon="user"/></i></li>
+              <li><i className="userIcon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
           <li id ="userName">UserName</li>
             </ul>
           </div>
