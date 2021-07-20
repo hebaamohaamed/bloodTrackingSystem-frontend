@@ -1,13 +1,24 @@
 import {useHistory} from 'react-router-dom'
 import BloodBankHeader from '../../headers/bloodbank';
 import GoogleLogout from 'react-google-login'
+import { Cookies,useCookies } from 'react-cookie';
+import { wait } from '@testing-library/react';
 
 function BloodBankLogout() {
+    
   let history = useHistory();
-  const onSuccess = (res) =>{
-    alert("you're logged out")
+  function handleRemoveCookie() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
     history.push('/home')
-  }
+      
+}  
     return (
         <div>
           <BloodBankHeader/>
@@ -15,12 +26,13 @@ function BloodBankLogout() {
             <h2>Blood-Bank logout</h2>
             <form>
             <center>
-              <GoogleLogout 
-                    clientId="882732752469-hfbm5chah7e0usf6p3c6t6kv20dbpv25.apps.googleusercontent.com"
-                    onlLogoutSuccess={onSuccess}
-                    buttonText="Logout With Google"
-                  >
-            </GoogleLogout>
+                    <a href="#" onClick={ handleRemoveCookie}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Logout
+                    </a>
             </center>
             </form>
           </div>

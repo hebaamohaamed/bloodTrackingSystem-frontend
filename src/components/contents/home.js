@@ -49,6 +49,7 @@ class HomeContent extends Component {
 
   }
     render(){
+       
     return (
       <div id="home">
         <HomeHeader />

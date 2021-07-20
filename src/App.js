@@ -22,7 +22,6 @@ import hospitalBagHistory from './components/contents/hospital/Hospital-BagHisto
 import {RetrieveBloodBags} from './components/contents/hospital/RetrieveBloodBags'
 import {RetrieveProcesses} from './components/contents/hospital/Hospital-RetrieveProcesses'
 import {HospitalLogin} from './components/contents/hospital/Hospital-Login'
-
 import bloodBankTrackingBlood from './components/contents/bloodbank/Blood-Bank-TrackingBlood'
 import BloodBankRetrieveProcesses from './components/contents/bloodbank/Blood-Bank-RetrieveProcesses'
 

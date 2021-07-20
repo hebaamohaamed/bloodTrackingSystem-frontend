@@ -3,16 +3,28 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faGoogle, faLinkedin, faYahoo } from '@fortawesome/free-brands-svg-icons';
 import BloodBankHeader from '../../headers/bloodbank';
 import GoogleLogin from 'react-google-login'
+import { useCookies } from 'react-cookie';
 
 function BloodBankLogin() {
-  let history = useHistory();
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+
+  function handleRemoveCookie() {
+    removeCookie();
+  }
+
+  function handleCookie(id,name,email){
+    setCookie('name',name , { path: '/' });
+    setCookie('id', id, { path: '/' });
+    setCookie('email',email, { path: '/' }); 
+    console.log(cookies)
+  }
   const onSuccess = (res) =>{
     console.log("sucess", res.profileObj)
-    alert(res.profileObj.email)
-
+    handleCookie("d236",res.profileObj.name,res.profileObj.email)
   }
   const onFailure = (res) =>{
     console.log("failure", res)
+    handleRemoveCookie()
   }
     return (
         <div>
