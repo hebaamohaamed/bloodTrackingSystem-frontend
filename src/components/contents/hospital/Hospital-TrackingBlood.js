@@ -8,10 +8,10 @@ function hospitalTrackingBlood(){
     return(
         <div>
             <HospitalHeader/>
-            <div class="container px-1 px-md-4 py-5 mx-auto">
+            <div class="container px-1 px-md-4 py-5 mx-auto TrackingBloodPage">
     <div className="card" id="trackingBlood">
         <div className="row d-flex justify-content-between px-3 top">
-          <div>
+          <div className="info">
             <a href="/">
               <i className="info fa-2x"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
             </a>

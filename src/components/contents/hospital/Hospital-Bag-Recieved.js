@@ -20,15 +20,14 @@ class hospitalBagRecieved extends Component{
 return(
     <div>
     <HospitalHeader/>
-    <div id="rec">
-    <div class="login-box">
-    <h2>Info Needed</h2>
+    <div className="InfoNedded" >
+    <h2>Recieved Bag Info</h2>
     <form>
       <div className="user-box">
-        <input type="text" name="" required=""/>
+        <input type="text" name="" required/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="confirm" onClick={this.handleButton} ref="confirm" >
+      <a id="bagRecievedConfirm" onClick={this.handleButton} ref="confirm" >
         <span></span>
         <span></span>
         <span></span>
@@ -38,7 +37,7 @@ return(
     </form>
   </div>
   </div>
-  </div>
+
 
 
 );

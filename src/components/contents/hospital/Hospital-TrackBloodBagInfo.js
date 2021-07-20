@@ -4,14 +4,14 @@ function hospitalTrackBloodBagInfo(){
     return(
         <div>
             <HospitalHeader />
-            <div class="login-box">
+            <div class="InfoNedded">
     <h2>Info Needed</h2>
     <form>
       <div class="user-box">
-        <input type="text" name="" required=""/>
+        <input type="text" name="" required/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="button" href="#" >
+      <a id="trackBagInfoSubmit" href="#" >
         <span></span>
         <span></span>
         <span></span>

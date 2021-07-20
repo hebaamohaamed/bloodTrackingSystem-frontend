@@ -29,42 +29,22 @@ return(
 
     <div>
         <HospitalHeader />
-         <div className="new-box">
-    <h2>New Patient</h2>
+         <div id="usedBagInfo">
+    <h2>Used Bag Info</h2>
     <form>
       <div className="new-user-box">
-        <input type="text" name="" required=""/>
+        <input type="text" name="" required/>
         <label>Enter Patient E-Mail</label>
       </div>
       <div className="new-user-box">
-        <input type="text" name="" required=""/>
+        <input type="text" name="" required/>
         <label>Enter Blood Bag ID</label>
       </div>
       <div className="new-user-box">
-        <input type="number" name="" required=""/>
+        <input type="number" name="" required/>
         <label>Enter number of Blood Bags</label>
       </div>
       <a id="button1" href="#" onClick={this.usedButton2} ref="submit2" >
-        Submit
-      </a>
-    </form>
-  </div>
-  <div class="existing-box">
-    <h2>Existing Patient</h2>
-    <form>
-      <div className="existing-user-box">
-        <input type="text" name="" required=""/>
-        <label>Enter Patient E-Mail</label>
-      </div>
-      <div className="existing-user-box">
-        <input type="text" name="" required=""/>
-        <label>Enter Blood Bag ID</label>
-      </div>
-      <div className="existing-user-box">
-        <input type="number" name="" required=""/>
-        <label>Enter number of Blood Bags</label>
-      </div>
-      <a id="button2" href="#" onClick={this.usedButton} ref="submit">
         Submit
       </a>
     </form>
