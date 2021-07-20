@@ -3,8 +3,100 @@ import { Component } from 'react';
 import { render } from '@testing-library/react';
 import { findDOMNode } from 'react-dom';
 import BloodBankHeader from '../../headers/bloodbank';
+import axios from 'axios'
 
 class BloodBankDonation extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      Date: null,
+      Expired: null,
+      Test: null,
+      Temperature: null,
+      milliMeters: null,
+      Type: null,
+      Email: null,
+      DIN: null
+    }
+  }
+
+  TrigerAxios(event){
+    event.preventDefault();
+    const currentDate2 = new Date();
+    const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
+    const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
+    const currentDate = date + " " + time 
+    let ownerID = "BB101";
+    this.setState({DIN: "BB101"})
+    alert(`http://localhost:5000/create/bag?id=${this.state.DIN}&mm=${this.state.milliMeters}&type=${this.state.Type}&date=${this.state.Date}&expired=${this.state.Expired}&test=${this.state.Test}&did=${this.state.Email}&temp${this.state.Temperature}&time=${currentDate}`)
+    axios.get(`http://localhost:5000/create/bag?id=${this.state.DIN}&mm=${this.state.milliMeters}&type=${this.state.Type}&date=${this.state.Date}&expired=${this.state.Expired}&test=${this.state.Test}&did=${this.state.Email}&temp${this.state.Temperature}&time=${currentDate}`)
+    .then(response =>{
+      let output = Object.values(response.data);
+      alert("Blood Bag Created")
+      this.TrigerAxios2(event);
+      console.log("Change State Confirmed")
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)
+      
+    })
+  }
+  TrigerAxios2(event){
+    event.preventDefault();
+    const currentDate2 = new Date();
+    const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
+    const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
+    const currentDate = date + " " + time  
+    let PIN = "P8563"
+    let ownerID = "BB101";
+    let bloodNumber = this.state.DIN + ":" + this.state.Type
+    alert(`http://localhost:5000/create/process?pin=${PIN}&id=${bloodNumber}&uid=${this.state.Email}&oid=${ownerID}&type=donate&time=${currentDate}`)
+    axios.get(`http://localhost:5000/create/process?pin=${PIN}&id=${bloodNumber}&uid=${this.state.Email}&oid=${ownerID}&type=donate&time=${currentDate}`)
+    .then(response =>{
+      let output = Object.values(response.data);
+      let objectOutput = JSON.parse(output[0]);
+      alert("Blood Bag Location: Transportation Car")
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)
+    })
+  }
+  handleInputChange(value){
+    this.setState({
+      Date: value
+    })
+  }
+  handleInputChange2(value2){
+    this.setState({
+      Expired: value2
+    })
+  }
+  handleInputChange3(value3){
+    this.setState({
+      Test: value3
+    })
+  }
+  handleInputChange4(value4){
+    this.setState({
+      Temperature: value4
+    })
+  }
+  handleInputChange5(value5){
+    this.setState({
+      milliMeters: value5
+    })
+  }
+  handleInputChange6(value6){
+    this.setState({
+      Type: value6
+    })
+  }
+  handleInputChange7(value7){
+    this.setState({
+      Email:value7
+    })
+  }
+
   donationButton1 =()=>{
         const button1 = findDOMNode(this.refs.submit);
         $(button1).css("color", "white");
@@ -35,61 +127,61 @@ class BloodBankDonation extends Component {
           <div className='set'>
             <div className='Date'>
               <label for='Date'>Date</label>
-              <input id='Date' placeholder="MM/DD/YYYY" type='date' />
+              <input id='Date' placeholder="MM/DD/YYYY" type='date' value={this.state.Date} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
             </div>
             <div className='Expire'>
               <label for='Expire'>Expire</label>
-              <input id='Expire' placeholder='MM/DD/YYYY' type='date' />
+              <input id='Expire' placeholder='MM/DD/YYYY' type='date' value={this.state.Expired} onChange={(e) =>{this.handleInputChange2(e.target.value)}} />
             </div>
           </div>
           <div className='set'>
               <div className='Test'>
                 <label for='Test'>Test</label>
-                <input id='Test' placeholder="Secure/Not Secure" type='text' />
+                <input id='Test' placeholder="Secure/Not Secure" type='text' value={this.state.Test} onChange={(e) =>{this.handleInputChange3(e.target.value)}}/>
               </div>
               <div className='Temperature'>
                 <label for='Temperature'>Temperature</label>
-                <input id='Temperature' placeholder='20C' type='text' />
+                <input id='Temperature' placeholder='20C' type='text' value={this.state.Temperature} onChange={(e) =>{this.handleInputChange4(e.target.value)}} />
               </div>
             </div>
           <div className='longInput'>
               <label for='Millimeters'>Millimeters</label>
               <div className='radio-container'>
-                  <input id='Millimeters' placeholder='20C' type='text' />
+                  <input id='Millimeters' placeholder='20C' type='text' value={this.state.milliMeters} onChange={(e) =>{this.handleInputChange5(e.target.value)}} />
               </div>   
           </div>
           <div className='longInput'>
               <label for='A+'>Blood Type</label>
               <div className='radio-container'>
-                <input id='A+' name='pet-weight' type='radio' value='A+' />
+                <input id='A+' name='pet-weight' type='radio' value='A+' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='A+'>A+</label>
 
-                <input id='B+' name='pet-weight' type='radio' value='B+' />
+                <input id='B+' name='pet-weight' type='radio' value='B+' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='B+'>B+</label>
 
-                <input id='O+' name='pet-weight' type='radio' value='O+' />
+                <input id='O+' name='pet-weight' type='radio' value='O+' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='O+'>O+</label>
 
-                <input id='AB+' name='pet-weight' type='radio' value='AB+' />
+                <input id='AB+' name='pet-weight' type='radio' value='AB+' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='AB+'>AB+</label>
 
-                <input id='A-' name='pet-weight' type='radio' value='A-' />
+                <input id='A-' name='pet-weight' type='radio' value='A-' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='A-'>A-</label>
 
-                <input id='B-' name='pet-weight' type='radio' value='B-' />
+                <input id='B-' name='pet-weight' type='radio' value='B-' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='B-'>B-</label>
 
-                <input id='O-' name='pet-weight' type='radio' value='O-' />
+                <input id='O-' name='pet-weight' type='radio' value='O-' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='O-'>O-</label>
 
-                <input id='AB-' name='pet-weight' type='radio' value='AB-' />
+                <input id='AB-' name='pet-weight' type='radio' value='AB-' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='AB-'>AB-</label>
               </div>
             </div>
           <div className='longInput'>
               <label for='Email'>Email</label>
               <div className='radio-container'>
-                  <input id='Email' placeholder="Write patient's Email" type='text' />
+                  <input id='Email' placeholder="Write patient's Email" type='text' value={this.state.Email} onChange={(e) =>{this.handleInputChange7(e.target.value)}} />
               </div>   
           </div>
           
@@ -97,7 +189,7 @@ class BloodBankDonation extends Component {
         <footer>
           <div className='set'>
               <a id="new" href="#" onClick={this.donationButton1} ref="submit" >New Donor</a>
-              <a id="existing" href="#" onClick={this.donationButton2} ref="submit2" >Existing Donor</a>
+              <a id="existing" href="#" onClick={(event)=>this.TrigerAxios(event)} ref="submit2" >Existing Donor</a>
           </div>
         </footer>
       </div>
