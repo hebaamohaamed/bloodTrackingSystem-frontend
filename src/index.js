@@ -1,23 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { CookiesProvider } from "react-cookie";
+
+
 import './fontawesome';
-import './css/login.css';
 import './css/options.css';
+import './css/Blood-Bank-NewDonation.css'
 import './css/headers.css'
 import './css/Hospital-Bag-Recieved.css'
 import './css/Login-form.css'
 import './css/User-RetrieveBloodBags.css'
-
+import './css/footer.css'
+import './css/Hospital-Options.css'
+import './css/TrackingBlood.css'
+import './css/RetrieveBloodBags.css'
+import './css/Hospital-BagHistory.css'
+import './css/home.css'
 
 import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
+    <CookiesProvider>
     <App />
+    </CookiesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -2,9 +2,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import HomeContent from '../contents/home'
-import BloodBankHelp from '../contents/bloodbank/help'
 import BloodBankLogin from '../contents/bloodbank/login'
-
+import {NavDropdown} from 'react-bootstrap'
 function BloodBankHeader() {
   let history = useHistory();
     return (
@@ -25,9 +24,24 @@ function BloodBankHeader() {
                 </Link>
               </li>
               <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">BloodBags</Link>
+              </li>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodbank/help">Processes</Link>
+              </li>
+              <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
               </li>
-              <li><i  id="icon" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
+              
+              <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
+              <li id="dropdown">
+              <NavDropdown
+                  id ="bloodbank"
+                  title="Central BB"
+                >
+                  <NavDropdown.Item><Link to='/bloodBankLogout' >Logout </Link> </NavDropdown.Item>
+                </NavDropdown> 
+                </li>
             </ul>
           </div>
         </div>

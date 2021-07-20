@@ -13,6 +13,12 @@ function HospitalContent() {
             <button onClick={()=>{history.push("/HospitalBagRecieved");}}>Hospital Bags Recieved</button>
             <button onClick={()=>{history.push("/HospitalBagUsed");}}>Hospital Bags Used</button>
             <button onClick={()=>{history.push("/HospitalLogin");}}>Hospital Login</button>
+            <button onClick={()=>{history.push("/HospitalOptions");}}>Hospital Options</button>
+            <button onClick={()=>{history.push("/HospitalTrackBloodBagInfo");}}>Track blood bag info</button>
+            <button onClick={()=>{history.push("/HospitalTrackingBlood");}}>Track blood </button>
+            <button onClick={()=>{history.push("/RetrieveBloodBag");}}>Retrieve Blood Bag </button>
+            <button onClick={()=>{history.push("/HospitalBagHistory");}}>hospital bag history </button>
+            <button onClick={()=>{history.push("/RetrieveProcesses");}}>Retrieve processes </button>
         </Router>
 
        

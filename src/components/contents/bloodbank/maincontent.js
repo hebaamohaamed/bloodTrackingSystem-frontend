@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 import BloodBankHeader from '../../headers/bloodbank'
 import HomeContent from '../home'
-import BloodBankHelp from './help'
 import BloodBankLogin from './login'
 import BloodBankDonation from './donation'
 import BloodBankOptions from './options'
@@ -17,11 +16,12 @@ function BloodBankContent() {
         <BloodBankHeader /> 
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <button onClick={()=>{history.push("/options");}}>go to options</button>
-        <switch>
-          <Route exact path="/bloodbank/help"><BloodBankHelp /> </Route>
-          <Route exact path="/bloodbank/login"><BloodBankLogin /></Route>
-          <Route exact path="/bloodbank"><BloodBankLogin /></Route>
-       </switch>
+        <button onClick={()=>{history.push("/bloodBankLogin");}}>login</button>
+        <button onClick={()=>{history.push("/donation");}}>New Donation</button>
+        <button onClick={()=>{history.push("/bloodBagRetrieve");}}>Blood Bags Retrieve</button>
+        <button onClick={()=>{history.push("/bloodBagSendBag");}}>send Blood bag</button>
+        <button onClick={()=>{history.push("/bloodTracking");}}>Blood Tracking</button>
+        <button onClick={()=>{history.push("/retrieveProcesses");}}>retrieve processes</button>
        </Router>
       
       </div>

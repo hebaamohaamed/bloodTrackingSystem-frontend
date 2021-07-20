@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  max-height: 100vw;
+}
+
+.signup-container {
+  display: grid;
+  grid-template-areas: "left right";
+  max-width: 900px;
+}
+
+#BBDonationCard .right-container {
+  background: #C31313;
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+  border-radius: 10px;
+}
+#BBDonationCard .right-container h1:nth-of-type(1) {
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+#BBDonationCard .right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+#BBDonationCard .right-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+#BBDonationCard .right-container input, .right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+#BBDonationCard .right-container header {
+  padding: 40px;
+}
+
+#BBDonationCard .right-container .longInput .radio-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#BBDonationCard .right-container footer {
+  align-items: center;
+  background: #FBFCFC  ;
+  display: grid;
+  padding: 5px 40px;
+}
+#BBDonationCard .right-container footer a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFFAFA;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+#BBDonationCard .right-container footer #new {
+  background: #C31313;
+  transition: 0.2s all ease-in-out;
+}
+#BBDonationCard .right-container footer #new:hover {
+  background: #807182;
+  color: white;
+}
+#BBDonationCard .right-container footer #existing {
+  background: #C31313;
+  border: 1px solid transparent;
+  color: #fff;
+}
+#BBDonationCard .right-container footer #existing:hover {
+  background: #807182;
+}
+
+#BBDonationCard .Date label, .Expire label, .Test label, .Temperature label, .longInput label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#BBDonationCard .radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+#BBDonationCard .radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 50px;
+}
+
+#BBDonationCard .radio-container input[type=radio] {
+  display: none;
+}
+
+#BBDonationCard .radio-container input[type=radio]:checked + label {
+  background: #C31313;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#BBDonationCard .radio-container #Millimeters{
+    border: black;
+}
+#BBDonationCard .radio-container #Email{
+    border: black;
+}

@@ -1,4 +1,106 @@
-  #rec .login-box {
+  /* ****************************Hospital Bag recieved****************************************** */
+  .InfoNedded {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #C31313;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .InfoNedded  h2 {
+    margin: 0 0 90px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .InfoNedded .user-box {
+    position: relative;
+  }
+  
+  .InfoNedded .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .InfoNedded .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .InfoNedded .user-box input:focus ~ label,
+  .InfoNedded .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .InfoNedded form #bagRecievedConfirm {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFFAFA;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 0px
+  }
+  
+  .InfoNedded #bagRecievedConfirm:hover {
+    background: #C31313;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #FFFAFA,
+                0 0 25px #FFFAFA,
+                0 0 50px #FFFAFA,
+                0 0 100px #FFFAFA;
+  }
+  .InfoNedded form #trackBagInfoSubmit {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFFAFA;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 0px
+  }
+  
+  .InfoNedded #trackBagInfoSubmit:hover {
+    background: #C31313;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #FFFAFA,
+                0 0 25px #FFFAFA,
+                0 0 50px #FFFAFA,
+                0 0 100px #FFFAFA;
+  }
+   /* ************************************ BBsendingBloodBag *********************************************** */
+   #BBsendingBloodBag {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11,18 +113,18 @@
     border-radius: 10px;
   }
   
-  #rec  .login-box h2 {
+  #BBsendingBloodBag h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
-  #rec .login-box .user-box {
+  #BBsendingBloodBag .user-box {
     position: relative;
   }
   
-  #rec .login-box .user-box input {
+  #BBsendingBloodBag .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -33,7 +135,7 @@
     outline: none;
     background: transparent;
   }
-  #rec .login-box .user-box label {
+  #BBsendingBloodBag .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -44,15 +146,15 @@
     transition: .5s;
   }
   
-  #rec .login-box .user-box input:focus ~ label,
-  #rec .login-box .user-box input:valid ~ label {
+  #BBsendingBloodBag .user-box input:focus ~ label,
+  #BBsendingBloodBag .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: white;
     font-size: 12px;
   }
   
-  #rec .login-box form a {
+  #BBsendingBloodBag form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -66,7 +168,7 @@
     letter-spacing: 0px
   }
   
-  #rec .login-box a:hover {
+  #BBsendingBloodBag a:hover {
     background: #C31313;
     color: #fff;
     border-radius: 5px;
@@ -74,92 +176,13 @@
                 0 0 25px #FFFAFA,
                 0 0 50px #FFFAFA,
                 0 0 100px #FFFAFA;
-  }
-  /* **************************************************************************************** */
-  .existing-box {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: #C31313;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
-  
-  .existing-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .existing-box .existing-user-box {
-    position: relative;
-  }
-  
-  .existing-box .existing-user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  .existing-box .existing-user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-  }
-  
-  .existing-box .existing-user-box input:focus ~ label,
-  .existing-box .existing-user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: white;
-    font-size: 12px;
-  }
-  
-  .existing-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #FFFAFA;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 0px
-  }
-  
-  .existing-box a:hover {
-    background: #C31313;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #FFFAFA,
-                0 0 25px #FFFAFA,
-                0 0 50px #FFFAFA,
-                0 0 100px #FFFAFA;
-  }
-    
-    /* ****************************************************************************************************************** */
-    .new-box {
+  } 
+    /* ***************************************Hospital Bag Used*************************************************** */
+    #usedBagInfo  {
       position: absolute;
       top: 50%;
-      left: 30%;
-      width: 400px;
+      left: 50%;
+      width: 500px;
       padding: 40px;
       transform: translate(-50%, -50%);
       background: #C31313;
@@ -168,18 +191,18 @@
       border-radius: 10px;
     }
     
-    .new-box h2 {
-      margin: 0 0 30px;
+    #usedBagInfo h2 {
+      margin: 0 0 50px;
       padding: 0;
       color: #fff;
       text-align: center;
     }
     
-    .new-box .new-user-box {
+    #usedBagInfo .new-user-box {
       position: relative;
     }
     
-    .new-box .new-user-box input {
+    #usedBagInfo .new-user-box input {
       width: 100%;
       padding: 10px 0;
       font-size: 16px;
@@ -190,7 +213,7 @@
       outline: none;
       background: transparent;
     }
-    .new-box .new-user-box label {
+    #usedBagInfo .new-user-box label {
       position: absolute;
       top:0;
       left: 0;
@@ -201,15 +224,15 @@
       transition: .5s;
     }
     
-    .new-box .new-user-box input:focus ~ label,
-    .new-box .new-user-box input:valid ~ label {
+    #usedBagInfo .new-user-box input:focus ~ label,
+    #usedBagInfo .new-user-box input:valid ~ label {
       top: -20px;
       left: 0;
       color: white;
       font-size: 12px;
     }
     
-    .new-box form a {
+    #usedBagInfo form a {
       position: relative;
       display: inline-block;
       padding: 10px 20px;
@@ -223,7 +246,7 @@
       letter-spacing: 0px
     }
     
-    .new-box a:hover {
+    #usedBagInfo a:hover {
       background: #C31313;
       color: #fff;
       border-radius: 5px;
@@ -232,4 +255,9 @@
                   0 0 50px #FFFAFA,
                   0 0 100px #FFFAFA;
     }
+    body{
+      background-color:#EAEDED;
+    }
+    footer{background-color: white;}
+    
   

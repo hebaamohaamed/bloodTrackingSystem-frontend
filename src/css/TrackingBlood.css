@@ -1,0 +1,127 @@
+.TrackingBloodPage .card {
+    z-index: 0;
+    background-color: white;
+    padding-bottom: 20px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    border-radius: 5px;
+    width: 1300px;
+    text-align: center;
+    margin-left: -100px;
+}
+
+.TrackingBloodPage .top {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-left: 15% !important;
+    padding-right: 15% !important
+}
+
+.TrackingBloodPage .info {
+    position: relative;
+    left: 537px;
+    top: -19px;
+    color: #C31313;
+ 
+}
+
+.TrackingBloodPage #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: #455A64;
+    padding-left: 0px;
+    margin-top: 30px
+}
+
+.TrackingBloodPage #progressbar li {
+    list-style-type: none;
+    font-size: 13px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+.TrackingBloodPage #progressbar .step0:before {
+    font-family: FontAwesome;
+    content: "\f10c";
+    color: #fff
+}
+
+.TrackingBloodPage #progressbar li:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    background: #C5CAE9;
+    border-radius: 50%;
+    margin: auto;
+    padding: 0px
+}
+
+.TrackingBloodPage #progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 12px;
+    background: #C5CAE9;
+    position: absolute;
+    left: 0;
+    top: 16px;
+    z-index: -1
+}
+
+.TrackingBloodPage #progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    left: -50%
+}
+
+.TrackingBloodPage #progressbar li:nth-child(2):after,
+#progressbar li:nth-child(3):after {
+    left: -50%
+}
+
+.TrackingBloodPage #progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    left: 50%
+}
+
+.TrackingBloodPage #progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.TrackingBloodPage #progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+
+.TrackingBloodPage #progressbar li.active:before,
+.TrackingBloodPage #progressbar li.active:after {
+    background: #C31313
+}
+
+.TrackingBloodPage #progressbar li.active:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+.TrackingBloodPage .icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px
+}
+
+.TrackingBloodPage .icon-content {
+    padding-bottom: 20px
+}
+
+@media screen and (max-width: 992px) {
+    .icon-content {
+        width: 50%
+    }
+}
