@@ -75,7 +75,28 @@
 #homeHeader #help{
     position: relative; left: -20px;
 }
+#userNav #navbar-brand1 {
+    position: relative; top: -10px; color: black; font-family:Helvetica;
+}
 
+#userNav #navbar-brand2{
+    position: relative; top: 10px; right: 50px; color: #C31313; font-family:Helvetica;
+}
+
+#userNav #navbar-brand3{
+    position: relative; top: 10px; right: 60px; color:black; font-family:Helvetica;
+}
+
+#userNav #navbarResponsive .nav-link{
+    position: relative; left: -20px;
+}
+#userNav #icon{
+    position: relative; top: 5px; left: 1px;
+}
+#userNav #userName{
+    margin-left: 8px;
+    margin-top: 8px;
+=======
 #homeHeader #icon{
     position: relative; top: 5px; left: 1px;
 }

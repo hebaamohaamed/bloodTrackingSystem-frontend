@@ -10,6 +10,13 @@
 #BBcarouselMultiItemExample #trackBlood{
     position: relative; height: 600px;
 }
+/*----------------------------------------------*/
+#carouselMultiItemExample2 #row1{
+    position: relative; height: 300px; left: 150px;
+}
+#carouselMultiItemExample2 #row2{
+    position: relative; height: 600px; left: 250px;
+}
 #BBcarouselMultiItemExample #sendBag{
     position: relative; height: 900px;
 }
