@@ -1,11 +1,16 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
-import HomeContent from '../contents/home'
-import BloodBankLogin from '../contents/bloodbank/login'
 import {NavDropdown} from 'react-bootstrap'
+import { useCookies } from 'react-cookie';
+
 function BloodBankHeader() {
   let history = useHistory();
+  const [cookies] = useCookies(['user']);
+  if(cookies.name == null){
+    history.push('/home')
+  }
+  const name = cookies.name;
     return (
       <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="bloodbankNav">
@@ -37,7 +42,7 @@ function BloodBankHeader() {
               <li id="dropdown">
               <NavDropdown
                   id ="bloodbank"
-                  title="Central BB"
+                  title={name}
                 >
                   <NavDropdown.Item><Link to='/bloodBankLogout' >Logout </Link> </NavDropdown.Item>
                 </NavDropdown> 
