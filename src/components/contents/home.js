@@ -3,11 +3,11 @@ import {Carousel, Row, Col, Card, CardGroup} from 'react-bootstrap'
 import { Component } from 'react'
 import bloodDonation from '../../imgs/blood-donation2.jpg'
 import bloodRecieve from '../../imgs/blood-recieve5.jpg'
-import bloodTypes from '../../imgs/blood-types7.jpg'
 import hospital from '../../imgs/hospital2.jpg'
 import user from '../../imgs/donor.png'
 import supervision from '../../imgs/supervision.jpg'
 import bloodbank from '../../imgs/bloodbank3.jpg'
+import bloodtype from '../../imgs/blood types.jpeg'
 import { Link } from 'react-router-dom';
 class HomeContent extends Component {
  
@@ -61,7 +61,7 @@ class HomeContent extends Component {
           <Carousel.Item interval={2000}>
             <img
               className="image"
-              src={bloodTypes}
+              src={bloodtype}
               alt="First slide"
             />
             <Carousel.Caption>
