@@ -23,21 +23,11 @@
   border:1px solid black;
 }
 
-
-/* main > div > div > div > div > div.card-body > table > tbody > tr> td{
-  width:150px;
-                text-align:center;
-                border:1px solid black;
-                padding:5px
-} */
-
 .RetrieveAllBloodBags .filter{
   padding-right: 40px;
   padding-left: 40px;
 }
 
-/* #root > div > div:nth-child(1) > main > div > div > div > div > div.card-body > table > thead > tr > th:nth-child(3) > div > span > input.filter2{
-  margin-right: 0px; 
-  border-radius: 5px;
-  
-} */
+.RetrieveAllBloodBags .userTrackIcon{
+  margin-right: 110px;
+}

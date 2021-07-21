@@ -3,6 +3,7 @@ import Data from './User-RetrieveBloodBagsData.json'
 import {COLUMNS} from './User-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import UserHeader from '../../headers/user'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 export const UserRetrieveBloodBags = () =>{
 	
@@ -33,6 +34,9 @@ export const UserRetrieveBloodBags = () =>{
             <div class="card">
                 <div class="card-header">
                     All Bags
+					<br></br>
+					<input placeholder="Bag ID to track"/>
+					<i className="userTrackIcon fa-2x"><FontAwesomeIcon icon={["fas" ,"search-location"]}/></i>
                 </div>
                 <div class="card-body">
                        
@@ -40,10 +44,11 @@ export const UserRetrieveBloodBags = () =>{
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
+						<tr {...headerGroup.getHeaderGroupProps()} >
 							{headerGroup.headers.map((column)=>(
 									
 									<th {...column.getHeaderProps()}>
+										
 										<div>{column.canFilter ? column.render('Filter') : null}</div>
 										<br></br>
 										{column.render('Header')}
