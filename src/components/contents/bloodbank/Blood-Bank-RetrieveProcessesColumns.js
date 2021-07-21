@@ -1,13 +1,13 @@
-import {FilterCol2} from '../hospital/filter'
-export const COLUMNS = [
+import {FilterCol2} from '../filterProcesses'
+export const COLUMNS2 = [
     {
-        Header: 'Blood Bag Number',
-        accessor: 'number',
+        Header: 'Donation ID',
+        accessor: 'id',
         Filter: FilterCol2
     },
     {
-        Header: 'Date',
-        accessor: 'date',
+        Header: 'Blood Bag Number',
+        accessor: 'number',
         Filter: FilterCol2
     },
     {
@@ -16,18 +16,13 @@ export const COLUMNS = [
         Filter: FilterCol2
     },
     {
-        Header: 'Process ID',
-        accessor: 'id',
-        Filter: FilterCol2
-    },
-    {
-        Header: 'Process Type',
-        accessor: 'type',
-        Filter: FilterCol2
-    },
-    {
         Header: 'User ID',
         accessor: 'userId',
+        Filter: FilterCol2
+    },
+    {
+        Header: 'Date',
+        accessor: 'date',
         Filter: FilterCol2
     }
 ]

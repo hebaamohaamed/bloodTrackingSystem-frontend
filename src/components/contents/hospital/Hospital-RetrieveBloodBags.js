@@ -4,7 +4,7 @@ import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import HospitalHeader from '../../headers/hospital'
 
-export const RetrieveBloodBags = () =>{
+export const HospitalRetrieveBloodBags = () =>{
 	
 	
 	const columns = useMemo(()=> COLUMNS, []);

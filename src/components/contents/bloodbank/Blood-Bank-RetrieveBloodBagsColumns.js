@@ -1,8 +1,8 @@
-import {FilterCol} from '../hospital/filter'
+import {FilterCol} from '../filterBloodBags'
 export const COLUMNS = [
     {
         Header: 'Bag ID',
-        accessor: 'id',
+        accessor: 'DIN',
         Filter: FilterCol
     },
     {
@@ -12,12 +12,12 @@ export const COLUMNS = [
     },
     {
         Header: 'Safe',
-        accessor: 'safe',
+        accessor: 'test',
         Filter: FilterCol
     },
     {
         Header: 'Expired',
-        accessor: 'exp',
+        accessor: 'expired',
         Filter: FilterCol
     }
 ]

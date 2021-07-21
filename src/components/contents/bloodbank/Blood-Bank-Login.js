@@ -12,7 +12,7 @@ function BloodBankLogin() {
   let history = useHistory();
 
   function TrigerAxios(email){
-    axios.get("http://localhost:3000/api/get/bloodbank?email="+email)
+    axios.get("http://localhost:4000/api/get/bloodbank?email="+email)
     .then(response =>{
       const id=response.data[0].bbId;
       const name =response.data[0].bbName;
@@ -35,7 +35,7 @@ function BloodBankLogin() {
     setCookie('id', id, { path: '/' });
     setCookie('email',email, { path: '/' }); 
     console.log(cookies)
-    history.push("/bloodBanlOptions")
+    history.push("/bloodBankOptions")
   }
   const onSuccess = (res) =>{
     console.log("sucess", res.profileObj)
@@ -45,7 +45,6 @@ function BloodBankLogin() {
   const onFailure = (res) =>{
     console.log("failure", res)
     alert("Couldn't Login With Google")
-    handleRemoveCookie()
   }
     return (
         <div>
@@ -60,7 +59,6 @@ function BloodBankLogin() {
                     onSuccess={onSuccess}
                     onFailure={onFailure}
                     cookiePolicy='single_host_origin'
-                    isSignedIn={false}
                     buttonText="Login With Google"
                   >
                   </GoogleLogin>

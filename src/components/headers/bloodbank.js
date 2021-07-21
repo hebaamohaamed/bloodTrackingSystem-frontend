@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import {NavDropdown} from 'react-bootstrap'
 import { useCookies } from 'react-cookie';
+import axios from 'axios'
+
 
 function BloodBankHeader() {
   let history = useHistory();
@@ -11,6 +13,44 @@ function BloodBankHeader() {
     history.push('/home')
   }
   const name = cookies.name;
+  const id = cookies.id;
+
+  function AxiosB(event){
+    event.preventDefault();
+    axios.get(`http://localhost:5000/query/bloodbank?oid=${id}`)
+		.then(response =>{
+		  let output = (response.data.output);
+		  console.log("All Blood is fetched")
+		  console.log(output)
+		  process = output
+		  history.push('/bloodBankbloodBagRetrieve"')
+	
+		})
+		.catch(error=>{
+		  console.log("TEST ERROR", error)
+		 
+  })
+
+  }
+
+  function AxiosP(event){
+    event.preventDefault();
+    axios.get(`http://localhost:5000/query/bloodbank?oid=${id}`)
+		.then(response =>{
+		  let output = (response.data.output);
+		  console.log("All Processes is fetched")
+		  console.log(output)
+		  process = output
+		  history.push('/bloodBankretrieveProcesses')
+	
+		})
+		.catch(error=>{
+		  console.log("TEST ERROR", error)
+		 
+  })
+
+  }
+
     return (
       <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="bloodbankNav">
@@ -29,15 +69,11 @@ function BloodBankHeader() {
                 </Link>
               </li>
               <li className="nav-item" to="help">
-                <Link className="nav-link" id="help" to="/bloodbank/help">BloodBags</Link>
+                <Link className="nav-link" id="help" onClick={(event)=>AxiosB(event)}>BloodBags</Link>
               </li>
               <li className="nav-item" to="help">
-                <Link className="nav-link" id="help" to="/bloodbank/help">Processes</Link>
+                <Link className="nav-link" id="help" onClick={(event)=>AxiosP(event)}>Processes</Link>
               </li>
-              <li className="nav-item" to="help">
-                <Link className="nav-link" id="help" to="/bloodbank/help">Help</Link>
-              </li>
-              
               <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
               <li id="dropdown">
               <NavDropdown
