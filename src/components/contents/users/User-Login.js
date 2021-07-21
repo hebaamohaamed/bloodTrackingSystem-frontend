@@ -6,7 +6,7 @@ function userLogin(){
         <div>
             <UserHeader/>
             <div className="login-box">
-    <h2>Hospital login</h2>
+    <h2>User login</h2>
     <form>
       <center>
         <div className="flex-c-m">
