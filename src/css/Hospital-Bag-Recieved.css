@@ -232,7 +232,7 @@
       font-size: 12px;
     }
     
-    #usedBagInfo form a {
+    #usedBagInfo form .bagUsedBottons a {
       position: relative;
       display: inline-block;
       padding: 10px 20px;
@@ -245,8 +245,12 @@
       margin-top: 40px;
       letter-spacing: 0px
     }
+    #usedBagInfo form .bagUsedBottons #bagUsedExisting{
+      margin-left: 80px;
+    }
+
     
-    #usedBagInfo a:hover {
+    #usedBagInfo .bagUsedBottons a:hover {
       background: #C31313;
       color: #fff;
       border-radius: 5px;

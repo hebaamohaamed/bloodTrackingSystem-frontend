@@ -116,13 +116,10 @@ return(
         <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <div className="new-user-box">
-        <input type="number" name="" required/>
-        <label>Enter number of Blood Bags</label>
+      <div className='bagUsedBottons'>
+        <a id="bagUsedNew" href="#" onClick={this.donationButton1} ref="submit" >New Donor</a>
+        <a id="bagUsedExisting" href="#" onClick={this.donationButton2} ref="submit2" >Existing Donor</a>
       </div>
-      <a id="button1" href="#" onClick={(event)=>this.TrigerAxios(event)} ref="submit2" >
-        Submit
-      </a>
     </form>
   </div>
   </div>
