@@ -48,11 +48,8 @@ class hospitalBagUsed extends Component{
     event.preventDefault();
     axios.get(`http://localhost:5004/check/patient?email=${this.state.patientEmail}`)
     .then(response =>{
-      let output1 = Object.values(response);
-      alert(output1)
-      // let output2 = JSON.parse(output1)
-      // let objectOutput = output2[0]
-      // alert(objectOutput)
+      const Id = response.data[0].pID;
+      alert(Id)
       alert("Validate Patient")
       //this.TrigerAxios(event,output);
     })
