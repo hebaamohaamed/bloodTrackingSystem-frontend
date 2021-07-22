@@ -3,11 +3,32 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 function UserHeader() {
-  function getBlood(){
+  
+  function getBlood(event,ID){
+    event.preventDefault();
+    axios.get(`http://localhost:5003/query/hospital/blood?oid=${ID}`)
+    .then(response =>{
+      var blood = response.data
+      console.log(blood.data)
+      console.log("All Blood Fetched")
+      
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)
+      alert("Can't fetch Blood")
+    })
+
+  }
+  function getHospitals(event){
+    event.preventDefault();
     axios.get("http://localhost:4000/api/get/hospitals")
     .then(response =>{
-      console.log(response)
+      var data = '['
+      for(var i=0;i<)
+      var ID = response.data[0].hId
+      console.log(ID)
       console.log("All Hospitals Fetched")
+      getBlood(event, ID)
     })
     .catch(error=>{
       console.log("TEST ERROR", error)
@@ -15,6 +36,7 @@ function UserHeader() {
     })
 
   }
+
 
     return (
      
@@ -34,7 +56,7 @@ function UserHeader() {
                     </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" id="help" onClick={getBlood()}>Search For Blood</Link>
+                <Link className="nav-link" id="help" onClick={(event)=>writeToFile(event)}>Search For Blood</Link>
               </li>
               <li><i className="userIcon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
           <li id ="userName">UserName</li>
