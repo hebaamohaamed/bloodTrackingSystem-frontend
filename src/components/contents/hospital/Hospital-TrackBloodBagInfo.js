@@ -28,7 +28,7 @@ class hospitalTrackBloodBagInfo extends Component{
         <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <Link to={{pathname: "/HospitalTrackingBlood", data: this.state.bNumber}}>Submit</Link>
+      <Link id="trackBagInfoSubmit" to={{pathname: "/HospitalTrackingBlood", data: this.state.bNumber}}>Submit</Link>
       {/* <a id="trackBagInfoSubmit" honClick={()=> history.push(`/HospitalTrackingBlood/${this.state.bNumber}`)}>
         <span></span>
         <span></span>

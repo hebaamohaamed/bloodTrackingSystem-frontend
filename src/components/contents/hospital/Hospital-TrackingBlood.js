@@ -46,7 +46,7 @@ class hospitalTrackingBlood extends Component{
           </div>
             <div className="container">
                 <h5>Bag ID: <span className="text-danger font-weight-bold">{data}</span></h5>
-                <button onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
+                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
         

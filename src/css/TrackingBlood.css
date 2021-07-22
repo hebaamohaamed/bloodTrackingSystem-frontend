@@ -120,6 +120,21 @@
     padding-bottom: 20px
 }
 
+.TrackingBloodPage .trackButtonInTrackingBlood{
+    background-color: #C31313;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    border: none;
+    padding: 5px;
+    font-size: large;
+    color: white;
+}
+
+.TrackingBloodPage .trackButtonInTrackingBlood:hover{
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 992px) {
     .icon-content {
         width: 50%
