@@ -2,7 +2,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 
-import { faHospital,faClinicMedical, faUser, faInfoCircle, faSearchLocation} from '@fortawesome/free-solid-svg-icons';
+import { faHospital,faClinicMedical, faUser, faInfoCircle, faSearchLocation, faUniversity} from '@fortawesome/free-solid-svg-icons';
 import { fab, faGoogle, faYahoo, faLinkedinIn, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 
@@ -17,5 +17,6 @@ library.add(
   faTwitter,
   faInstagram,
   faInfoCircle,
-  faSearchLocation
+  faSearchLocation,
+  faUniversity
   );
