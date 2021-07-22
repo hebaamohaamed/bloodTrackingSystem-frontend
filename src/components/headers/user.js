@@ -1,5 +1,21 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
+import axios from 'axios'
+
 function UserHeader() {
+  function getBlood(){
+    axios.get("http://localhost:4000/api/get/hospitals")
+    .then(response =>{
+      console.log(response)
+      console.log("All Hospitals Fetched")
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)
+      alert("Can't fetch Hsopitals")
+    })
+
+  }
+
     return (
      
        <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="userNav">
@@ -18,7 +34,7 @@ function UserHeader() {
                     </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" id="help" href="#" >Help</a>
+                <Link className="nav-link" id="help" onClick={getBlood()}>Search For Blood</Link>
               </li>
               <li><i className="userIcon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
           <li id ="userName">UserName</li>
