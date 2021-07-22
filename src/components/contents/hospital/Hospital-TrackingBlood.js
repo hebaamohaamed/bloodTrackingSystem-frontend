@@ -7,21 +7,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import {Component} from 'react'
 
+
 class hospitalTrackingBlood extends Component{
-    
-    TrigerAxios(event,bNumber){
+
+    constructor(props){
+        super(props)
+        this.state={
+          current: null,
+        }
+      }
+
+    TrigerAxios(event, data){
         event.preventDefault();
-        axios.get(`http://localhost:5001/get/hsitory?id=${bNumber}`)
+        axios.get(`http://localhost:5001/get/history?id=${data}`)
         .then(response =>{
-          let output = Object.values(response.data);
-          alert("DONE")
-          console.log("Change State Confirmed")
+          let output1 = Object.values(response.data)
+          let output2 = JSON.parse(output1)
+          var len = Object.keys(output2).length
+          this.setState({current: output2[len-1].Value.currentState})
+          console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
         })
       }
     render(){
+        const { data } = this.props.location
     return(
         <div>
             <HospitalHeader/>
@@ -34,18 +45,45 @@ class hospitalTrackingBlood extends Component{
             </a>
           </div>
             <div className="container">
-                <h5>Bag ID: <span className="text-danger font-weight-bold">5168496</span></h5>
+                <h5>Bag ID: <span className="text-danger font-weight-bold">{data}</span></h5>
+                <button onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
         
         <div className="row d-flex justify-content-center">
             <div className="col-12">
-                <ul id="progressbar" className="text-center">
+            {this.state.current == "READY" &&
+                 <ul id="progressbar" className="text-center">
                     <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
                 </ul>
+            } 
+            {this.state.current == "UNDER_TRANSPORTATION" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            } 
+            {this.state.current == "DELIEVERED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            } 
+            {this.state.current == "USED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                </ul>
+            } 
             </div>
         </div>
         <div className="row justify-content-between top">
@@ -77,6 +115,7 @@ class hospitalTrackingBlood extends Component{
 </div>
 </div>
     );
+            
     }
 }
 export default hospitalTrackingBlood;

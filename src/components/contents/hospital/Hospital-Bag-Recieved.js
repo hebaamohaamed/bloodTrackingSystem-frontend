@@ -24,6 +24,7 @@ class hospitalBagRecieved extends Component{
     axios.get(`http://localhost:5001/second/state?id=${this.state.bNumber}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
+      console.log(output)
       alert("Blood Bag State: Delievered")
       this.TrigerAxios2(event);
       console.log("Change State Confirmed")
@@ -31,7 +32,7 @@ class hospitalBagRecieved extends Component{
     .catch(error=>{
       console.log("TEST ERROR", error)      
     })
-
+  
   }
   TrigerAxios2(event){
     event.preventDefault();
@@ -69,6 +70,7 @@ class hospitalBagRecieved extends Component{
     $(button).css("text-transform","capitalize");
   }
  render(){
+
 return(
     <div>
     <HospitalHeader/>

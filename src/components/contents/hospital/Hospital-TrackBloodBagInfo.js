@@ -1,6 +1,8 @@
 import HospitalHeader from "../../headers/hospital";
 import {Component} from 'react'
-const TrigerAxios = require("./Hospital-TrackingBlood")
+import {Link} from 'react-router-dom'
+import { createBrowserHistory } from 'history';
+
 
 class hospitalTrackBloodBagInfo extends Component{
   constructor(props){
@@ -26,13 +28,14 @@ class hospitalTrackBloodBagInfo extends Component{
         <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="trackBagInfoSubmit" href="/HospitalTrackingBlood" >
+      <Link to={{pathname: "/HospitalTrackingBlood", data: this.state.bNumber}}>Submit</Link>
+      {/* <a id="trackBagInfoSubmit" honClick={()=> history.push(`/HospitalTrackingBlood/${this.state.bNumber}`)}>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         Submit
-      </a>
+      </a> */}
     </form>
   </div>
         </div>
@@ -40,4 +43,5 @@ class hospitalTrackBloodBagInfo extends Component{
     );
     }
 }
+
 export default hospitalTrackBloodBagInfo;
