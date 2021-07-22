@@ -50,7 +50,7 @@ export const ViewHospitalByBloodType = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
+							
 						</tr>
 					))
 				}
@@ -66,7 +66,7 @@ export const ViewHospitalByBloodType = () =>{
 										return <td className="retrieveTd" {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td className="retrieveTd"><a href="/" style={{color: "#C31313"}}>track</a></td>
+							
 							</tr>
 						)
 					})

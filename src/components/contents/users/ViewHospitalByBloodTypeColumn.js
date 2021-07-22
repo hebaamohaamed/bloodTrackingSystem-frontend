@@ -12,8 +12,19 @@ export const COLUMNS = [
         Filter: FilterCol3
     },
     {
+        Header: 'Email',
+        accessor: 'email',
+        Filter: FilterCol3
+    },
+    {
         Header: 'Blood Type',
         accessor: 'bloodtype',
         Filter: FilterCol4
+    },
+    {
+        Header: 'Google Maps',
+        accessor: 'map',
+        Cell: e =><a href={e.value}> Show</a>,
+        Filter: FilterCol3
     }
 ]
