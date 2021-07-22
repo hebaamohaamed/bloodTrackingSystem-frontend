@@ -46,12 +46,11 @@ class hospitalBagUsed extends Component{
 
   Trigerdb2(event){
     event.preventDefault();
-    axios.get(`http://localhost:5004/check/patient?email=${this.state.patientEmail}`)
+    axios.get("http://localhost:5004/check/patient?email="+this.state.patientEmail)
     .then(response =>{
       const Id = response.data[0].pID;
-      alert(Id)
       alert("Validate Patient")
-      //this.TrigerAxios(event,output);
+      this.TrigerAxios(event,Id);
     })
     .catch(error=>{
       console.log("TEST ERROR", error)      
