@@ -1,10 +1,10 @@
 
 export const FilterCol2 = ({ column }) => {
-    const {filterValue2, setFilter2 } = column
+    const {filterValue, setFilter } = column
      return(
          <span>
              {' '}
-             <input className="filter2" value={filterValue2 || ''} onChange={(e) => setFilter2(e.target.value)} placeholder="Filter Column" />
+             <input className="filter2" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter Column" />
          </span>
      )
 }
