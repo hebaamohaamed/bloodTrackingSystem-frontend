@@ -31,3 +31,12 @@
 .RetrieveAllBloodBags .userTrackIcon{
   margin-right: 110px;
 }
+
+.RetrieveAllBloodBags .card .card-header .trackBagID{
+  width: 500px;
+  font-size: large;
+}
+.RetrieveAllBloodBags .card .card-header .trackIcon{
+  margin-left: 10px;
+  /* margin-bottom: 200000px; */
+}

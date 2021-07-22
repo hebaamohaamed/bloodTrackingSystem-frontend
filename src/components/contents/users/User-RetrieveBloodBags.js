@@ -35,8 +35,8 @@ export const UserRetrieveBloodBags = () =>{
                 <div class="card-header">
                     All Bags
 					<br></br>
-					<input placeholder="Bag ID to track"/>
-					<i className="userTrackIcon fa-2x"><FontAwesomeIcon icon={["fas" ,"search-location"]}/></i>
+					<input className="trackBagID" placeholder="Enter the Bag ID you want to track"/>
+					<i className="trackIcon" data-toggle="tooltip" title="Press to track"><FontAwesomeIcon icon={["fas" ,"search-location"]}/></i>
                 </div>
                 <div class="card-body">
                        
