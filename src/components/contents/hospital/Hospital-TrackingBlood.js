@@ -14,6 +14,7 @@ class hospitalTrackingBlood extends Component{
         super(props)
         this.state={
           current: null,
+          owner: null
         }
       }
 
@@ -24,7 +25,15 @@ class hospitalTrackingBlood extends Component{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
+          var cookie = "H104"
           this.setState({current: output2[len-1].Value.currentState})
+          this.setState({owner: output2[4].Value.currentOwner})
+          alert(cookie)
+          alert(this.state.owner)
+           if(this.state.owner !== cookie ){
+             alert("You can only track your own bags") 
+             throw new Error(`This is not your bag`);
+           }
           console.log("Process Completed")
         })
         .catch(error=>{
@@ -33,6 +42,7 @@ class hospitalTrackingBlood extends Component{
       }
     render(){
         const { data } = this.props.location
+        var cookie = "H104"
     return(
         <div>
             <HospitalHeader/>
@@ -49,7 +59,7 @@ class hospitalTrackingBlood extends Component{
                 <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        
+        {this.state.owner === cookie &&
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&
@@ -86,6 +96,7 @@ class hospitalTrackingBlood extends Component{
             } 
             </div>
         </div>
+        }
         <div className="row justify-content-between top">
             <div className="row d-flex icon-content col-md-3"> 
             <img id="ready" className="icon" src={ReadyImg}/>
