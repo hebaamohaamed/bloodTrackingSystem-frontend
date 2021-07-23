@@ -14,7 +14,8 @@ class hospitalTrackingBlood extends Component{
         super(props)
         this.state={
           current: null,
-          owner: null
+          owner: null,
+          owner2: null
         }
       }
 
@@ -28,6 +29,10 @@ class hospitalTrackingBlood extends Component{
           var cookie = "H104"
           this.setState({current: output2[len-1].Value.currentState})
           this.setState({owner: output2[4].Value.currentOwner})
+          this.setState({owner2: output2[3].Value.ownerID})
+          if(this.state.owner == null){
+              this.state.owner = this.state.owner2
+          }
           alert(cookie)
           alert(this.state.owner)
            if(this.state.owner !== cookie ){
