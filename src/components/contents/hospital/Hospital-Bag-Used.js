@@ -82,6 +82,9 @@ class hospitalBagUsed extends Component{
     if(this.state.bNumber.includes("+")){
       bloodNumber = this.state.bNumber.replace("+","%2B")
     }
+    else{
+      bloodNumber = this.state.bNumber
+    }
     axios.get(`http://localhost:5001/third/state?id=${bloodNumber}&pid=${pID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
