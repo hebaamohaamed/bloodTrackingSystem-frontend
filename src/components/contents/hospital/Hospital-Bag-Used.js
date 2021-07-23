@@ -174,8 +174,8 @@ return(
         <label>Enter Blood Bag ID</label>
       </div>
       <div className='bagUsedBottons'>
-        <a id="bagUsedNew" href="#" onClick={(event)=>this.TrigerAxios0(event)} ref="submit" >New Donor</a>
-        <a id="bagUsedExisting" href="#" onClick={(event)=>this.TrigerAxios01(event)} ref="submit2" >Existing Donor</a>
+        <a id="bagUsedNew" href="#" onClick={(event)=>this.TrigerAxios0(event)} ref="submit" >New Patient</a>
+        <a id="bagUsedExisting" href="#" onClick={(event)=>this.TrigerAxios01(event)} ref="submit2" >Existing Patient</a>
       </div>
     </form>
   </div>
