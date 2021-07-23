@@ -6,6 +6,8 @@ import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
+
 
 
 class hospitalTrackingBlood extends Component{
@@ -14,9 +16,11 @@ class hospitalTrackingBlood extends Component{
         super(props)
         this.state={
           current: null,
+          out:null
         }
       }
 
+     
     TrigerAxios(event, data){
         event.preventDefault();
         axios.get(`http://localhost:5001/get/history?id=${data}`)
@@ -25,6 +29,7 @@ class hospitalTrackingBlood extends Component{
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
           this.setState({current: output2[len-1].Value.currentState})
+          this.setState({out:JSON.stringify(output2)})
           console.log("Process Completed")
         })
         .catch(error=>{
@@ -40,9 +45,9 @@ class hospitalTrackingBlood extends Component{
     <div className="card" id="trackingBlood">
         <div className="row d-flex justify-content-between px-3 top">
           <div className="info">
-            <a href="/">
+            <Link to={{pathname: "/HospitalBagHistory", data:this.state.out }}>
               <i className="info fa-2x"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
-            </a>
+            </Link>
           </div>
             <div className="container">
                 <h5>Bag ID: <span className="text-danger font-weight-bold">{data}</span></h5>
