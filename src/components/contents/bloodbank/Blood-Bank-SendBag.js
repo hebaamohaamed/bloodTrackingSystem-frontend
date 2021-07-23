@@ -22,6 +22,9 @@ class bloodBankSendBags extends Component{
     if(this.state.bNumber.includes("+")){
       bloodNumber = this.state.bNumber.replace("+","%2B")
     }
+    else{
+      bloodNumber = this.state.bNumber
+    }
     axios.get(`http://localhost:5000/first/state?id=${bloodNumber}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
