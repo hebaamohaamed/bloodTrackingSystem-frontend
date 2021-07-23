@@ -4,7 +4,7 @@ function BloodBankTrackBloodBagInfo(){
     return(
         <div>
             <BloodBankHeader />
-            <div class="login-box">
+            <div class="InfoNedded">
     <h2>Info Needed</h2>
     <form>
       <div class="user-box">
