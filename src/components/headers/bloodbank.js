@@ -9,9 +9,9 @@ import axios from 'axios'
 function BloodBankHeader() {
   let history = useHistory();
   const [cookies] = useCookies(['user']);
-  if(cookies.name == null){
-    history.push('/home')
-  }
+  // if(cookies.name == null){
+  //   history.push('/home')
+  // }
   const name = cookies.name;
   const id = cookies.id;
 

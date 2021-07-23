@@ -25,6 +25,8 @@ import BloodBankRetrieveBloodBags from './components/contents/bloodbank/Blood-Ba
 import bloodBankSendBags from './components/contents/bloodbank/Blood-Bank-SendBag'
 import bloodBankTrackingBlood from './components/contents/bloodbank/Blood-Bank-TrackingBlood'
 import BloodBankRetrieveProcesses from './components/contents/bloodbank/Blood-Bank-RetrieveProcesses'
+import BloodBankBagHistory from './components/contents/bloodbank/Blood-Bank-BagHistory'
+import BloodBankTrackBloodBagInfo from './components/contents/bloodbank/Blood-Bank-TrackingBloodInfo'
 
 //supervision
 import SuperContent from './components/contents/supervision/maincontent'
@@ -68,6 +70,8 @@ function App() {
         <Route exact path="/bloodBankbloodBagSendBag" component={bloodBankSendBags}></Route>
         <Route exact path="/bloodBankbloodTracking" component={bloodBankTrackingBlood}></Route>
         <Route exact path="/bloodBankretrieveProcesses" component={BloodBankRetrieveProcesses}></Route>
+        <Route exact path="/bloodBankbaghistory" component={BloodBankBagHistory}></Route>
+        <Route exact path="/bloodBanktrackingbloodinfo" component={BloodBankTrackBloodBagInfo}></Route>
 
 
         <Route exact path="/supervision" component={SuperContent}></Route>
