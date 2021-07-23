@@ -17,13 +17,13 @@ function BloodBankHeader() {
 
   function AxiosB(event){
     event.preventDefault();
-    axios.get(`http://localhost:5000/query/bloodbank?oid=${id}`)
+    axios.get(`http://localhost:5000/query/bloodbank/blood?oid=${id}`)
 		.then(response =>{
 		  let output = (response.data.output);
 		  console.log("All Blood is fetched")
 		  console.log(output)
 		  process = output
-		  history.push('/bloodBankbloodBagRetrieve"')
+		  history.push('/bloodBankbloodBagRetrieve')
 	
 		})
 		.catch(error=>{
@@ -35,7 +35,7 @@ function BloodBankHeader() {
 
   function AxiosP(event){
     event.preventDefault();
-    axios.get(`http://localhost:5000/query/bloodbank?oid=${id}`)
+    axios.get(`http://localhost:5000/query/bloodbank/process?oid=${id}`)
 		.then(response =>{
 		  let output = (response.data.output);
 		  console.log("All Processes is fetched")
@@ -73,6 +73,9 @@ function BloodBankHeader() {
               </li>
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" onClick={(event)=>AxiosP(event)}>Processes</Link>
+              </li>
+              <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodBankOptions">Options</Link>
               </li>
               <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
               <li id="dropdown">

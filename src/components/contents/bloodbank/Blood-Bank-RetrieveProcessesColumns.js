@@ -2,22 +2,17 @@ import {FilterCol2} from '../filterProcesses'
 export const COLUMNS2 = [
     {
         Header: 'Donation ID',
-        accessor: 'id',
+        accessor: 'processID',
         Filter: FilterCol2
     },
     {
         Header: 'Blood Bag Number',
-        accessor: 'number',
-        Filter: FilterCol2
-    },
-    {
-        Header: 'Owner ID',
-        accessor: 'owner',
+        accessor: 'bloodNumber',
         Filter: FilterCol2
     },
     {
         Header: 'User ID',
-        accessor: 'userId',
+        accessor: 'userID',
         Filter: FilterCol2
     },
     {

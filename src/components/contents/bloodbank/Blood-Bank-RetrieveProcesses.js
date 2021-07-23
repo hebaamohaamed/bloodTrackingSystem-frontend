@@ -47,12 +47,14 @@ export const BloodBankRetrieveProcesses = () =>{
 									<th {...column.getHeaderProps()}>
 										<div>{column.canFilter ? column.render('Filter') : null}</div>
 										<br></br>
-										{column.render('Header')}
+										{
+											column.render('Header')
+										}
 										
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
+							
 						</tr>
 					))
 				}
@@ -65,10 +67,14 @@ export const BloodBankRetrieveProcesses = () =>{
 							<tr {...row.getRowProps()}>
 								{
 									row.cells.map(cell => {
-										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+										return <td {...cell.getCellProps()}>
+										{
+											cell.render('Cell')
+										}
+										</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313"}}>track</a></td>
+
 							</tr>
 						)
 					})
