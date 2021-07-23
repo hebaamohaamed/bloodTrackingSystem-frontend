@@ -11,8 +11,9 @@ class bloodBankTrackingBlood extends Component{
 
     constructor(props){
         super(props)
-        this.state={
+        this.s0tate={
           current: null,
+          owner: null
         }
       }
 
@@ -24,7 +25,8 @@ class bloodBankTrackingBlood extends Component{
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
           this.setState({current: output2[len-1].Value.currentState})
-          //alert(this.state.current)
+          this.setState({owner: output2[0].Value.ownerID})
+          alert(this.state.owner)
           console.log("Process Completed")
         })
         .catch(error=>{

@@ -20,7 +20,7 @@ class BloodBankDonation extends Component {
   }
 
   ValidateExisting(event){
-    event.preventDefault();
+    event.preventDefault();  
     if(this.state.Temperature > 5){
       alert("Temprature can't be more than 5C")
     }
@@ -29,7 +29,12 @@ class BloodBankDonation extends Component {
         alert("MilliLiter can't be more than 500ml ")
       }
       else{
-      this.TrigerdbCheck(event);
+        if(this.state.Expired < this.state.Date ){
+          alert("Expired date can't be before bag creation date")
+        }
+        else{
+          this.TrigerdbCheck(event);
+        }
       }
     }
   }
@@ -43,7 +48,12 @@ class BloodBankDonation extends Component {
         alert("MilliLiter can't be more than 500ml ")
       }
       else{
-      this.TrigerAxiosLastUser(event);
+        if(this.state.Expired < this.state.Date ){
+          alert("Expired date can't be before bag creation date")
+        }
+        else{
+          this.TrigerdbCheck(event);
+        }
       }
     }
   }
@@ -222,7 +232,11 @@ class BloodBankDonation extends Component {
           <div className='set'>
               <div className='Test'>
                 <label for='Test'>Test</label>
-                <input id='Test' placeholder="SAFE/Not_SAFE" type='text' value={this.state.Test} onChange={(e) =>{this.handleInputChange3(e.target.value)}}/>
+                <input list="safety" id='Test' placeholder="SAFE/NOT_SAFE" type='text' value={this.state.Test} onChange={(e) =>{this.handleInputChange3(e.target.value)}}/>
+                <datalist id="safety" >
+                  <option value="SAFE"/>
+                  <option value="NOT_SAFE" />
+                </datalist>
               </div>
               <div className='Temperature'>
                 <label for='Temperature'>Temperature</label>
