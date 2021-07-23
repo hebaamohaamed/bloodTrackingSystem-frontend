@@ -19,6 +19,35 @@ class BloodBankDonation extends Component {
     }
   }
 
+  ValidateExisting(event){
+    event.preventDefault();
+    if(this.state.Temperature > 5){
+      alert("Temprature can't be more than 5C")
+    }
+    else{
+      if(this.state.milliMeters > 500){
+        alert("MilliLiter can't be more than 500ml ")
+      }
+      else{
+      this.TrigerdbCheck(event);
+      }
+    }
+  }
+  ValidateNew(event){
+    event.preventDefault();
+    if(this.state.Temperature > 5){
+      alert("Temprature can't be more than 5C")
+    }
+    else{
+      if(this.state.milliMeters > 500){
+        alert("MilliLiter can't be more than 500ml ")
+      }
+      else{
+      this.TrigerAxiosLastUser(event);
+      }
+    }
+  }
+
   TrigerdbCheck(event){
     event.preventDefault();
     axios.get("http://localhost:5004/check/donor?email="+this.state.donorEmail)
@@ -75,7 +104,7 @@ class BloodBankDonation extends Component {
     })
   }
 
-
+  
   TrigerAxiosCreateBag(event, dID, lastDIN){
     event.preventDefault();
     const currentDate2 = new Date();
@@ -201,9 +230,9 @@ class BloodBankDonation extends Component {
               </div>
             </div>
           <div className='longInput'>
-              <label for='Millimeters'>Millimeters</label>
+              <label for='Millimeters'>MilliLiter</label>
               <div className='radio-container'>
-                  <input id='Millimeters' placeholder='4mm' type='text' value={this.state.milliMeters} onChange={(e) =>{this.handleInputChange5(e.target.value)}} />
+                  <input id='Millimeters' placeholder='250ml' type='text' value={this.state.milliMeters} onChange={(e) =>{this.handleInputChange5(e.target.value)}} />
               </div>   
           </div>
           <div className='longInput'>
@@ -244,8 +273,8 @@ class BloodBankDonation extends Component {
         </header>
         <footer>
           <div className='set'>
-              <a id="new" href="#" onClick={(event)=>this.TrigerAxiosLastUser(event)} ref="submit" >New Donor</a>
-              <a id="existing" href="#" onClick={(event)=>this.TrigerdbCheck(event)} ref="submit2" >Existing Donor</a>
+              <a id="new" href="#" onClick={(event)=>this.ValidateNew(event)} ref="submit" >New Donor</a>
+              <a id="existing" href="#" onClick={(event)=>this.ValidateExisting(event)} ref="submit2" >Existing Donor</a>
           </div>
         </footer>
       </div>
