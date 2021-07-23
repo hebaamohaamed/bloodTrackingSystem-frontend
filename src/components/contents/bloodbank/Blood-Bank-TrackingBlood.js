@@ -30,7 +30,7 @@ class bloodBankTrackingBlood extends Component{
           if(this.state.owner !== cookie ){
             alert("You can only track your own bags") 
             throw new Error(`This is not your bag`);
-       }
+            }
           console.log("Process Completed")
         })
         .catch(error=>{
@@ -40,7 +40,7 @@ class bloodBankTrackingBlood extends Component{
 
     render(){
         const { data } = this.props.location
-        var cookie = "1005"
+        var cookie = "BB105"
     return(
         <div>
             <BloodBankHeader/>
@@ -57,7 +57,7 @@ class bloodBankTrackingBlood extends Component{
                 <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        { this.state.owner === cookie &&     
+        { this.state.owner == cookie &&     
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&
