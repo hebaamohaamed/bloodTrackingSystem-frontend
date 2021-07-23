@@ -29,13 +29,6 @@ class hospitalTrackBloodBagInfo extends Component{
         <label>Enter Blood Bag ID</label>
       </div>
       <Link id="trackBagInfoSubmit" to={{pathname: "/HospitalTrackingBlood", data: this.state.bNumber}}>Submit</Link>
-      {/* <a id="trackBagInfoSubmit" honClick={()=> history.push(`/HospitalTrackingBlood/${this.state.bNumber}`)}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Submit
-      </a> */}
     </form>
   </div>
         </div>
