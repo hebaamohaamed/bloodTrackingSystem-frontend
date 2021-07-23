@@ -15,7 +15,7 @@ function UserHeader() {
           var blood = response.data.out.substr(0,response.data.out.length-1)
           var bloodArray = blood.split(":")
           console.log(bloodArray)
-          axios.get("http://localhost:4000/api/get/hospitals")
+          axios.get("http://localhost:5004/api/get/hospitals")
             .then(response =>{
               var data =response.data
               //console.log(response.data)
@@ -34,14 +34,14 @@ function UserHeader() {
             }
             finalOut = finalOut +"]"
             console.log(JSON.parse(finalOut));   
-            axios.get(`http://localhost:4000/api/write/file?file=${finalOut}`)
+            axios.get(`http://localhost:5004/api/write/file?file=${finalOut}`)
             .then(response =>{
                console.log("data written")
                history.push("/ViewHospitalBloodType")            
               })
             .catch(error=>{
               console.log("TEST ERROR", error)
-              alert(`http://localhost:4000/api/write/file?file=${finalOut}`)
+              alert(`http://localhost:5004/api/write/file?file=${finalOut}`)
             })
 
           })
