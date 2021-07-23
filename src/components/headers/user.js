@@ -1,40 +1,58 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
+import { useState } from 'react';
 
 function UserHeader() {
-  
-  function getBlood(event,ID){
-    event.preventDefault();
-    axios.get(`http://localhost:5003/query/hospital/blood?oid=${ID}`)
-    .then(response =>{
-      var blood = response.data
-      console.log(blood.data)
-      console.log("All Blood Fetched")
-      
-    })
-    .catch(error=>{
-      console.log("TEST ERROR", error)
-      alert("Can't fetch Blood")
-    })
 
-  }
+  let history = useHistory();
   function getHospitals(event){
     event.preventDefault();
-    axios.get("http://localhost:4000/api/get/hospitals")
-    .then(response =>{
-      var data = '['
-      for(var i=0;i<)
-      var ID = response.data[0].hId
-      console.log(ID)
-      console.log("All Hospitals Fetched")
-      getBlood(event, ID)
-    })
-    .catch(error=>{
-      console.log("TEST ERROR", error)
-      alert("Can't fetch Hsopitals")
-    })
+    var finalOut = "["
+    axios.get(`http://localhost:5003/query/hospital/blood`)
+        .then(response =>{
+          var blood = response.data.out.substr(0,response.data.out.length-1)
+          var bloodArray = blood.split(":")
+          console.log(bloodArray)
+          axios.get("http://localhost:4000/api/get/hospitals")
+            .then(response =>{
+              var data =response.data
+              //console.log(response.data)
+              console.log("All Hospitals Fetched")
+              var output ="["
+              for(var i =0;i<response.data.length;i++){
+                var hospital = response.data[i]
+                var hospitalStr = JSON.stringify(hospital)
+                var type = bloodArray[i].substr(1,bloodArray[i].length-2)
+                var sub = hospitalStr.substr(0,hospitalStr.length-1)
+                sub = sub + ',"blood":'+'"'+type+'"}'
+                if(finalOut.length==1)
+                  finalOut = finalOut + sub
+                else
+                  finalOut = finalOut + "," + sub  
+            }
+            finalOut = finalOut +"]"
+            console.log(JSON.parse(finalOut));   
+            axios.get(`http://localhost:4000/api/write/file?file=${finalOut}`)
+            .then(response =>{
+               console.log("data written")
+               history.push("/ViewHospitalBloodType")            
+              })
+            .catch(error=>{
+              console.log("TEST ERROR", error)
+              alert(`http://localhost:4000/api/write/file?file=${finalOut}`)
+            })
 
+          })
+            .catch(error=>{
+              console.log("TEST ERROR", error)
+              alert("Can't fetch Hsopitals")
+          })
+        })
+        .catch(error=>{
+          console.log("TEST ERROR", error)
+    })
   }
 
 
@@ -56,7 +74,7 @@ function UserHeader() {
                     </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" id="help" onClick={(event)=>writeToFile(event)}>Search For Blood</Link>
+                <Link className="nav-link" id="help" onClick={(event)=>getHospitals(event)}>Search For Blood</Link>
               </li>
               <li><i className="userIcon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
           <li id ="userName">UserName</li>
