@@ -17,12 +17,16 @@ class bloodBankSendBags extends Component{
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
-    const currentDate = date + " " + time  
-    axios.get(`http://localhost:5000/first/state?id=${this.state.bNumber}&time=${currentDate}`)
+    const currentDate = date + " " + time
+    let bloodNumber = null;
+    if(this.state.bNumber.includes("+")){
+      bloodNumber = this.state.bNumber.replace("+","%2B")
+    }
+    axios.get(`http://localhost:5000/first/state?id=${bloodNumber}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       alert("Blood Bag State: Under Transportation")
-      this.TrigerAxios2(event);
+      this.TrigerAxios2(event,bloodNumber);
       console.log("Change State Confirmed")
     })
     .catch(error=>{
@@ -30,14 +34,14 @@ class bloodBankSendBags extends Component{
       
     })
   }
-  TrigerAxios2(event){
+  TrigerAxios2(event,bloodNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
     let ownerID = "BB101";
-    axios.get(`http://localhost:5000/change/location?id=${this.state.bNumber}&oid=${ownerID}&time=${currentDate}`)
+    axios.get(`http://localhost:5000/change/location?id=${bloodNumber}&oid=${ownerID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       let objectOutput = JSON.parse(output[0]);
