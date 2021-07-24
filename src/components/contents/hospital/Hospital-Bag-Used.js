@@ -249,7 +249,7 @@ class hospitalBagUsed extends Component{
     let ownerID = this.state.cookie;
     axios.get(`http://localhost:5001/create/process?pin=${processID}&id=${bloodNumber}&uid=${pID}&oid=${ownerID}&type=recieve&time=${currentDate}`)
     .then(response =>{
-      let output = Object.values(response.data);
+      let output = Object.values(response.datua);
       let objectOutput = JSON.parse(output[0]);
       this.JqueryPass();
     })
