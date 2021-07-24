@@ -8,6 +8,11 @@ import hospital from '../../imgs/hospital2.jpg'
 import user from '../../imgs/donor.png'
 import supervision from '../../imgs/supervision.jpg'
 import bloodbank from '../../imgs/bloodbank3.jpg'
+import alaa from '../../imgs/alaa.jpg'
+import aya from '../../imgs/aya.jpeg'
+import catherine from '../../imgs/catherine.jpg'
+import heba from '../../imgs/heba.jpeg'
+import omar from '../../imgs/omar.jpeg'
 import { Link } from 'react-router-dom';
 class HomeContent extends Component {
  
@@ -104,8 +109,7 @@ class HomeContent extends Component {
             <Card.Body>
               <Card.Title>HOSPITAL</Card.Title>
               <Card.Text>
-                login as a hospital organization<br></br> trace blood history and confirm it's usage
-                
+                login as Hospital to know blood bag history and confirm it's usage.
               </Card.Text>
               <Link to="/HospitalLogin">
                LOGIN
@@ -117,7 +121,7 @@ class HomeContent extends Component {
             <Card.Body>
               <Card.Title>BLOODBANK</Card.Title>
               <Card.Text>
-              login as a blood bank organization<br></br> add new donations and send to hospitals
+              login as Blood Bank to add new donations and send to hospitals.
               </Card.Text>
               <Link to="bloodBankLogin">
                LOGIN
@@ -130,7 +134,7 @@ class HomeContent extends Component {
             <Card.Body>
               <Card.Title>SUPERVISION</Card.Title>
               <Card.Text>
-              login as a ministry organization<br></br> trace blood hisotry with no ristrictions
+              login as Ministry organization to track blood hisotry with no ristrictions.
               </Card.Text>
               <Link to="/SupervisionLogin">
                LOGIN
@@ -143,7 +147,7 @@ class HomeContent extends Component {
             <Card.Body>
               <Card.Title>DONOR/PATIENT</Card.Title>
               <Card.Text>
-              login as a donor or patient<br></br>trace blood, search for blood in hospitals
+              login as Donor or Patient to track blood and search for blood in hospitals.
               </Card.Text>
               <Link to="/user">
                LOGIN
@@ -175,27 +179,27 @@ class HomeContent extends Component {
         <div class="content">
            
             <div class="tabs">
-              <button class="tablinks active" data-country="London"><p data-title="London">Our Technology</p></button>
-              <button class="tablinks" data-country="Paris"><p data-title="Paris">Blood Search</p></button>
-              <button class="tablinks" data-country="Barcelona"><p data-title="Barcelona">Blood Tracing</p></button>
+              <button class="tablinks active" data-country="Technology"><p data-title="Technology">Our Technology</p></button>
+              <button class="tablinks" data-country="Search"><p data-title="Search">Blood Search</p></button>
+              <button class="tablinks" data-country="Tracking"><p data-title="Tracking">Blood Tracking</p></button>
             </div>
 
             
             <div class="wrapper_tabcontent">
-              <div id="London" class="tabcontent active">
+              <div id="Technology" class="tabcontent active">
                   <b>
                   <h3>Technology</h3>
                   <p> </p>
                   </b>
               </div>
 
-              <div id="Paris" class="tabcontent">
+              <div id="Search" class="tabcontent">
                   <h3>Search</h3>
                   <p>As a patient or a donor you can search for blood type in your city with blockchain technology </p>
               </div>
 
-              <div id="Barcelona" class="tabcontent">
-                  <h3>Tracing</h3>
+              <div id="Tracking" class="tabcontent">
+                  <h3>Tracking</h3>
                   <p>Barcelona has been an urban laboratory since the high Medieval Ages. A place of diversity, a backdrop for a multiplicity of social and cultural processes on multiple scales that reflect different ways of constructing the future, a city with a long experience of urban life and social innovations. </p>
               </div>
 
@@ -213,11 +217,10 @@ class HomeContent extends Component {
                     <span>Team</span></h2>
                 <p><br></br></p>
                 <div class="row">
-                   
-                    <div class="member" id="first">
+                    <div class="member teamCards col-md-4" >
                         <div class="box">
                             <div class="image">
-                                <img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="team" class="img-fluid" />
+                                <img src={aya} alt="team" class="img-fluid" />
                                 <div class="social-icons">
                                     <a href="https://www.facebook.com/profile.php?id=100003943173808"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://twitter.com/ayaelbadrawey?s=09"><i class="fab fa-twitter"></i></a>
@@ -230,10 +233,10 @@ class HomeContent extends Component {
                         </div>
                     </div>
                   
-                    <div class="member middle col-lg-4 col-md-4">
+                    <div class="member middle col-md-4">
                         <div class="box">
                             <div class="image">
-                                <img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="team" class="img-fluid" />
+                                <img src={alaa} alt="team" class="img-fluid" />
                                 <div class="social-icons">
                                     <a href="https://www.facebook.com/alaa.saeedd.1422"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://instagram.com/alaasaeedd_?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
@@ -248,7 +251,7 @@ class HomeContent extends Component {
                     <div class="member last col-lg-4 col-md-4">
                         <div class="box">
                             <div class="image">
-                                <img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="team" class="img-fluid" />
+                                <img src={omar} alt="team" class="img-fluid" />
                                 <div class="social-icons">
                                     <a href="https://www.facebook.com/omartariik1"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://twitter.com/Tarekk_Jr?s=09"><i class="fab fa-twitter"></i></a>
@@ -261,12 +264,14 @@ class HomeContent extends Component {
                         </div>
                     </div>
                   </div>
+                  <br></br>
+                  <br></br>
                   <div class="row">
-
-                    <div class="member first2 col-lg-6 col-md-6">
+                    <div className="col-md-2"></div>
+                    <div class="member first2 col-md-4">
                         <div class="box">
                             <div class="image">
-                                <img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="team" class="img-fluid" />
+                                <img src={heba} alt="team" class="img-fluid" />
                                 <div class="social-icons">
                                     <a href="https://www.facebook.com/heba.mohmed.1426"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://twitter.com/hebaamohaammed?s=09"><i class="fab fa-twitter"></i></a>
@@ -278,10 +283,10 @@ class HomeContent extends Component {
                             <h4>Web Developer</h4>
                         </div>
                     </div>
-                    <div class="member second col-lg-6 col-md-6">
+                    <div class="member second col-md-4">
                         <div class="box">
                             <div class="image">
-                                <img src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="team" class="img-fluid" />
+                                <img src={catherine} alt="team" class="img-fluid" />
                                 <div class="social-icons">
                                     <a href="https://www.facebook.com/Catherine2310"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://twitter.com/wontfind_?s=09"><i class="fab fa-twitter"></i></a>
@@ -293,8 +298,11 @@ class HomeContent extends Component {
                             <h4>Web Developer</h4>
                         </div>
                     </div>
+                    <div className="col-md-2"></div>
                 </div>
-                
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
         </section>
      </div>   
