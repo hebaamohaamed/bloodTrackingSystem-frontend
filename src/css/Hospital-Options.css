@@ -1,18 +1,18 @@
-#carouselMultiItemExample .carousel-inner{
+.carouselMultiItemExample .carousel-inner{
     position: relative;
     top: 80px;
     bottom: 5px;
 }
 
-#carouselMultiItemExample #col-lg-44{
+.carouselMultiItemExample #col-lg-44{
     position: relative; 
     height: 300px;
 }
-#carouselMultiItemExample #col-lg-43{
+.carouselMultiItemExample #col-lg-43{
     position: relative;
     height: 600px;
 }
-#carouselMultiItemExample #col-lg-42{
+.carouselMultiItemExample #col-lg-42{
     position: relative; 
     height: 900px;
 }

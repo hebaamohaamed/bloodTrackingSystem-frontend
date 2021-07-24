@@ -30,11 +30,20 @@ import BloodBankTrackBloodBagInfo from './components/contents/bloodbank/Blood-Ba
 import SuperContent from './components/contents/supervision/maincontent'
 import retrieveAll from './components/contents/supervision/RetrieveAll'
 import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
+import SupervisionOptions from './components/contents/supervision/Supervision-options'
+import SupervisionRetrieveBloodBags from './components/contents/supervision/Supervision-RetrieveBloodBags'
+import SupervisionBagHistory from './components/contents/supervision/Supervision-BagHistory'
+import SupervisionRetrieveProcesses from './components/contents/supervision/Supervision-RetrieveProcesses'
 
 
 
 //user
 import UserContent from './components/contents/users/maincontent'
+import userLogin from './components/contents/users/User-Login'
+import userOptions from './components/contents/users/User-Options'
+import UserRetrieveBloodBags from './components/contents/users/User-RetrieveBloodBags'
+import userTrackingBlood from './components/contents/users/User-TrackingBlood'
+import ViewHospitalByBloodType from './components/contents/users/ViewHospitalByBloodType'
 
 //footer
 import Footer from './components/footer'
@@ -70,12 +79,22 @@ function App() {
 
 
         <Route exact path="/supervision" component={SuperContent}></Route>
+        <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
+        <Route exact path="/superVisionOptions" component={SupervisionOptions}></Route>
+        <Route exact path="/superVisionretrievebags" component={SupervisionRetrieveBloodBags}></Route>
+        <Route exact path="/superVisionretrieveprocesses" component={SupervisionRetrieveProcesses}></Route>
+        <Route exact path="/superVisionbaghistory" component={SupervisionBagHistory}></Route>
 
         <Route exact path="/user" component={UserContent}></Route>
+        <Route exact path="/UserLogin" component={userLogin}></Route>
+        <Route exact path="/UserOption" component={userOptions}></Route>
+        <Route exact path="/UserRetrieveBloodBags" component={UserRetrieveBloodBags}></Route>
+        <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
+        <Route exact path="/ViewHospitalBloodType" component={ViewHospitalByBloodType}></Route>
 
 
         <Route exact path="/RetrieveAll" component={retrieveAll}></Route>
-        <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
+        
 
 
 

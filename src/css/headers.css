@@ -128,3 +128,36 @@
     left: -10px;
     margin-top: 4px;
 }
+
+
+/* ************************SuperVision header********************************** */
+#superVisionNav #navbar-brand1 {
+    position: relative; top: -10px; color: black; font-family:Helvetica;
+}
+
+#superVisionNav #navbar-brand2{
+    position: relative; top: 10px; right: 50px; color: #C31313; font-family:Helvetica;
+}
+
+#superVisionNav #navbar-brand3{
+    position: relative; top: 10px; right: 60px; color:black; font-family:Helvetica;
+}
+
+#superVisionNav #navbarResponsive .nav-link{
+    position: relative; left: -20px;
+}
+#superVisionNav .superVisionIcon{
+    position: relative; 
+    top: 2px; 
+    left: 1px;
+}
+#superVisionNav #superVisionName{
+    margin-left: 8px;
+    margin-top: 13px;
+}
+#superVisionNav #navbarResponsive .nav-link{
+    position: relative; 
+    left: -10px;
+    margin-top: 4px;
+}
+

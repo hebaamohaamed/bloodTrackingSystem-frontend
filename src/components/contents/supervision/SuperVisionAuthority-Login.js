@@ -5,8 +5,8 @@ function superVisionAuthorityLogin(){
     return(
         <div>
             <SuperHeader/>
-            <div className="login-box">
-  <h2>Hospital login</h2>
+            <div style={{width:"450px"}} className="login-box">
+    <h2>Supervision Log In</h2>
   <form>
     <center>
       <div className="flex-c-m">
