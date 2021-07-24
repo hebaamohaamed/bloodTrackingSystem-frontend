@@ -117,7 +117,7 @@ class BloodBankDonation extends Component {
       valid = false
       this.JqueryDate()
     }
-    if(!RegExp.test(this.state.donorEmail ||this.state.donorEmail === null)){
+    if(!RegExp.test(this.state.donorEmail) ||this.state.donorEmail === null){
       valid = false
       this.JqueryEmail()
     }
@@ -154,7 +154,7 @@ class BloodBankDonation extends Component {
       valid = false
       this.JqueryDate()
     }
-    if(!RegExp.test(this.state.donorEmail || this.state.donorEmail === null)){
+    if(!RegExp.test(this.state.donorEmail) || this.state.donorEmail === null){
       valid = false
       this.JqueryEmail()
     }

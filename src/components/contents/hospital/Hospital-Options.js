@@ -62,7 +62,7 @@ function hospitalOptions(){
               <p className="card-text">
                 When you use a Blood Bag you should confirm here, Please.
               </p>
-              <a href="/" className="btn btn-danger">Confirm</a>
+              <Link to="/HospitalBagUsed" className="btn btn-danger">Confirm</Link>
             </div>
           </div>
         </div>

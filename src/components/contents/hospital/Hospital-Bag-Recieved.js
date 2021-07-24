@@ -9,12 +9,14 @@ import Cookies from 'js-cookie';
 
 
 
+
 class hospitalBagRecieved extends Component{
 
   constructor(props){
     super(props)
     this.state={
       bNumber: null,
+      cookie: Cookies.get('id')
     }
   }
   ErrorJquery = () =>{
@@ -95,7 +97,7 @@ class hospitalBagRecieved extends Component{
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time 
-    let ownerId = "H105"; 
+    let ownerId = this.state.cookie;
     axios.get(`http://localhost:5001/change/location?id=${bloodNumber}&loc=HOSPITAL&oid=${ownerId}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
