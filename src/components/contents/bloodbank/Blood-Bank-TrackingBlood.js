@@ -9,6 +9,8 @@ import { Component } from "react";
 import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie';
+import ReactDOM from "react-dom"
+import $ from 'jquery'
 
 class bloodBankTrackingBlood extends Component{
 
@@ -21,6 +23,14 @@ class bloodBankTrackingBlood extends Component{
           cookie: Cookies.get('id')
         }
       }
+    JqueryBagNotExist(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).html("not exist")
+    } 
+    JqueryNotTheOwner(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).html("not yours")
+    }  
 
     TrigerAxios(event, data){
         event.preventDefault();
@@ -39,15 +49,14 @@ class bloodBankTrackingBlood extends Component{
           this.setState({owner: output2[0].Value.ownerID})
           if(this.state.owner !== this.state.cookie ){
              console.log(this.state.owner) 
-            alert("You can only track your own bags") 
-            throw new Error(`This is not your bag`);
+             this.JqueryNotTheOwner()
             }
           this.setState({out:output2})
           console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
-          alert("bag doesn't exist ")
+         this.JqueryBagNotExist()
         })
       }
 
@@ -69,7 +78,7 @@ class bloodBankTrackingBlood extends Component{
           </div>
             <div className="container">
                 <h5>Bag ID: <span class="text-danger font-weight-bold">{data}</span></h5>
-                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
+                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)} ref="track" >Track</button>
             </div>
         </div> 
         { this.state.owner === this.state.cookie &&     

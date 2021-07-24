@@ -1,10 +1,17 @@
 import BloodBankHeader from "../../headers/bloodbank";
 import { Component } from "react";
+import {Redirect} from 'react-router-dom'
+
 
 class BloodBankBagHistory extends Component{
     render(){
+
         const { data } = this.props.location
         console.log(data)
+
+        if(data == null){
+            return <Redirect to={"/bloodBanktrackingbloodinfo"} />
+        }
 
         
         let menuItems = [];
