@@ -18,7 +18,12 @@ class BloodBankTrackBloodBagInfo extends Component{
   ErrorJquery = () =>{
     //blood number invalid format
     const button = ReactDOM.findDOMNode(this.refs.confirm)
-    $(button).html("error")
+    $(button).css("transform","scale(1.1)")
+    $(button).html("Invalid ID format")
+    $(button).css("text-transform","capitalize")
+    $(button).css("background-color","white")
+    $(button).css("color","#C31313")
+    $(button).css("border-radius","10px")
   }
 
   Validation(event){

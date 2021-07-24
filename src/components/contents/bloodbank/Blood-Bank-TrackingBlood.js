@@ -25,11 +25,19 @@ class bloodBankTrackingBlood extends Component{
       }
     JqueryBagNotExist(){
         const button = ReactDOM.findDOMNode(this.refs.track)
-        $(button).html("not exist")
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Bag doesn't exist")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","220px")
     } 
     JqueryNotTheOwner(){
         const button = ReactDOM.findDOMNode(this.refs.track)
-        $(button).html("not yours")
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Not your bag")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","200px")
     }  
 
     TrigerAxios(event, data){
