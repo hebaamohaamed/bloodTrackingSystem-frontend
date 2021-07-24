@@ -6,12 +6,12 @@ export const COLUMNS2 = [
         Filter: FilterCol2
     },
     {
-        Header: 'Blood Bag Number',
+        Header: 'Blood Number',
         accessor: 'bloodNumber',
         Filter: FilterCol2
     },
     {
-        Header: 'User ID',
+        Header: 'Donor ID',
         accessor: 'userID',
         Filter: FilterCol2
     },

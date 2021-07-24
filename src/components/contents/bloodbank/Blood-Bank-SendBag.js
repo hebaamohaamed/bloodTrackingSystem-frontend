@@ -3,16 +3,64 @@ import BloodBankHeader from "../../headers/bloodbank";
 import $ from 'jquery'
 import { findDOMNode } from 'react-dom';
 import axios from 'axios'
+import ReactDOM from "react-dom"
+import Cookies from 'js-cookie';
+
 
 class bloodBankSendBags extends Component{
   constructor(props){
     super(props)
     this.state={
       bNumber: null,
+      cookie: Cookies.get('id')
     }
   }
 
-  TrigerAxios(event){
+  ErrorJquery = () =>{
+    //blood number invalid format
+    const button = ReactDOM.findDOMNode(this.refs.confirm)
+    $(button).css("transform","scale(1.1)")
+    $(button).html("Invalid ID format")
+    $(button).css("text-transform","capitalize")
+    $(button).css("background-color","white")
+    $(button).css("color","#C31313")
+    $(button).css("border-radius","10px")
+  }
+  
+  JqueryWaiting(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Transporting Blood Bag...")
+    //yellow
+  }
+  JqueryWaitingFail(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Current State is not Valid")
+    //yellow
+  }
+  JqueryTransported(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Blood Bag is Transported...")
+    //yellow
+  }
+  JqueryTransportedFail(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Location is not Valid")
+    //yellow
+  }
+
+  Validation(event){
+    event.preventDefault();
+    let upper = this.state.bNumber.toUpperCase()
+    const RegExp = /^BD\d{3,4}:(AB|A|O|B)[+-]$/g;
+    const valid = RegExp.test(upper)
+    if(valid == true){
+      this.TrigerAxiosFirstState(event)
+    }else{
+      this.ErrorJquery()
+    }
+  }
+
+  TrigerAxiosFirstState(event){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
@@ -28,30 +76,32 @@ class bloodBankSendBags extends Component{
     axios.get(`http://localhost:5000/first/state?id=${bloodNumber}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
-      alert("Blood Bag State: Under Transportation")
-      this.TrigerAxios2(event,bloodNumber);
+      this.JqueryWaiting();
+      this.TrigerAxiosChangeLocation(event,bloodNumber);
       console.log("Change State Confirmed")
     })
     .catch(error=>{
       console.log("TEST ERROR", error)
+      this.JqueryWaitingFail();
       
     })
   }
-  TrigerAxios2(event,bloodNumber){
+  TrigerAxiosChangeLocation(event,bloodNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
-    let ownerID = "BB101";
+    let ownerID = this.state.cookie;
     axios.get(`http://localhost:5000/change/location?id=${bloodNumber}&oid=${ownerID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       let objectOutput = JSON.parse(output[0]);
-      alert("Blood Bag Location: Transportation Car")
+      this.JqueryTransported();
     })
     .catch(error=>{
       console.log("TEST ERROR", error)
+      this.JqueryTransportedFail();
     })
   }
   handleInputChange(value){
@@ -60,29 +110,19 @@ class bloodBankSendBags extends Component{
     })
   }
 
-
-    button =()=>{
-        const button1 = findDOMNode(this.refs.submit);
-        $(button1).css("color", "#C31313");
-        $(button1).css("background-color", "#FFFAFA");
-        $(button1).css("font-weight", "bold");
-        $(button1).css("border-radius", "5px");
-        $(button1).html("Confirmed")
-        $(button1).attr("class","fas fa-check")
-        $(button1).css("text-transform","capitalize")
-    }
     render(){
     return(
     <div>
         <BloodBankHeader/>
         <div id="BBsendingBloodBag" class="login-box">
+        <div ref="msg">hii</div>
     <h2>Info Needed</h2>
     <form>
       <div className="user-box">
         <input type="text" required="" value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="button" href="#" onClick={(event)=>this.TrigerAxios(event)} ref="submit">
+      <a id="button" href="#" onClick={(event)=>this.Validation(event)} ref="confirm">
         <span></span>
         <span></span>
         <span></span>

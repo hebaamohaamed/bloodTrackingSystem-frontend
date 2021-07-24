@@ -1,13 +1,9 @@
 import {FilterCol} from '../filterBloodBags'
+import {FilterCol3} from '../filterBloodBags'
 export const COLUMNS = [
     {
-        Header: 'Bag ID',
-        accessor: 'DIN',
-        Filter: FilterCol
-    },
-    {
-        Header: 'Blood Type',
-        accessor: 'type',
+        Header: 'Bag Number',
+        accessor: 'key',
         Filter: FilterCol
     },
     {
