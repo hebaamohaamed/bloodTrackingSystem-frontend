@@ -10,16 +10,25 @@
 #BBcarouselMultiItemExample #trackBlood{
     position: relative; height: 600px;
 }
-/*----------------------------------------------*/
+/*-------------------User options--------------------------*/
+#carouselMultiItemExample2 .carousel-inner{
+    position: relative;
+    top: 80px;
+}
 #carouselMultiItemExample2 #row1{
     position: relative; height: 300px; left: 150px;
 }
 #carouselMultiItemExample2 #row2{
     position: relative; height: 600px; left: 250px;
 }
-#BBcarouselMultiItemExample #sendBag{
-    position: relative; height: 900px;
+/*---------------------Supervision options-------------------------*/
+#carouselMultiItemExample3 .carousel-inner{
+    position: relative;
+    top: 80px;
 }
-
-
-/*----------------------------------------------*/
+#carouselMultiItemExample3 #sRow1{
+    position: relative; height: 300px; left: 150px;
+}
+#carouselMultiItemExample3 #sRow2{
+    position: relative; height: 600px; left: 250px;
+}

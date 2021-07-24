@@ -26,15 +26,15 @@ export const RetrieveBloodBags = () =>{
 	return(
 		<div>
 		<HospitalHeader/>
-	<main class="py-4 RetrieveAllBloodBags">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
+	<main className="py-4 RetrieveAllBloodBags">
+    <div className="container">
+        <div className="row justify-content-center">
+            <div className="col-md-12">
+            <div className="card">
+                <div className="card-header">
                     All Bags
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                        
 		<table {...getTableProps()} >
 			<thead>

@@ -30,26 +30,51 @@ class bloodBankSendBags extends Component{
   JqueryWaiting(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Transporting Blood Bag...")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryWaitingFail(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Current State is not Valid")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryTransported(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
-    $(message).html("Blood Bag is Transported...")
+    $(message).html("Blood Bag is Transported")
+    $(message).css("color","#1E8449")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryTransportedFail(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Location is not Valid")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
 
   Validation(event){
     event.preventDefault();
+    if(this.state.bNumber != null){
     let upper = this.state.bNumber.toUpperCase()
     const RegExp = /^BD\d{3,4}:(AB|A|O|B)[+-]$/g;
     const valid = RegExp.test(upper)
@@ -58,6 +83,7 @@ class bloodBankSendBags extends Component{
     }else{
       this.ErrorJquery()
     }
+  }
   }
 
   TrigerAxiosFirstState(event){
@@ -115,11 +141,12 @@ class bloodBankSendBags extends Component{
     <div>
         <BloodBankHeader/>
         <div id="BBsendingBloodBag" class="login-box">
-        <div ref="msg">hii</div>
+        <div ref="msg"></div>
+        <br></br>
     <h2>Info Needed</h2>
     <form>
       <div className="user-box">
-        <input type="text" required="" value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
+        <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
       <a id="button" href="#" onClick={(event)=>this.Validation(event)} ref="confirm">

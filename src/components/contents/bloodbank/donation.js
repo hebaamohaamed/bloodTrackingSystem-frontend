@@ -20,6 +20,8 @@ class BloodBankDonation extends Component {
       Type: null,
       donorEmail: null,
       bloodNumber: null,
+      donorID: null,
+      go: true,
       cookie: Cookies.get('id')
     }
   }
@@ -27,12 +29,10 @@ class BloodBankDonation extends Component {
   //jquery
   JqueryDate(){
     const date = ReactDOM.findDOMNode(this.refs.dates)  
-    //make it red  
     $(date).css("color","red");
   }
   JqueryTemp(){
     const temp = ReactDOM.findDOMNode(this.refs.temp)  
-    //make it red    
     $(temp).css("color","red");
   }
   JqueryMl(){
@@ -41,44 +41,68 @@ class BloodBankDonation extends Component {
   }
   JqueryEmail(){
     const email = ReactDOM.findDOMNode(this.refs.email) 
-    $(email).css("color","red"); 
-        
+    $(email).css("color","red");      
   }
   JqueryTest(){
     const test = ReactDOM.findDOMNode(this.refs.test) 
     $(test).css("color","red"); 
-        
   }
   JqueryType(){
     const type = ReactDOM.findDOMNode(this.refs.type) 
-    $(type).css("color","red"); 
-        
+    $(type).css("color","red");        
   }
   JqueryNewFail(){
     const New = ReactDOM.findDOMNode(this.refs.New) 
-    $(New).css("color","red"); 
+    $(New).css("transform","scale(1.1)")
+    $(New).html("Already Existed")
+    $(New).css("text-transform","capitalize")
+    $(New).css("background-color","grey")
+    $(New).css("color","white")
+    $(New).css("border-radius","10px")
     //html already exist
         
   }
   JqueryExistFail(){
     const exist = ReactDOM.findDOMNode(this.refs.exist) 
-    $(exist).css("color","red");
+    $(exist).css("transform","scale(1.1)")
+    $(exist).html("Doesn't exist")
+    $(exist).css("text-transform","capitalize")
+    $(exist).css("background-color","grey")
+    $(exist).css("color","white")
+    $(exist).css("border-radius","10px")
     //html donor doens't exist
         
   }
   JqueryWaiting(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Creating Blood Bag...")
-    //yellow
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
   }
   JqueryBlood(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Blood Bag IS Created...")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryProcess(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Donation Is Created...")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryPass(){
@@ -90,7 +114,13 @@ class BloodBankDonation extends Component {
       blood =this.state.bloodNumber
     }
     const message = ReactDOM.findDOMNode(this.refs.msg);
-    $(message).html(`Submitted with <br> Bag ID: ${blood}`)
+    $(message).html(`Submitted with Bag ID: ${blood}`)
+    $(message).css("color","#1E8449")
+    $(message).css("background-color","white")
+    $(message).css("font-size","medium")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //green
   }
 
@@ -166,7 +196,7 @@ class BloodBankDonation extends Component {
       this.JqueryType()
     }
     if(valid){
-    this.TrigerAxiosLastUser(event);
+    this.TrigerdbCheck2(event);
     }
   }
 
@@ -183,6 +213,27 @@ class BloodBankDonation extends Component {
       this.JqueryExistFail();   
     })
   }
+  TrigerdbCheck2(event){
+    event.preventDefault();
+    axios.get("http://localhost:5004/check/donor?email="+this.state.donorEmail)
+    .then(response =>{
+      let Id = response.data[0].dID;
+      this.setState({donorID:Id});
+      this.JqueryNewFail();
+      this.setState({go: false})
+      this.checkGo(event)
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)
+    })
+    this.checkGo(event)
+  }
+  checkGo(event){
+    event.preventDefault();
+    if(this.state.go){
+      this.TrigerAxiosLastUser(event)
+    }
+  }
 
   TrigerAxiosLastUser(event){
     event.preventDefault();
@@ -194,7 +245,6 @@ class BloodBankDonation extends Component {
     })
     .catch(error=>{
       console.log("TEST ERROR", error) 
-      this.JqueryNewFail();  
     })
   }
 
@@ -261,7 +311,6 @@ class BloodBankDonation extends Component {
     const finalNumber = Number(lastDIN) +1 
     let PIN = "P" + finalNumber
     let ownerID = this.state.cookie;
-    alert(ownerID);
     let bNumber = DIN + ":" + this.state.Type
     this.setState({bloodNumber: bNumber})
     axios.get(`http://localhost:5000/create/process?pin=${PIN}&id=${this.state.bloodNumber}&uid=${dID}&oid=${ownerID}&type=donate&time=${currentDate}`)
@@ -321,7 +370,7 @@ class BloodBankDonation extends Component {
     <div id="BBDonationCard" className='signup-container'>
       <div className='right-container'>
         <header>
-        <div ref="msg">hii</div>
+        <div style={{marginBottom:"10px"}} ref="msg"></div>
           <h1>Blood Info, Be careful!</h1>
           <div className='set'>
             <div className='Date'>

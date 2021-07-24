@@ -41,6 +41,7 @@ function HospitalLogin(){
     alert("Couldn't Login With Google")
   }
   
+
       return(
         <div>
           <PreLoginHeader/>
@@ -62,6 +63,7 @@ function HospitalLogin(){
             </form>
           </div>
         </div>
+
     );
       }
 
