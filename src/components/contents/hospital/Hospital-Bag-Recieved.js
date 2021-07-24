@@ -4,6 +4,9 @@ import HospitalHeader from '../../headers/hospital'
 import $ from 'jquery'
 import { Component } from 'react';
 import axios from 'axios'
+import ReactDOM from "react-dom"
+import Cookies from 'js-cookie';
+
 
 
 class hospitalBagRecieved extends Component{
@@ -14,8 +17,52 @@ class hospitalBagRecieved extends Component{
       bNumber: null,
     }
   }
+  ErrorJquery = () =>{
+    //blood number invalid format
+    const button = ReactDOM.findDOMNode(this.refs.confirm)
+    $(button).css("transform","scale(1.1)")
+    $(button).html("Invalid ID format")
+    $(button).css("text-transform","capitalize")
+    $(button).css("background-color","white")
+    $(button).css("color","#C31313")
+    $(button).css("border-radius","10px")
+  }
+  
+  JqueryWaiting(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Delievering Blood Bag...")
+    //yellow
+  }
+  JqueryWaitingFail(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Current State is not Valid")
+    //yellow
+  }
+  JqueryDelievered(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Blood Bag is Delievered...")
+    //yellow
+  }
+  JqueryDelieveredFail(){
+    const message = ReactDOM.findDOMNode(this.refs.msg);
+    $(message).html("Location is not Valid")
+    //yellow
+  }
 
-  TrigerAxios(event){
+  Validation(event){
+    event.preventDefault();
+    let upper = this.state.bNumber.toUpperCase()
+    const RegExp = /^BD\d{3,4}:(AB|A|O|B)[+-]$/g;
+    const valid = RegExp.test(upper)
+    if(valid == true){
+      this.TrigerAxiosSecondState(event)
+    }else{
+      this.ErrorJquery()
+    }
+  }
+
+
+  TrigerAxiosSecondState(event){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
@@ -32,16 +79,17 @@ class hospitalBagRecieved extends Component{
     .then(response =>{
       let output = Object.values(response.data);
       console.log(output)
-      alert("Blood Bag State: Delievered")
-      this.TrigerAxios2(event, bloodNumber);
+      this.JqueryWaiting();
+      this.TrigerAxiosChangeLocation(event, bloodNumber);
       console.log("Change State Confirmed")
     })
     .catch(error=>{
-      console.log("TEST ERROR", error)      
+      console.log("TEST ERROR", error)  
+      this.JqueryWaitingFail();    
     })
   
   }
-  TrigerAxios2(event,bloodNumber){
+  TrigerAxiosChangeLocation(event,bloodNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
@@ -52,10 +100,11 @@ class hospitalBagRecieved extends Component{
     .then(response =>{
       let output = Object.values(response.data);
       let objectOutput = JSON.parse(output[0]);
-      alert("Blood Bag Location: Hospital")
+      this.JqueryDelievered();
     })
     .catch(error=>{
       console.log("TEST ERROR", error)
+      this.JqueryDelieveredFail();
     })
   }
   handleInputChange(value){
@@ -64,31 +113,20 @@ class hospitalBagRecieved extends Component{
     })
   }
 
-
-
-  handleButton = ()=>{
-    const button = findDOMNode(this.refs.confirm);
-    $(button).css("color", "#C31313");
-    $(button).css("background-color", "#FFFAFA");
-    $(button).css("font-weight", "bold");
-    $(button).css("border-radius", "5px");
-    $(button).html("Confirmed");
-    $(button).attr("class","fas fa-check");
-    $(button).css("text-transform","capitalize");
-  }
  render(){
 
 return(
     <div>
     <HospitalHeader/>
     <div className="InfoNedded" >
+    <div ref="msg">hii</div>
     <h2>Recieved Bag Info</h2>
     <form>
       <div className="user-box">
         <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <a id="bagRecievedConfirm" onClick={(event)=>this.TrigerAxios(event)} ref="confirm" >
+      <a id="bagRecievedConfirm" onClick={(event)=>this.Validation(event)} ref="confirm" >
         <span></span>
         <span></span>
         <span></span>

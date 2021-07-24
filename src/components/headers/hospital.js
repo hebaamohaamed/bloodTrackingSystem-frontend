@@ -1,8 +1,20 @@
-import {useHistory} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import {NavDropdown} from 'react-bootstrap'
+import { useCookies } from 'react-cookie';
+import axios from 'axios'
+
+
 
 function HospitalHeader() {
   let history = useHistory();
+  const [cookies] = useCookies(['user']);
+  if(cookies.name == null){
+    history.push('/home')
+  }
+  const name = cookies.name;
+  const id = cookies.id;
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="hospitalNav">
         <div className="container">
@@ -20,16 +32,21 @@ function HospitalHeader() {
                     </a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" id="help" href="#" >Options</a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" id="boodbags" href="#" >BloodBags</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" id="processes" href="#" >Processes</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" id="help" href="#" >Help</a>
-              </li>
               <li><i className="icon fa-2x"><FontAwesomeIcon icon="hospital"/></i></li>
-          <li id ="hospital">Giza Hospital</li>
+              <NavDropdown
+                  id ="hospital"
+                  title={name}
+                >
+                  <NavDropdown.Item><Link to='/HospitalLogout' >Logout </Link> </NavDropdown.Item>
+                </NavDropdown> 
             </ul>
           </div>
         </div>
