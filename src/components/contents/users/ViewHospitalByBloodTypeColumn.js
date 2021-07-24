@@ -3,17 +3,23 @@ import {FilterCol4} from '../hospital/filter'
 export const COLUMNS = [
     {
         Header: 'Hospital',
-        accessor: 'hospital',
+        accessor: 'hName',
         Filter: FilterCol3
     },
     {
         Header: 'Address',
-        accessor: 'adress',
+        accessor: 'hAddress',
         Filter: FilterCol3
     },
     {
         Header: 'Blood Type',
-        accessor: 'bloodtype',
+        accessor: 'blood',
         Filter: FilterCol4
+    },
+    {
+        Header: 'Google Maps',
+        accessor: 'hMap',
+        Cell: e =><a href={e.value} target="_blank"> Show</a>,
+        Filter: FilterCol3
     }
 ]

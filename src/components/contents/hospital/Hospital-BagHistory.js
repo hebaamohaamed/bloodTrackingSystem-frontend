@@ -1,6 +1,23 @@
 import HospitalHeader from "../../headers/hospital";
+import { Component } from "react";
+import axios from "axios"
 
-function hospitalBagHistory(){
+class hospitalBagHistory extends Component{
+    render(){
+        const { data } = this.props.location
+        let len = JSON.parse(data).length
+        console.log()
+        let menuItems = [];
+        for (var i = 0; i < len; i++) {
+            menuItems.push(<tr>
+                <td>{JSON.parse(data)[i].Value.ownerID}</td>
+                <td>{JSON.parse(data)[i].Value.currentState}</td>
+                <td>{JSON.parse(data)[i].Value.location}</td>
+                <td>{JSON.parse(data)[i].Value.patientID}</td>
+                <td>{JSON.parse(data)[i].Value.timeStamp}</td>
+                </tr>)
+        }
+        console.log(JSON.parse(data)[1].Value);
     return(
         <div>
             <HospitalHeader />
@@ -22,25 +39,14 @@ function hospitalBagHistory(){
                                 <th>Owner</th>
                                 <th>State</th>
                                 <th>Location</th>
-                                <th>Date</th>
-                                <th>Hour</th>
+                                <th>Patient</th>
+                                <th>Timestamp</th>
                             </tr>
                         </thead>
+    
                         <tbody>
-                            <tr>
-                                <td>Central Blood Bank</td>
-                                <td>Ready</td>
-                                <td>Blood Bank</td>
-                                <td>22/5/2019</td>
-                                <td>1 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Giza Hospital</td>
-                                <td>Delivered</td>
-                                <td>Hospital</td>
-                                <td>10/7/2019</td>
-                                <td>10 AM</td>
-                            </tr>
+                        {menuItems}
+                            
                         </tbody>
                     </table>
                 </div>
@@ -51,5 +57,6 @@ function hospitalBagHistory(){
 
         </div>
     );
+    }
 }
 export default hospitalBagHistory;

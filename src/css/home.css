@@ -158,34 +158,32 @@
     margin-left: 40px;
 
 }
-
+/* omar */
+#team > div > div:nth-child(3) > div.member.last.col-lg-4.col-md-4 > div > h4{
+	margin-left: 75px;
+}
+/* alaa */
+#team > div > div:nth-child(3) > div.member.middle.col-md-4 > div > h4{
+	margin-left: 75px;
+}
+/* aya */
+#team > div > div:nth-child(3) > div.member.teamCards.col-md-4 > div > h4{
+	margin-left: 75px;
+}
+/* catherine */
+#team > div > div:nth-child(6) > div.member.second.col-md-4 > div > h4{
+	margin-left: 65px;
+}
+/* heba */
+#team > div > div:nth-child(6) > div.member.first2.col-md-4 > div > h4{
+	margin-left: 65px;
+}
 #team .box:hover {
     transform: translateY(-15px);
 }
 #team .container, .container-lg, .container-md, .container-sm{
     margin-top: -100px;
     margin-bottom: -100px;
-}
-#team .member{
-    width: 300px;
-   
-}
-#team #first{
-    margin-left: 120px;
-}
-#team .middle{
-    margin-left: 80px;
-}
-#team .last{
-    margin-left: 80px;
-}
-#team .first2{
-    margin-left: 300px;
-    margin-top: 40px;
-}
-#team .second{
-    margin-left: 80px;
-    margin-top: 40px;
 }
 #logins{
     height: 10%;

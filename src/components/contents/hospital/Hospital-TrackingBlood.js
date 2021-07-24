@@ -6,22 +6,53 @@ import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
+
+
 
 class hospitalTrackingBlood extends Component{
-    
-    TrigerAxios(event,bNumber){
+
+    constructor(props){
+        super(props)
+        this.state={
+          current: null,
+          out:null,
+          owner: null,
+          owner2: null
+        }
+      }
+
+     
+    TrigerAxios(event, data){
         event.preventDefault();
-        axios.get(`http://localhost:5001/get/hsitory?id=${bNumber}`)
+        axios.get(`http://localhost:5001/get/history?id=${data}`)
         .then(response =>{
-          let output = Object.values(response.data);
-          alert("DONE")
-          console.log("Change State Confirmed")
+          let output1 = Object.values(response.data)
+          let output2 = JSON.parse(output1)
+          var len = Object.keys(output2).length
+          var cookie = "H104"
+          this.setState({current: output2[len-1].Value.currentState})
+          this.setState({out:JSON.stringify(output2)})
+          this.setState({owner: output2[4].Value.currentOwner})
+          this.setState({owner2: output2[3].Value.ownerID})
+          if(this.state.owner == null){
+              this.state.owner = this.state.owner2
+          }
+          alert(cookie)
+          alert(this.state.owner)
+           if(this.state.owner !== cookie ){
+             alert("You can only track your own bags") 
+             throw new Error(`This is not your bag`);
+           }
+          console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
         })
       }
     render(){
+        const { data } = this.props.location
+        var cookie = "H104"
     return(
         <div>
             <HospitalHeader/>
@@ -29,25 +60,53 @@ class hospitalTrackingBlood extends Component{
     <div className="card" id="trackingBlood">
         <div className="row d-flex justify-content-between px-3 top">
           <div className="info">
-            <a href="/">
+            <Link to={{pathname: "/HospitalBagHistory", data:this.state.out }}>
               <i className="info fa-2x"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
-            </a>
+            </Link>
           </div>
             <div className="container">
-                <h5>Bag ID: <span className="text-danger font-weight-bold">5168496</span></h5>
+                <h5>Bag ID: <span className="text-danger font-weight-bold">{data}</span></h5>
+                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        
+        {this.state.owner === cookie &&
         <div className="row d-flex justify-content-center">
             <div className="col-12">
-                <ul id="progressbar" className="text-center">
+            {this.state.current == "READY" &&
+                 <ul id="progressbar" className="text-center">
                     <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
                 </ul>
+            } 
+            {this.state.current == "UNDER_TRANSPORTATION" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            } 
+            {this.state.current == "DELIEVERED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            } 
+            {this.state.current == "USED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                </ul>
+            } 
             </div>
         </div>
+        }
         <div className="row justify-content-between top">
             <div className="row d-flex icon-content col-md-3"> 
             <img id="ready" className="icon" src={ReadyImg}/>
@@ -77,6 +136,7 @@ class hospitalTrackingBlood extends Component{
 </div>
 </div>
     );
+            
     }
 }
 export default hospitalTrackingBlood;

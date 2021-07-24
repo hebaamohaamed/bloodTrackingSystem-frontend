@@ -4,7 +4,34 @@ import shippedImg from '../../../imgs/Shipped.png'
 import deliveredImg from '../../../imgs/delivered.png'
 import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function userTrackingBlood(){
+import { Component } from 'react'
+import axios from 'axios'
+
+class userTrackingBlood extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+          current: null,
+        }
+      }
+
+    TrigerAxios(event, data){
+        event.preventDefault();
+        axios.get(`http://localhost:5003/get/history?id=${data}`)
+        .then(response =>{
+          let output1 = Object.values(response.data)
+          let output2 = JSON.parse(output1)
+          var len = Object.keys(output2).length
+          this.setState({current: output2[len-1].Value.currentState})
+          console.log("Process Completed")
+        })
+        .catch(error=>{
+          console.log("TEST ERROR", error)
+        })
+      }
+
+    render(){
+        const data =null;
     return(
         <div>
             <UserHeader/>
@@ -18,16 +45,43 @@ function userTrackingBlood(){
           </div>
             <div className="container">
                 <h5>Bag ID: <span class="text-danger font-weight-bold">5168496</span></h5>
+                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div>
         <div className="row d-flex justify-content-center">
             <div className="col-12">
-                <ul id="progressbar" class="text-center">
+            {this.state.current == "READY" &&
+                 <ul id="progressbar" className="text-center">
                     <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="active step0"></li>
-                    <li className="step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
                 </ul>
+            }
+            {this.state.current == "UNDER_TRANSPORTATION" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            }
+            {this.state.current == "DELIEVERED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className=" step0"></li>
+                </ul>
+            }
+            {this.state.current == "USED" &&
+                 <ul id="progressbar" className="text-center">
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                    <li className="active step0"></li>
+                </ul>
+            }
             </div>
         </div>
         <div className="row justify-content-between top">
@@ -56,5 +110,6 @@ function userTrackingBlood(){
 </div>
         </div>
     );
+    }
 }
 export default userTrackingBlood;

@@ -4,6 +4,8 @@ import newDonationImg from '../../../imgs/new donation.jpg'
 import trackBloodImg from '../../../imgs/track blood.jpg'
 import sendBagImg from '../../../imgs/send bag.jpg'
 
+import {Link} from 'react-router-dom'
+
 
 function BloodBankOptions() {
   let history = useHistory();
@@ -29,7 +31,7 @@ function BloodBankOptions() {
           <p className="card-text">
           If you want to submit new donation, you can submit here.
           </p>
-          <a href="/" className="btn btn-danger">Submit</a>
+          <a href="/bloodBankdonation" className="btn btn-danger">Submit</a>
         </div>
       </div>
     </div>
@@ -46,7 +48,7 @@ function BloodBankOptions() {
           <p className="card-text">
           If you want to track a specific bag, you can submit info here.
           </p>
-          <a href="/" className="btn btn-danger">Track</a>
+          <Link to="/bloodBanktrackingbloodinfo" className="btn btn-danger">Track</Link>
         </div>
       </div>
     </div>
@@ -63,7 +65,7 @@ function BloodBankOptions() {
           <p className="card-text">
           If you need to send a Blood Bag, Submit info here.
           </p>
-          <a href="/" className="btn btn-danger">Submit</a>
+          <a href="/bloodBankbloodBagSendBag" className="btn btn-danger">Submit</a>
         </div>
       </div>
     </div>
