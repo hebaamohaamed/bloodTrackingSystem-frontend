@@ -15,7 +15,7 @@ function HospitalLogin(){
   function TrigerAxios(email){
     axios.get("http://localhost:5004/api/get/hospitals?email="+email)
     .then(response =>{
-      const id=response.data[0].hID;
+      const id=response.data[0].hId;
       const name =response.data[0].hName;
       console.log(response)
       handleCookie(id,name,email)
