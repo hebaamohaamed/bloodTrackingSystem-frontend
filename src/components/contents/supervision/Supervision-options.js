@@ -7,12 +7,12 @@ function SupervisionOptions(){
     return(
         <div>
             <SuperHeader/>
-            <div style={{marginTop:"80px"}} id="carouselMultiItemExample2" Name="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+            <div style={{marginTop:"80px"}} id="carouselMultiItemExample3" className="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
 <div className="carousel-inner py-4">
   <div className="carousel-item active">
     <div className="container">
       <div className="row">
-        <div id="row1" className="col-lg-4">
+        <div id="sRow1" className="col-lg-4">
           <div className="card">
             <img
               src={retrieveImg}
@@ -29,7 +29,7 @@ function SupervisionOptions(){
           </div>
         </div>
 
-        <div id="row2" className="col-lg-4 d-none d-lg-block">
+        <div id="sRow2" className="col-lg-4 d-none d-lg-block">
           <div className="card">
             <img
               src={viewprocess}

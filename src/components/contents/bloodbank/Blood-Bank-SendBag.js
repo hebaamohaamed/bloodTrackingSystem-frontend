@@ -79,7 +79,7 @@ class bloodBankSendBags extends Component{
     <h2>Info Needed</h2>
     <form>
       <div className="user-box">
-        <input type="text" required="" value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
+        <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
       <a id="button" href="#" onClick={(event)=>this.TrigerAxios(event)} ref="submit">

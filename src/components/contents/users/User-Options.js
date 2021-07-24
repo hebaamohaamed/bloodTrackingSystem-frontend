@@ -6,7 +6,7 @@ function userOptions(){
     return(
         <div>
             <UserHeader/>
-            <div id="carouselMultiItemExample2" Name="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+            <div id="carouselMultiItemExample2" className="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
 <div className="carousel-inner py-4">
   <div className="carousel-item active">
     <div className="container">
