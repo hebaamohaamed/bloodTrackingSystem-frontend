@@ -2,6 +2,9 @@ import HospitalHeader from "../../headers/hospital";
 import bagRecievedImg from '../../../imgs/bag recieved.jpeg'
 import trackBloodImg from '../../../imgs/track blood.jpg'
 import bagUsedImg from '../../../imgs/bag used.jpg'
+
+import {Link} from 'react-router-dom'
+
 function hospitalOptions(){
     return(
         <div>
@@ -25,7 +28,7 @@ function hospitalOptions(){
               <p className="card-text">
                 When you recieve a blood bag, you can confirm here, Please.
               </p>
-              <a href="/" className="btn btn-danger">Confirm</a>
+              <Link to="/HospitalBagRecieved" className="btn btn-danger">Confirm</Link>
             </div>
           </div>
         </div>

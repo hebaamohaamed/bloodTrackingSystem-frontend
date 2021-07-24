@@ -17,7 +17,6 @@ function BloodBankLogin() {
       const id=response.data[0].bbId;
       const name =response.data[0].bbName;
       console.log(response)
-      console.log("Change State Confirmed")
       handleCookie(id,name,email)
     })
     .catch(error=>{
@@ -35,7 +34,6 @@ function BloodBankLogin() {
   const onSuccess = (res) =>{
     console.log("sucess", res.profileObj)
     TrigerAxios(res.profileObj.email);
-    //handleCookie("d236",res.profileObj.name,res.profileObj.email)
   }
   const onFailure = (res) =>{
     console.log("failure", res)

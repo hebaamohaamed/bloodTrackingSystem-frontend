@@ -12,7 +12,8 @@ import hospitalTrackingBlood from './components/contents/hospital/Hospital-Track
 import hospitalBagHistory from './components/contents/hospital/Hospital-BagHistory'
 import {HospitalRetrieveBloodBags} from './components/contents/hospital/Hospital-RetrieveBloodBags'
 import {HospitalRetrieveProcesses} from './components/contents/hospital/Hospital-RetrieveProcesses'
-import {HospitalLogin} from './components/contents/hospital/Hospital-Login'
+import HospitalLogin from './components/contents/hospital/Hospital-Login'
+import HospitalLogout from './components/contents/hospital/Hospital-Logout'
 
 //bloodbank
 import BloodBankOptions from './components/contents/bloodbank/options'
@@ -64,6 +65,8 @@ function App() {
         <Route exact path="/HospitalTrackingBlood" component={hospitalTrackingBlood}></Route>
         <Route exact path="/HospitalBagHistory" component={hospitalBagHistory}></Route>
         <Route exact path="/HospitalLogin" component={HospitalLogin}></Route>
+        <Route exact path="/HospitalLogout" component={HospitalLogout}></Route>
+
 
         <Route exact path="/bloodBankOptions" component={BloodBankOptions}></Route>
         <Route exact path="/bloodBankLogin" component={BloodBankLogin}></Route>
