@@ -52,35 +52,69 @@ class hospitalBagUsed extends Component{
         
   }
   JqueryNewFail(){
-    const New = ReactDOM.findDOMNode(this.refs.New) 
-    $(New).css("color","red"); 
+    const New = ReactDOM.findDOMNode(this.refs.New)  
+    $(New).css("transform","scale(1.1)")
+    $(New).html("Already Existed")
+    $(New).css("text-transform","capitalize")
+    $(New).css("background-color","white")
+    $(New).css("color","#C31313")
+    $(New).css("border-radius","10px")
     //html already exist
         
   }
   JqueryExistFail(){
     const exist = ReactDOM.findDOMNode(this.refs.exist) 
-    $(exist).css("color","red");
+    $(exist).css("transform","scale(1.1)")
+    $(exist).html("Doesn't exist")
+    $(exist).css("text-transform","capitalize")
+    $(exist).css("background-color","white")
+    $(exist).css("color","#C31313")
+    $(exist).css("border-radius","10px")
     //html donor doens't exist
         
   }
   JqueryWaiting(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Blood Bag is taking by Patient...")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryWaitingFail(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Current State is not Valid")
+    $(message).css("color","#E74C3C")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryUsed(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
-    $(message).html("Blood Bag is taken...")
+    $(message).html("Blood Bag is taken")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryUsedFail(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Location is not Valid")
+    $(message).css("color","#E74C3C")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryPass(){
@@ -92,7 +126,13 @@ class hospitalBagUsed extends Component{
       blood =this.state.bNumber
     }
     const message = ReactDOM.findDOMNode(this.refs.msg);
-    $(message).html(`Submitted with <br> Bag ID: ${blood}`)
+    $(message).html(`Submitted with Bag ID: ${blood}`)
+    $(message).css("color","#1E8449")
+    $(message).css("background-color","white")
+    $(message).css("font-size","medium")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //green
   }
 
@@ -247,11 +287,9 @@ class hospitalBagUsed extends Component{
     const finalNumber = Number(lastNumber) +1
     let processID = "P" + finalNumber 
     let ownerID = this.state.cookie;
-    alert(this.state.cookie)
+
     axios.get(`http://localhost:5001/create/process?pin=${processID}&id=${bloodNumber}&uid=${pID}&oid=${ownerID}&type=recieve&time=${currentDate}`)
     .then(response =>{
-      alert("done")
-  
       this.JqueryPass();
     })
     .catch(error=>{
@@ -274,7 +312,8 @@ return(
     <div>
         <HospitalHeader />
          <div id="usedBagInfo">
-          <div ref="msg">hiii</div>
+          <div ref="msg"></div>
+          <br></br>
     <h2>Used Bag Info</h2>
     <form>
       <div className="new-user-box">
