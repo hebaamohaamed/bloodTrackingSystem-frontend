@@ -63,19 +63,14 @@ function BloodBankHeader() {
               </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link className="nav-link">Home
-                      <span className="sr-only">(current)</span>
-                </Link>
+            <li className="nav-item" to="help">
+                <Link className="nav-link" id="help" to="/bloodBankOptions">Options</Link>
               </li>
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" onClick={(event)=>AxiosB(event)}>BloodBags</Link>
               </li>
               <li className="nav-item" to="help">
                 <Link className="nav-link" id="help" onClick={(event)=>AxiosP(event)}>Processes</Link>
-              </li>
-              <li className="nav-item" to="help">
-                <Link className="nav-link" id="help" to="/bloodBankOptions">Options</Link>
               </li>
               <li><i  className="icon fa-2x" aria-hidden="true"  ><FontAwesomeIcon icon="clinic-medical" /></i></li>
               <li id="dropdown">

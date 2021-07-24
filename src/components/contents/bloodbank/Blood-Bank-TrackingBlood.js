@@ -44,7 +44,7 @@ class bloodBankTrackingBlood extends Component{
 
     render(){
         const { data } = this.props.location
-        var cookie = "BB105"
+        var cookie = "BB100"
     return(
         <div>
             <BloodBankHeader/>
@@ -61,7 +61,7 @@ class bloodBankTrackingBlood extends Component{
                 <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        { this.state.owner == cookie &&     
+        { this.state.owner === cookie &&     
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&
@@ -95,7 +95,7 @@ class bloodBankTrackingBlood extends Component{
                     <li className="active step0"></li>
                     <li className="active step0"></li>
                 </ul>
-            } 
+            }  
             </div>
         </div>
     }
