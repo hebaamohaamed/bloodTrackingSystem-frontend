@@ -7,6 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie';
+import ReactDOM from "react-dom"
+import $ from 'jquery'
 
 
 
@@ -18,41 +22,69 @@ class hospitalTrackingBlood extends Component{
           current: null,
           out:null,
           owner: null,
-          owner2: null
+          owner2: null,
+          cookie: Cookies.get('id')
         }
       }
+
+      JqueryBagNotExist(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Bag doesn't exist")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","220px")
+        } 
+    JqueryNotTheOwner(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Not your bag")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","200px")
+    }
 
      
     TrigerAxios(event, data){
         event.preventDefault();
-        axios.get(`http://localhost:5001/get/history?id=${data}`)
+        let bloodNumber = null;
+        if(data.includes("+")){
+            bloodNumber = data.replace("+","%2b")
+        }else{
+            bloodNumber = data;
+        }
+        axios.get(`http://localhost:5001/get/history?id=${bloodNumber}`)
         .then(response =>{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
-          var cookie = "H104"
           this.setState({current: output2[len-1].Value.currentState})
-          this.setState({out:JSON.stringify(output2)})
-          this.setState({owner: output2[4].Value.currentOwner})
           this.setState({owner2: output2[3].Value.ownerID})
-          if(this.state.owner == null){
-              this.state.owner = this.state.owner2
+          if(output2[len-1].Value.currentOwner == null){
+            this.setState({owner: output2[len-1].Value.ownerID})
+          }else{
+            this.setState({owner: output2[len-1].Value.currentOwner}) 
           }
-          alert(cookie)
-          alert(this.state.owner)
-           if(this.state.owner !== cookie ){
-             alert("You can only track your own bags") 
-             throw new Error(`This is not your bag`);
+          //alert(this.state.cookie)
+          //alert(this.state.owner)
+           if(this.state.owner !== this.state.cookie ){
+            this.JqueryNotTheOwner()
+           }else{
+            this.setState({out:JSON.stringify(output2)})
            }
           console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
+          alert("bag doesn't exist")
+          this.JqueryBagNotExist()
         })
       }
     render(){
         const { data } = this.props.location
-        var cookie = "H104"
+            if(data == null){
+            return <Redirect to={"/HospitalTrackBloodBagInfo"} />
+        }
     return(
         <div>
             <HospitalHeader/>
@@ -66,10 +98,10 @@ class hospitalTrackingBlood extends Component{
           </div>
             <div className="container">
                 <h5>Bag ID: <span className="text-danger font-weight-bold">{data}</span></h5>
-                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
+                <button ref="track" className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        {this.state.owner === cookie &&
+        {this.state.owner === this.state.cookie &&
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&

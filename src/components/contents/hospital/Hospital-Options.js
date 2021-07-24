@@ -45,7 +45,7 @@ function hospitalOptions(){
               <p className="card-text">
                 If you want to track a specific bag, you can submit info here.
               </p>
-              <a href="/" className="btn btn-danger">Track</a>
+              <Link to="/HospitalTrackBloodBagInfo" className="btn btn-danger">Confirm</Link>
             </div>
           </div>
         </div>

@@ -1,14 +1,28 @@
 import HospitalHeader from "../../headers/hospital";
 import { Component } from "react";
 import axios from "axios"
+import {Redirect} from 'react-router-dom'
+
 
 class hospitalBagHistory extends Component{
     render(){
         const { data } = this.props.location
+        if(data == null){
+            return <Redirect to={"/HospitalTrackBloodBagInfo"} />
+        }
         let len = JSON.parse(data).length
-        console.log()
+        //console.log(JSON.parse(data)[len-1].Value.currentOwner)
         let menuItems = [];
-        for (var i = 0; i < len; i++) {
+         for (var i = 0; i < len; i++) {
+            if(JSON.parse(data)[i].Value.currentOwner != null){
+                menuItems.push(<tr>
+                    <td>{JSON.parse(data)[i].Value.currentOwner}</td>
+                    <td>{JSON.parse(data)[i].Value.currentState}</td>
+                    <td>{JSON.parse(data)[i].Value.location}</td>
+                    <td>{JSON.parse(data)[i].Value.patientID}</td>
+                    <td>{JSON.parse(data)[i].Value.timeStamp}</td>
+                    </tr>)
+            }else{
             menuItems.push(<tr>
                 <td>{JSON.parse(data)[i].Value.ownerID}</td>
                 <td>{JSON.parse(data)[i].Value.currentState}</td>
@@ -16,6 +30,7 @@ class hospitalBagHistory extends Component{
                 <td>{JSON.parse(data)[i].Value.patientID}</td>
                 <td>{JSON.parse(data)[i].Value.timeStamp}</td>
                 </tr>)
+            }
         }
         console.log(JSON.parse(data)[1].Value);
     return(

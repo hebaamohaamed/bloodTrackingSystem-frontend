@@ -42,6 +42,7 @@ class bloodBankTrackingBlood extends Component{
 
     TrigerAxios(event, data){
         event.preventDefault();
+        alert("axios")
         let bloodNumber = null;
         if(data.includes("+")){
             bloodNumber = data.replace("+","%2b")
