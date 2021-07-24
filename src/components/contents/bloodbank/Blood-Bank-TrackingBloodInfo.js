@@ -29,7 +29,7 @@ class BloodBankTrackBloodBagInfo extends Component{
   Validation(event){
     event.preventDefault();
     let upper = this.state.bNumber.toUpperCase()
-    const RegExp = /^BD\d{3,4}:[AB|A|O|B][+|-]$/g;
+    const RegExp = /^BD\d{3,4}:(AB|A|O|B)[+-]$/g;
     const valid = RegExp.test(upper)
     if(valid == true){
       this.setState({ redirect: "/bloodBankbloodTracking" });
