@@ -33,16 +33,34 @@ class hospitalBagRecieved extends Component{
   JqueryWaiting(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Delievering Blood Bag...")
+    $(message).css("color","#F39C12")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryWaitingFail(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
     $(message).html("Current State is not Valid")
+    $(message).css("color","#E74C3C")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryDelievered(){
     const message = ReactDOM.findDOMNode(this.refs.msg);
-    $(message).html("Blood Bag is Delievered...")
+    $(message).html("Blood Bag is Delievered")
+    $(message).css("color","#1E8449")
+    $(message).css("background-color","white")
+    $(message).css("font-size","large")
+    $(message).css("text-align","center")
+    $(message).css("border-radius","10px")
+    $(message).css("font-weight","bold")
     //yellow
   }
   JqueryDelieveredFail(){
@@ -121,7 +139,8 @@ return(
     <div>
     <HospitalHeader/>
     <div className="InfoNedded" >
-    <div ref="msg">hii</div>
+    <div ref="msg"></div>
+    <br></br>
     <h2>Recieved Bag Info</h2>
     <form>
       <div className="user-box">

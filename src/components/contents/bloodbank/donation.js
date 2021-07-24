@@ -285,7 +285,7 @@ class BloodBankDonation extends Component {
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time 
-    let ownerID = "BB105";
+    let ownerID = this.state.cookie;
     const finalNumber = Number(lastDIN) +1
     let DIN = "BD" + finalNumber
     axios.get(`http://localhost:5000/create/bag?din=${DIN}&mm=${this.state.milliMeters}&type=${this.state.Type}&date=${this.state.Date}&expired=${this.state.Expired}&test=${this.state.Test}&did=${dID}&temp=${this.state.Temperature}&time=${currentDate}&oid=${ownerID}`)
