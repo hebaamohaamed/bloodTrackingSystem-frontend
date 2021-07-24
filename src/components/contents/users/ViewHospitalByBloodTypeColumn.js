@@ -1,5 +1,5 @@
-import {FilterCol3} from '../hospital/filter'
-import {FilterCol4} from '../hospital/filter'
+import {FilterCol3} from '../filterBloodBags'
+import {FilterCol4} from '../filterBloodBags'
 export const COLUMNS = [
     {
         Header: 'Hospital',

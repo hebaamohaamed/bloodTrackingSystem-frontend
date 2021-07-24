@@ -6,6 +6,7 @@ import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import { Component } from "react";
+import {Link} from 'react-router-dom'
 
 class bloodBankTrackingBlood extends Component{
 
@@ -13,7 +14,8 @@ class bloodBankTrackingBlood extends Component{
         super(props)
         this.state={
           current: null,
-          owner: null
+          owner: null,
+          out:null
         }
       }
 
@@ -24,13 +26,15 @@ class bloodBankTrackingBlood extends Component{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
-          var cookie = "BB105"
+          var cookie = "BB100"
           this.setState({current: output2[len-1].Value.currentState})
           this.setState({owner: output2[0].Value.ownerID})
           if(this.state.owner !== cookie ){
+             console.log(this.state.owner) 
             alert("You can only track your own bags") 
             throw new Error(`This is not your bag`);
             }
+          this.setState({out:output2})
           console.log("Process Completed")
         })
         .catch(error=>{
@@ -48,9 +52,9 @@ class bloodBankTrackingBlood extends Component{
     <div className="card">
         <div className="row d-flex justify-content-between px-3 top">
         <div class="info">
-            <a href="#">
+            <Link to={{pathname: "/bloodBankbaghistory", data: this.state.out}}>
             <i className="info fa-2x" title="Press here to view bag history"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
-            </a>
+            </Link>
           </div>
             <div className="container">
                 <h5>Bag ID: <span class="text-danger font-weight-bold">{data}</span></h5>

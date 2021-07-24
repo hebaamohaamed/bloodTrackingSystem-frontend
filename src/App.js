@@ -28,7 +28,6 @@ import BloodBankTrackBloodBagInfo from './components/contents/bloodbank/Blood-Ba
 
 //supervision
 import SuperContent from './components/contents/supervision/maincontent'
-import retrieveAll from './components/contents/supervision/RetrieveAll'
 import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
 import SupervisionOptions from './components/contents/supervision/Supervision-options'
 import SupervisionRetrieveBloodBags from './components/contents/supervision/Supervision-RetrieveBloodBags'
@@ -91,13 +90,6 @@ function App() {
         <Route exact path="/UserRetrieveBloodBags" component={UserRetrieveBloodBags}></Route>
         <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
         <Route exact path="/ViewHospitalBloodType" component={ViewHospitalByBloodType}></Route>
-
-
-        <Route exact path="/RetrieveAll" component={retrieveAll}></Route>
-        
-
-
-
 
       </Router>
       <Footer />

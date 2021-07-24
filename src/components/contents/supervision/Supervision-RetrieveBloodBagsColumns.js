@@ -1,4 +1,4 @@
-import {FilterCol} from '../hospital/filter'
+import {FilterCol} from '../filterBloodBags'
 export const COLUMNS = [
     {
         Header: 'Bag ID',
