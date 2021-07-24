@@ -17,7 +17,7 @@ class hospitalBagHistory extends Component{
                 <td>{JSON.parse(data)[i].Value.timeStamp}</td>
                 </tr>)
         }
-        console.log(JSON.parse(data)[0].Value);
+        console.log(JSON.parse(data)[1].Value);
     return(
         <div>
             <HospitalHeader />
