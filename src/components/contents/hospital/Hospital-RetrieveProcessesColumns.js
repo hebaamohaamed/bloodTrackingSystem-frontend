@@ -1,4 +1,4 @@
-import {FilterCol2} from './filter'
+import {FilterCol2} from '../filterProcesses'
 export const COLUMNS = [
     {
         Header: 'Blood Bag Number',

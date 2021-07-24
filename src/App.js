@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import HomeContent from './components/contents/home'
 
 //hospital
-import HospitalContent from './components/contents/hospital/maincontent'
 import hospitalBagRecieved from './components/contents/hospital/Hospital-Bag-Recieved'
 import hospitalBagUsed from './components/contents/hospital/Hospital-Bag-Used'
 import hospitalOptions from './components/contents/hospital/Hospital-Options'
@@ -33,6 +32,7 @@ import retrieveAll from './components/contents/supervision/RetrieveAll'
 import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
 
 
+
 //user
 import UserContent from './components/contents/users/maincontent'
 
@@ -49,7 +49,6 @@ function App() {
         <Route exact path="/home" component={HomeContent}></Route>
 
 
-        <Route exact path="/hospital" component={HospitalContent}></Route>
         <Route exact path="/HospitalBagRecieved" component ={hospitalBagRecieved}></Route>
         <Route exact path="/HospitalBagUsed" component={hospitalBagUsed}></Route>
         <Route exact path="/HospitalOptions" component={hospitalOptions}></Route>
@@ -57,7 +56,6 @@ function App() {
         <Route exact path="/HospitalTrackingBlood" component={hospitalTrackingBlood}></Route>
         <Route exact path="/HospitalBagHistory" component={hospitalBagHistory}></Route>
         <Route exact path="/HospitalLogin" component={HospitalLogin}></Route>
-
 
         <Route exact path="/bloodBankOptions" component={BloodBankOptions}></Route>
         <Route exact path="/bloodBankLogin" component={BloodBankLogin}></Route>
@@ -78,6 +76,7 @@ function App() {
 
         <Route exact path="/RetrieveAll" component={retrieveAll}></Route>
         <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
+
 
 
 

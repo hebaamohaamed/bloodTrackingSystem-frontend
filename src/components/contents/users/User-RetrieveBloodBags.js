@@ -1,10 +1,11 @@
 import {useTable, useFilters} from 'react-table'
-import Data from './Hospital-RetrieveBloodBagsData.json'
-import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
+import Data from './User-RetrieveBloodBagsData.json'
+import {COLUMNS} from './User-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
-import HospitalHeader from '../../headers/hospital'
+import UserHeader from '../../headers/user'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-export const RetrieveBloodBags = () =>{
+export const UserRetrieveBloodBags = () =>{
 	
 	
 	const columns = useMemo(()=> COLUMNS, []);
@@ -25,14 +26,17 @@ export const RetrieveBloodBags = () =>{
 	}=tableInstance
 	return(
 		<div>
-		<HospitalHeader/>
-	<main class="py-4">
+		<UserHeader/>
+	<main class="py-4 RetrieveAllBloodBags">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     All Bags
+					<br></br>
+					<input className="trackBagID" placeholder="Enter the Bag ID you want to track"/>
+					<i className="trackIcon" data-toggle="tooltip" title="Press to track"><FontAwesomeIcon icon={["fas" ,"search-location"]}/></i>
                 </div>
                 <div class="card-body">
                        
@@ -40,10 +44,11 @@ export const RetrieveBloodBags = () =>{
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
+						<tr {...headerGroup.getHeaderGroupProps()} >
 							{headerGroup.headers.map((column)=>(
 									
 									<th {...column.getHeaderProps()}>
+										
 										<div>{column.canFilter ? column.render('Filter') : null}</div>
 										<br></br>
 										{column.render('Header')}
@@ -84,4 +89,6 @@ export const RetrieveBloodBags = () =>{
 	)
 
 }
+
+export default UserRetrieveBloodBags;
 

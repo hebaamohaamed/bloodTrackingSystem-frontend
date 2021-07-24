@@ -20,10 +20,23 @@
 }
 .RetrieveAllBloodBags .card .card-body .table{
   border-bottom: 1px solid #ddd;
+  border:1px solid black;
 }
-
 
 .RetrieveAllBloodBags .filter{
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.RetrieveAllBloodBags .userTrackIcon{
+  margin-right: 110px;
+}
+
+.RetrieveAllBloodBags .card .card-header .trackBagID{
+  width: 500px;
+  font-size: large;
+}
+.RetrieveAllBloodBags .card .card-header .trackIcon{
+  margin-left: 10px;
+  /* margin-bottom: 200000px; */
 }

@@ -1,11 +1,10 @@
 import {useTable, useFilters} from 'react-table'
-import Data from './Hospital-RetrieveBloodBagsData.json'
-import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
+import Data from './ViewHospitalByBloodTypeData.json'
+import {COLUMNS} from './ViewHospitalByBloodTypeColumn'
 import { useMemo } from 'react'
-import HospitalHeader from '../../headers/hospital'
+import UserHeader from '../../headers/user'
 
-export const RetrieveBloodBags = () =>{
-	
+export const ViewHospitalByBloodType = () =>{
 	
 	const columns = useMemo(()=> COLUMNS, []);
 	const data = useMemo(()=> Data, []);
@@ -25,25 +24,25 @@ export const RetrieveBloodBags = () =>{
 	}=tableInstance
 	return(
 		<div>
-		<HospitalHeader/>
+			<UserHeader/>
 	<main class="py-4 RetrieveAllBloodBags">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    All Bags
+                    Hospitals
                 </div>
                 <div class="card-body">
                        
-		<table {...getTableProps()} >
+		<table {...getTableProps()}  style={{width: "1100px"}} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
+						<tr {...headerGroup.getHeaderGroupProps()} className="retrieveTr">
 							{headerGroup.headers.map((column)=>(
 									
-									<th {...column.getHeaderProps()}>
+									<th {...column.getHeaderProps()} className="retrieveTh">
 										<div>{column.canFilter ? column.render('Filter') : null}</div>
 										<br></br>
 										{column.render('Header')}
@@ -51,7 +50,7 @@ export const RetrieveBloodBags = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px", paddingLeft:"50px"}}><br></br><br></br>Track</th>
+							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
 						</tr>
 					))
 				}
@@ -61,13 +60,13 @@ export const RetrieveBloodBags = () =>{
 					rows.map(row=>{
 						prepareRow(row)
 						return(
-							<tr {...row.getRowProps()}>
+							<tr {...row.getRowProps()} className="retrieveTr">
 								{
 									row.cells.map(cell => {
-										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+										return <td className="retrieveTd" {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313", paddingLeft:"50px"}}>track</a></td>
+								<td className="retrieveTd"><a href="/" style={{color: "#C31313"}}>track</a></td>
 							</tr>
 						)
 					})
@@ -84,4 +83,4 @@ export const RetrieveBloodBags = () =>{
 	)
 
 }
-
+export default ViewHospitalByBloodType;

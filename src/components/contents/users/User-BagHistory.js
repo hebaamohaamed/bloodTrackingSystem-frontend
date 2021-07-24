@@ -1,9 +1,9 @@
-import HospitalHeader from "../../headers/hospital";
+import UserHeader from "../../headers/user";
 
-function hospitalBagHistory(){
+function UserBagHistory(){
     return(
         <div>
-            <HospitalHeader />
+            <UserHeader/>
             <div className="container bagHistory">
     <div className="row">
         <div className="col-md-offset-1 col-md-10">
@@ -52,4 +52,4 @@ function hospitalBagHistory(){
         </div>
     );
 }
-export default hospitalBagHistory;
+export default UserBagHistory;
