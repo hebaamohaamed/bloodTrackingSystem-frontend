@@ -84,6 +84,7 @@ class hospitalBagUsed extends Component{
     //yellow
   }
   JqueryPass(){
+    alert("jquery")
     let blood = null
     if(this.state.bNumber.includes("%")){
       blood = this.state.bNumber.replace("%2B","+")
@@ -247,11 +248,10 @@ class hospitalBagUsed extends Component{
     let processID = "P" + finalNumber 
     let ownerID = this.state.cookie;
     alert(this.state.cookie)
-    alert(`http://localhost:5001/create/process?pin=${processID}&id=${bloodNumber}&uid=${pID}&oid=${ownerID}&type=recieve&time=${currentDate}`)
     axios.get(`http://localhost:5001/create/process?pin=${processID}&id=${bloodNumber}&uid=${pID}&oid=${ownerID}&type=recieve&time=${currentDate}`)
     .then(response =>{
-      let output = Object.values(response.datua);
-      let objectOutput = JSON.parse(output[0]);
+      alert("done")
+  
       this.JqueryPass();
     })
     .catch(error=>{
