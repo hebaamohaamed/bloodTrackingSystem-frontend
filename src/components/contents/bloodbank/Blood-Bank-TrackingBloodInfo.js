@@ -1,12 +1,35 @@
 import BloodBankHeader from "../../headers/bloodbank";
 import { Component } from "react";
 import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+import ReactDOM from "react-dom"
+import $ from 'jquery'
+
 
 class BloodBankTrackBloodBagInfo extends Component{
   constructor(props){
     super(props)
     this.state={
       bNumber: null,
+      redirect: null
+    }
+  }
+
+  ErrorJquery = () =>{
+    //blood number invalid format
+    const button = ReactDOM.findDOMNode(this.refs.confirm)
+    $(button).html("error")
+  }
+
+  Validation(event){
+    event.preventDefault();
+    let upper = this.state.bNumber.toUpperCase()
+    const RegExp = /^BD\d{3,4}:[AB|A|O|B][+|-]$/g;
+    const valid = RegExp.test(upper)
+    if(valid == true){
+      this.setState({ redirect: "/bloodBankbloodTracking" });
+    }else{
+      this.ErrorJquery()
     }
   }
   handleInputChange(value){
@@ -15,21 +38,24 @@ class BloodBankTrackBloodBagInfo extends Component{
     })
   }
   render(){
+    if (this.state.redirect) {
+      return <Redirect to={{pathname:this.state.redirect , data:this.state.bNumber}} />
+    }
     return(
         <div>
             <BloodBankHeader />
             <div class="InfoNedded">
-    <h2>Info Needed</h2>
-    <form>
-      <div class="user-box">
-      <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
-        <label>Enter Blood Bag ID</label>
-      </div>
-      <Link id="trackBagInfoSubmit" to={{pathname: "/bloodBankbloodTracking", data: this.state.bNumber}}>Submit</Link>
-    </form>
-  </div>
-        </div>
-        
+            <h2>Info Needed</h2>
+            <form>
+              <div class="user-box">
+              <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
+                <label>Enter Blood Bag ID</label>
+              </div>
+              <Link ref="confirm" id="trackBagInfoSubmit" to={{pathname: "/bloodBankbloodTracking", data: this.state.bNumber}} onClick={(event)=>this.Validation(event)} >Submit</Link>
+            </form>
+          </div>
+                </div>
+
     );
   }
 }

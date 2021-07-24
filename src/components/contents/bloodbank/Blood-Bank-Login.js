@@ -24,12 +24,7 @@ function BloodBankLogin() {
       console.log("TEST ERROR", error)
       alert("This Email Is Not Registered")
     })
-
   }
-  function handleRemoveCookie() {
-    removeCookie();
-  }
-
   function handleCookie(id,name,email){
     setCookie('name',name , { path: '/' });
     setCookie('id', id, { path: '/' });

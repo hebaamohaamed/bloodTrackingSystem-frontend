@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios'
 import { Component } from "react";
 import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie';
 
 class bloodBankTrackingBlood extends Component{
 
@@ -15,21 +17,27 @@ class bloodBankTrackingBlood extends Component{
         this.state={
           current: null,
           owner: null,
-          out:null
+          out:null,
+          cookie: Cookies.get('id')
         }
       }
 
     TrigerAxios(event, data){
         event.preventDefault();
-        axios.get(`http://localhost:5000/get/history?id=${data}`)
+        let bloodNumber = null;
+        if(data.includes("+")){
+            bloodNumber = data.replace("+","%2b")
+        }else{
+            bloodNumber = data;
+        }
+        axios.get(`http://localhost:5000/get/history?id=${bloodNumber}`)
         .then(response =>{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
-          var cookie = "BB100"
           this.setState({current: output2[len-1].Value.currentState})
           this.setState({owner: output2[0].Value.ownerID})
-          if(this.state.owner !== cookie ){
+          if(this.state.owner !== this.state.cookie ){
              console.log(this.state.owner) 
             alert("You can only track your own bags") 
             throw new Error(`This is not your bag`);
@@ -39,12 +47,15 @@ class bloodBankTrackingBlood extends Component{
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
+          alert("bag doesn't exist ")
         })
       }
 
     render(){
         const { data } = this.props.location
-        var cookie = "BB100"
+        if(data == null){
+            return <Redirect to={"/bloodBanktrackingbloodinfo"} />
+        }
     return(
         <div>
             <BloodBankHeader/>
@@ -61,7 +72,7 @@ class bloodBankTrackingBlood extends Component{
                 <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div> 
-        { this.state.owner === cookie &&     
+        { this.state.owner === this.state.cookie &&     
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&

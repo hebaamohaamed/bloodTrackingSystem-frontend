@@ -12,7 +12,7 @@ function Footer() {
         <div className="col-md-4 col-sm-6 col-xs-12">
           <ul className="social-icons">
             <li><a id="f" className="facebook" href="#"><i><FontAwesomeIcon icon = {['fab' ,'facebook']}/></i></a></li>
-            <li><a id="t" className="twitter" href="https://twitter.com/blood_tracking" ><i><FontAwesomeIcon icon = {['fab' ,'twitter']}/></i></a></li>
+            <li><a id="t" className="twitter" href="https://twitter.com/blood_tracking" target="_blank" ><i><FontAwesomeIcon icon = {['fab' ,'twitter']}/></i></a></li>
             <li><a id="i" className="instagram" href="#"><i><FontAwesomeIcon icon = {['fab' ,'instagram']}/></i></a></li>
             <li><a id="l" className="linkedin" href="#"><i><FontAwesomeIcon icon = {['fab' ,'linkedin']}/></i></a></li>   
           </ul>
