@@ -14,17 +14,82 @@ class hospitalBagUsed extends Component{
     }
   }
 
-  TrigerAxios(event){
+  TrigerAxios0(event){
+    event.preventDefault();
+    axios.get("http://localhost:5003/get/last")
+    .then(response =>{
+      let lastNumber = Object.values(response.data);
+      this.Trigerdb(event,lastNumber);
+      lastNumber = lastNumber +1
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)      
+    })
+  }
+
+  TrigerAxios01(event){
+    event.preventDefault();
+    axios.get("http://localhost:5001/get/last")
+    .then(response =>{
+      let lastNumber = Object.values(response.data);
+      this.Trigerdb2(event,lastNumber);
+      lastNumber = lastNumber +1
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)      
+    })
+  }
+
+
+  Trigerdb(event, lastNumber){
+    event.preventDefault();
+    const finalNumber = Number(lastNumber) +1
+    const pID = "R" + finalNumber
+    axios.post("http://localhost:5004/insert/patient", {
+      ID: pID,
+      Email: this.state.patientEmail,
+    })
+    .then(response =>{
+      alert("Patient is Registered")
+      this.TrigerAxios(event,pID,lastNumber);
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)      
+    })
+  }
+
+  Trigerdb2(event,lastNumber){
+    event.preventDefault();
+    axios.get("http://localhost:5004/check/patient?email="+this.state.patientEmail)
+    .then(response =>{
+      const Id = response.data[0].pID;
+      alert("Validate Patient")
+      this.TrigerAxios(event,Id,lastNumber);
+    })
+    .catch(error=>{
+      console.log("TEST ERROR", error)      
+    })
+  }
+
+
+  TrigerAxios(event, pID,lastNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
-    axios.get(`http://localhost:5001/third/state?id=${this.state.bNumber}&pid=${this.state.patientEmail}&time=${currentDate}`)
+    let bloodNumber = null;
+    if(this.state.bNumber.includes("+")){
+      bloodNumber = this.state.bNumber.replace("+","%2B")
+    }
+    else{
+      bloodNumber = this.state.bNumber
+    }
+    axios.get(`http://localhost:5001/third/state?id=${bloodNumber}&pid=${pID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       alert("Blood Bag: Used")
-      this.TrigerAxios2(event);
+      this.TrigerAxios2(event,pID,lastNumber,bloodNumber);
       console.log("Change State Confirmed")
     })
     .catch(error=>{
@@ -32,37 +97,36 @@ class hospitalBagUsed extends Component{
     })
 
   }
-  TrigerAxios2(event){
+  TrigerAxios2(event, pID,lastNumber,bloodNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
-    axios.get(`http://localhost:5001/change/location?id=${this.state.bNumber}&loc=PATIENT&oid=${this.state.patientEmail}&time=${currentDate}`)
+    axios.get(`http://localhost:5001/change/location?id=${bloodNumber}&loc=PATIENT&oid=${pID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       let objectOutput = JSON.parse(output[0]);
-      this.TrigerAxios3(event);
-      console.log("RESPONSE", objectOutput.DIN);
       alert("Blood Bag Location: The Patient")
+      this.TrigerAxios3(event,pID,lastNumber,bloodNumber);
     })
     .catch(error=>{
       console.log("TEST ERROR", error)
     })
   }
-  TrigerAxios3(event){
+  TrigerAxios3(event,pID,lastNumber,bloodNumber){
     event.preventDefault();
     const currentDate2 = new Date();
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
-    let processID = "P9653"
+    const finalNumber = Number(lastNumber) +1
+    let processID = "P" + finalNumber 
     let ownerID = "H101"
-    axios.get(`http://localhost:5001/create/process?pin=${processID}&id=${this.state.bNumber}&uid=${this.state.patientEmail}&oid=${ownerID}&type=recieve&time=${currentDate}`)
+    axios.get(`http://localhost:5001/create/process?pin=${processID}&id=${bloodNumber}&uid=${pID}&oid=${ownerID}&type=recieve&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);
       let objectOutput = JSON.parse(output[0]);
-      console.log("RESPONSE", objectOutput.DIN);
       alert("Blood Bag Process: Recieved")
     })
     .catch(error=>{
@@ -116,13 +180,10 @@ return(
         <input type="text" required value={this.state.bNumber} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
         <label>Enter Blood Bag ID</label>
       </div>
-      <div className="new-user-box">
-        <input type="number" name="" required/>
-        <label>Enter number of Blood Bags</label>
+      <div className='bagUsedBottons'>
+        <a id="bagUsedNew" href="#" onClick={(event)=>this.TrigerAxios0(event)} ref="submit" >New Patient</a>
+        <a id="bagUsedExisting" href="#" onClick={(event)=>this.TrigerAxios01(event)} ref="submit2" >Existing Patient</a>
       </div>
-      <a id="button1" href="#" onClick={(event)=>this.TrigerAxios(event)} ref="submit2" >
-        Submit
-      </a>
     </form>
   </div>
   </div>
