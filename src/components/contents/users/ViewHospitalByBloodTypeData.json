@@ -2,10 +2,10 @@
 	{
 		"hId": "H100",
 		"hName": "Ain Shams Specialized",
-		"hEmail": "ainshamshospital@gmail.com",
+		"hEmail": "ainshamsspecialized@gmail.com",
 		"hMap": "https://goo.gl/maps/nsZEy536BueSevGh8",
 		"hAddress": "El-Khalifa El-Maamoun, El-Qobba Bridge, Heliopolis, Cairo",
-		"blood": "AB ,A ,B-,AB-,O-,A-"
+		"blood": "no blood"
 	},
 	{
 		"hId": "H101",
@@ -13,7 +13,7 @@
 		"hEmail": "angloamericanhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/Xwnh8z5jN5rGEyqh7",
 		"hAddress": "Zamalek, Cairo",
-		"blood": "AB ,AB-,O-,A ,A-"
+		"blood": "B-"
 	},
 	{
 		"hId": "H102",
@@ -21,7 +21,7 @@
 		"hEmail": "arabcontractorhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/kzRXgiNc1bRfman29",
 		"hAddress": "Al Gabal Al Akhdar، El-Nasr Rd, Nasr City, Cairo ",
-		"blood": "O-,B ,AB ,O ,AB-,A-"
+		"blood": "no blood"
 	},
 	{
 		"hId": "H103",
@@ -29,7 +29,7 @@
 		"hEmail": "behmanhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/NbrcFxHonv8qto6R7",
 		"hAddress": "32 El-Marsad St، Helwan Sharkeya, Helwan, Cairo ",
-		"blood": "AB-,O-,A-,O ,B ,AB ,A "
+		"blood": "no blood"
 	},
 	{
 		"hId": "H104",
@@ -37,7 +37,7 @@
 		"hEmail": "cairomedicalhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/rBagHNGfhFPiUxD8A",
 		"hAddress": "N Teseen St, First New Cairo, Cairo",
-		"blood": "AB ,B-,AB-,O-,A-,A "
+		"blood": "no blood"
 	},
 	{
 		"hId": "H105",
@@ -45,7 +45,7 @@
 		"hEmail": "alsalamhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/4g3y4tDMtBEf7Cxx7",
 		"hAddress": "3 Syria, Gazirat Mit Oqbah, Agouza, Giza",
-		"blood": "O ,A-,A ,O-,AB ,B-"
+		"blood": "no blood"
 	},
 	{
 		"hId": "H106",
@@ -53,7 +53,7 @@
 		"hEmail": "cleopatrahospital@gmail.com",
 		"hMap": "https://goo.gl/maps/guDsi6D6AZ2VSnSz9",
 		"hAddress": "39 Cleopatra Street, Opposite Maidan Salahuddin Square، Almazah, Heliopolis",
-		"blood": "O-,B ,B-,A ,O ,AB ,A-,AB-"
+		"blood": "no blood"
 	},
 	{
 		"hId": "H107",
@@ -61,7 +61,7 @@
 		"hEmail": "darelfoadhospital@gmail.com",
 		"hMap": "https://goo.gl/maps/AgV5p6RSaWhLJQuV7",
 		"hAddress": "Gameat Al Azhar, Nasr City, Cairo",
-		"blood": "O ,AB ,A-,B-,O-,A ,AB-"
+		"blood": "A-,O ,B "
 	},
 	{
 		"hId": "H108",
@@ -69,7 +69,7 @@
 		"hEmail": "wadielnilehospital@gmail.com",
 		"hMap": "https://goo.gl/maps/CCWbTGZTTTrmrW2b8",
 		"hAddress": "Omarat Al Saudeya, Cairo",
-		"blood": "O ,A-,B-,O-,AB ,AB-,A "
+		"blood": "no blood"
 	},
 	{
 		"hId": "H109",
@@ -77,6 +77,6 @@
 		"hEmail": "elsafahospital@gmail.com",
 		"hMap": "https://goo.gl/maps/aojSJ7z1gb3qBxi39",
 		"hAddress": "31 Ahmed Al Bourai, Gazirat Mit Oqbah, Agouza, Giza",
-		"blood": "A-,O-,AB-,A ,O ,B ,AB "
+		"blood": "O-"
 	}
 ]

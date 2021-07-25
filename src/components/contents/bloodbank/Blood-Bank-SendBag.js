@@ -118,7 +118,7 @@ class bloodBankSendBags extends Component{
     const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time  
-    let ownerID = this.state.cookie;
+    let ownerID = "TRANSPORTATION";
     axios.get(`http://localhost:5000/change/location?id=${bloodNumber}&oid=${ownerID}&time=${currentDate}`)
     .then(response =>{
       let output = Object.values(response.data);

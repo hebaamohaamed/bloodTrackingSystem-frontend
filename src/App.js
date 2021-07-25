@@ -40,7 +40,7 @@ import SupervisionRetrieveProcesses from './components/contents/supervision/Supe
 //user
 import UserContent from './components/contents/users/maincontent'
 import userLogin from './components/contents/users/User-Login'
-import userOptions from './components/contents/users/User-Options'
+import UserOptions from './components/contents/users/User-Options'
 import UserRetrieveBloodBags from './components/contents/users/User-RetrieveBloodBags'
 import userTrackingBlood from './components/contents/users/User-TrackingBlood'
 import ViewHospitalByBloodType from './components/contents/users/ViewHospitalByBloodType'
@@ -89,7 +89,7 @@ function App() {
 
         <Route exact path="/user" component={UserContent}></Route>
         <Route exact path="/UserLogin" component={userLogin}></Route>
-        <Route exact path="/UserOption" component={userOptions}></Route>
+        <Route exact path="/UserOption" component={UserOptions}></Route>
         <Route exact path="/UserRetrieveBloodBags" component={UserRetrieveBloodBags}></Route>
         <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
         <Route exact path="/ViewHospitalBloodType" component={ViewHospitalByBloodType}></Route>

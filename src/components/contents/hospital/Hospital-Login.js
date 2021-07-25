@@ -13,7 +13,7 @@ function HospitalLogin(){
   let history = useHistory();
 
   function TrigerAxios(email){
-    axios.get("http://localhost:5004/api/get/hospitals?email="+email)
+    axios.get("http://localhost:5004/api/get/hospital?email="+email)
     .then(response =>{
       const id=response.data[0].hId;
       const name =response.data[0].hName;

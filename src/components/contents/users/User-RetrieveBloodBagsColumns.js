@@ -1,8 +1,10 @@
 import {FilterCol} from '../filterBloodBags'
+import {FilterCol3} from '../filterBloodBags'
+import {Link} from 'react-router-dom'
 export const COLUMNS = [
     {
-        Header: 'Bag ID',
-        accessor: 'id',
+        Header: 'Bag Number',
+        accessor: 'DIN',
         Filter: FilterCol
     },
     {
@@ -12,12 +14,18 @@ export const COLUMNS = [
     },
     {
         Header: 'Safe',
-        accessor: 'safe',
+        accessor: 'test',
         Filter: FilterCol
     },
     {
         Header: 'Expired',
-        accessor: 'exp',
+        accessor: 'expired',
         Filter: FilterCol
+    },
+    {
+        Header: '',
+        accessor: 'key',
+        Cell: e =><Link to={{pathname: "/UserTrackingBlood", data: e.value}} style={{color: "#C31313", paddingLeft:"50px"}}>track</Link>,
+        Filter: FilterCol3
     }
 ]

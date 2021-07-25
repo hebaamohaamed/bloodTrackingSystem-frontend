@@ -1,1 +1,20 @@
-[{"id":"82376893", "type":"AB", "safe":"Yes", "exp":"No"},{"id":"45698127", "type":"A", "safe":"Yes", "exp":"No"}]
+[
+	{
+		"DIN": "BD1002",
+		"class": "org.blood",
+		"currentOwner": "H100",
+		"currentState": "DELIEVERED",
+		"date": "2021-07-15",
+		"donorID": "D1002",
+		"expired": "2021-07-31",
+		"key": "BD1002:A-",
+		"location": "HOSPITAL",
+		"mm": "250",
+		"ownerID": "BB100",
+		"patientID": "NONE",
+		"temperature": "3",
+		"test": "SAFE",
+		"timeStamp": "24/7/2021 20:16:28",
+		"type": "A-"
+	}
+]

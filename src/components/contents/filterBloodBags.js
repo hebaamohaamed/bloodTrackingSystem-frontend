@@ -12,7 +12,7 @@ export const FilterCol3 = ({ column }) => {
      return(
          <span>
              {' '}
-             <input className="filter2" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter Column" />
+             <input className="filter2" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter Column"  hidden/>
          </span>
      )
 }

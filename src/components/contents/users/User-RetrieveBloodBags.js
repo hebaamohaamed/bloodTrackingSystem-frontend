@@ -34,9 +34,6 @@ export const UserRetrieveBloodBags = () =>{
             <div class="card">
                 <div class="card-header">
                     All Bags
-					<br></br>
-					<input className="trackBagID" placeholder="Enter the Bag ID you want to track"/>
-					<i className="trackIcon" data-toggle="tooltip" title="Press to track"><FontAwesomeIcon icon={["fas" ,"search-location"]}/></i>
                 </div>
                 <div class="card-body">
                        
@@ -56,7 +53,6 @@ export const UserRetrieveBloodBags = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px", paddingLeft:"50px"}}><br></br><br></br>Track</th>
 						</tr>
 					))
 				}
@@ -72,7 +68,7 @@ export const UserRetrieveBloodBags = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313", paddingLeft:"50px"}}>track</a></td>
+								
 							</tr>
 						)
 					})

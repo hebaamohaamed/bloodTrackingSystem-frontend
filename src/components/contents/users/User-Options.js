@@ -1,8 +1,81 @@
 import UserHeader from "../../headers/user";
 import retrieveImg from '../../../imgs/retrieve.jpg'
 import hospitalImg from '../../../imgs/hospital.jpg'
+import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
-function userOptions(){
+
+
+function UserOptions(){
+
+  let history = useHistory();
+  let cookie = "D1002"
+
+  function getHospitals(event){
+    event.preventDefault();
+    var finalOut = "["
+    axios.get(`http://localhost:5003/query/hospital/blood`)
+        .then(response =>{
+          var blood = response.data.out.substr(0,response.data.out.length-1)
+          var bloodArray = blood.split(":")
+          console.log(bloodArray)
+          axios.get("http://localhost:5004/api/get/hospitals")
+            .then(response =>{
+              var data =response.data
+              //console.log(response.data)
+              console.log("All Hospitals Fetched")
+              console.log(data);  
+              var output ="["
+              for(var i =0;i<response.data.length;i++){
+                var hospital = response.data[i]
+                var hospitalStr = JSON.stringify(hospital)
+                var type = bloodArray[i].substr(1,bloodArray[i].length-2)
+                var sub = hospitalStr.substr(0,hospitalStr.length-1)
+                if(type == "")
+                  sub = sub + ',"blood":'+'"'+"no blood"+'"}'
+                else 
+                  sub = sub + ',"blood":'+'"'+type+'"}'
+                if(finalOut.length==1)
+                  finalOut = finalOut + sub
+                else
+                  finalOut = finalOut + "," + sub  
+            }
+            finalOut = finalOut +"]"
+            console.log(JSON.parse(finalOut));   
+            axios.get(`http://localhost:5004/api/write/file?file=${finalOut}`)
+            .then(response =>{
+               console.log("data written")
+               history.push("/ViewHospitalBloodType")            
+              })
+            .catch(error=>{
+              console.log("TEST ERROR", error)
+              alert(`http://localhost:5004/api/write/file?file=${finalOut}`)
+            })
+
+          })
+            .catch(error=>{
+              console.log("TEST ERROR", error)
+              alert("Can't fetch Hsopitals")
+          })
+        })
+        .catch(error=>{
+          console.log("TEST ERROR", error)
+    })
+  }
+  
+
+  function getBlood(event){
+    event.preventDefault();
+    axios.get(`http://localhost:5003/query/donor?did=${cookie}`)
+            .then(response =>{
+               console.log("data written")
+               history.push("/UserRetrieveBloodBags")            
+              })
+            .catch(error=>{
+              console.log("TEST ERROR", error)
+    })
+  }
+
     return(
         <div>
             <UserHeader/>
@@ -23,7 +96,7 @@ function userOptions(){
               <p className="card-text">
                 If you want to view all your blood bags press here.
               </p>
-              <a href="#!" class="btn btn-danger">View</a>
+              <a class="btn btn-danger" onClick={(event)=>getBlood(event)}>View</a>
             </div>
           </div>
         </div>
@@ -40,7 +113,7 @@ function userOptions(){
               <p className="card-text">
                 If you want to search for blood type in specific hospital, press here.
               </p>
-              <a href="#!" class="btn btn-danger">Search</a>
+              <a class="btn btn-danger" onClick={(event)=>getHospitals(event)}>Search</a>
             </div>
           </div>
         </div>
@@ -52,4 +125,4 @@ function userOptions(){
         </div>
     );
 }
-export default userOptions;
+export default UserOptions;

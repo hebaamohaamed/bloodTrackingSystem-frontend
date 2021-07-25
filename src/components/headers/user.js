@@ -20,13 +20,17 @@ function UserHeader() {
               var data =response.data
               //console.log(response.data)
               console.log("All Hospitals Fetched")
+              console.log(data);  
               var output ="["
               for(var i =0;i<response.data.length;i++){
                 var hospital = response.data[i]
                 var hospitalStr = JSON.stringify(hospital)
                 var type = bloodArray[i].substr(1,bloodArray[i].length-2)
                 var sub = hospitalStr.substr(0,hospitalStr.length-1)
-                sub = sub + ',"blood":'+'"'+type+'"}'
+                if(type == "")
+                  sub = sub + ',"blood":'+'"'+"no blood"+'"}'
+                else 
+                  sub = sub + ',"blood":'+'"'+type+'"}'
                 if(finalOut.length==1)
                   finalOut = finalOut + sub
                 else
@@ -68,10 +72,8 @@ function UserHeader() {
               </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="#" >Home
-                      <span className="sr-only">(current)</span>
-                    </a>
+            <li className="nav-item">
+                <Link className="nav-link" id="help" to="UserOption" >Options</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" id="help" onClick={(event)=>getHospitals(event)}>Search For Blood</Link>
