@@ -152,7 +152,7 @@ class hospitalBagUsed extends Component{
     event.preventDefault();  
     let valid = true;
     const RegExp = /^[\w-\.]+@(gmail.com)$/g
-    if(!RegExp.test(this.state.patientEmail || this.state.patientEmail === null)){
+    if(!RegExp.test(this.state.patientEmail) || this.state.patientEmail === null){
       valid = false
       this.JqueryEmail()
     }
