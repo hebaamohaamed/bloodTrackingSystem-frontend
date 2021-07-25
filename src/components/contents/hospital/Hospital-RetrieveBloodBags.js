@@ -4,7 +4,7 @@ import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import HospitalHeader from '../../headers/hospital'
 
-export const RetrieveBloodBags = () =>{
+export const HospitalRetrieveBloodBags = () =>{
 	
 	
 	const columns = useMemo(()=> COLUMNS, []);
@@ -51,7 +51,7 @@ export const RetrieveBloodBags = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px", paddingLeft:"50px"}}><br></br><br></br>Track</th>
+							
 						</tr>
 					))
 				}
@@ -67,7 +67,7 @@ export const RetrieveBloodBags = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313", paddingLeft:"50px"}}>track</a></td>
+								
 							</tr>
 						)
 					})

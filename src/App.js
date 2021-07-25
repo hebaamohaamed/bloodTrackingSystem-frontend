@@ -28,7 +28,6 @@ import BloodBankBagHistory from './components/contents/bloodbank/Blood-Bank-BagH
 import BloodBankTrackBloodBagInfo from './components/contents/bloodbank/Blood-Bank-TrackingBloodInfo'
 
 //supervision
-import SuperContent from './components/contents/supervision/maincontent'
 import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
 import SupervisionOptions from './components/contents/supervision/Supervision-options'
 import SupervisionRetrieveBloodBags from './components/contents/supervision/Supervision-RetrieveBloodBags'
@@ -38,12 +37,12 @@ import SupervisionRetrieveProcesses from './components/contents/supervision/Supe
 
 
 //user
-import UserContent from './components/contents/users/maincontent'
-import userLogin from './components/contents/users/User-Login'
+import UserLogin from './components/contents/users/User-Login'
 import UserOptions from './components/contents/users/User-Options'
 import UserRetrieveBloodBags from './components/contents/users/User-RetrieveBloodBags'
 import userTrackingBlood from './components/contents/users/User-TrackingBlood'
 import ViewHospitalByBloodType from './components/contents/users/ViewHospitalByBloodType'
+import UserLogout from './components/contents/users/User-Logout'
 
 //footer
 import Footer from './components/footer'
@@ -66,6 +65,9 @@ function App() {
         <Route exact path="/HospitalBagHistory" component={hospitalBagHistory}></Route>
         <Route exact path="/HospitalLogin" component={HospitalLogin}></Route>
         <Route exact path="/HospitalLogout" component={HospitalLogout}></Route>
+        <Route exact path="/HospitalRetrieveBloodBags" component={HospitalRetrieveBloodBags}></Route>
+        <Route exact path="/HospitalRetrieveProcesses" component={HospitalRetrieveProcesses}></Route>
+
 
 
         <Route exact path="/bloodBankOptions" component={BloodBankOptions}></Route>
@@ -80,19 +82,19 @@ function App() {
         <Route exact path="/bloodBanktrackingbloodinfo" component={BloodBankTrackBloodBagInfo}></Route>
 
 
-        <Route exact path="/supervision" component={SuperContent}></Route>
         <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
         <Route exact path="/superVisionOptions" component={SupervisionOptions}></Route>
         <Route exact path="/superVisionretrievebags" component={SupervisionRetrieveBloodBags}></Route>
         <Route exact path="/superVisionretrieveprocesses" component={SupervisionRetrieveProcesses}></Route>
         <Route exact path="/superVisionbaghistory" component={SupervisionBagHistory}></Route>
 
-        <Route exact path="/user" component={UserContent}></Route>
-        <Route exact path="/UserLogin" component={userLogin}></Route>
+        <Route exact path="/UserLogin" component={UserLogin}></Route>
         <Route exact path="/UserOption" component={UserOptions}></Route>
         <Route exact path="/UserRetrieveBloodBags" component={UserRetrieveBloodBags}></Route>
         <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
         <Route exact path="/ViewHospitalBloodType" component={ViewHospitalByBloodType}></Route>
+        <Route exact path="/UserLogout" component={UserLogout}></Route>
+
 
       </Router>
       <Footer />

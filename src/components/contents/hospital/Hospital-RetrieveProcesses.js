@@ -4,7 +4,7 @@ import {COLUMNS} from './Hospital-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 import HospitalHeader from '../../headers/hospital'
 
-export const RetrieveProcesses = () =>{
+export const HospitalRetrieveProcesses = () =>{
 	
 	const columns = useMemo(()=> COLUMNS, []);
 	const data = useMemo(()=> Data, []);
@@ -50,7 +50,7 @@ export const RetrieveProcesses = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px"}}><br></br><br></br>Track</th>
+						
 						</tr>
 					))
 				}
@@ -66,7 +66,6 @@ export const RetrieveProcesses = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313"}}>track</a></td>
 							</tr>
 						)
 					})

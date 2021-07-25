@@ -149,7 +149,7 @@ class HomeContent extends Component {
               <Card.Text>
               login as Donor or Patient to track blood and search for blood in hospitals.
               </Card.Text>
-              <Link to="/user">
+              <Link to="/UserLogin">
                LOGIN
               </Link>
             </Card.Body>

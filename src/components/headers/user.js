@@ -1,12 +1,19 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
-import { useState } from 'react';
+import {NavDropdown} from 'react-bootstrap'
+import { useCookies } from 'react-cookie';
+import axios from 'axios'
 
 function UserHeader() {
 
   let history = useHistory();
+  const [cookies] = useCookies(['user']);
+  if(cookies.name == null){
+    history.push('/home')
+  }
+  const name = cookies.name;
+  const id = cookies.id;
   function getHospitals(event){
     event.preventDefault();
     var finalOut = "["
@@ -78,8 +85,13 @@ function UserHeader() {
               <li className="nav-item">
                 <Link className="nav-link" id="help" onClick={(event)=>getHospitals(event)}>Search For Blood</Link>
               </li>
-              <li><i className="userIcon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
-          <li id ="userName">UserName</li>
+              <li><i className="icon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
+              <NavDropdown
+                  id ="userName"
+                  title={name}
+                >
+                  <NavDropdown.Item><Link to='/UserLogout' >Logout </Link> </NavDropdown.Item>
+                </NavDropdown> 
             </ul>
           </div>
         </div>

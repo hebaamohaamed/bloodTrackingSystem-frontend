@@ -15,6 +15,42 @@ function HospitalHeader() {
   }
   const name = cookies.name;
   const id = cookies.id;
+
+  function AxiosB(event){
+    event.preventDefault();
+    axios.get(`http://localhost:5001/query/hospital/blood?oid=${id}`)
+		.then(response =>{
+		  let output = (response.data.output);
+		  console.log("All Blood is fetched")
+		  console.log(output)
+		  process = output
+		  history.push('/HospitalRetrieveBloodBags')
+	
+		})
+		.catch(error=>{
+		  console.log("TEST ERROR", error)
+		 
+  })
+}
+
+  function AxiosP(event){
+    event.preventDefault();
+    axios.get(`http://localhost:5001/query/hospital/process?oid=${id}`)
+		.then(response =>{
+		  let output = (response.data.output);
+		  console.log("All Processes is fetched")
+		  console.log(output)
+		  process = output
+		  history.push('/HospitalRetrieveProcesses')
+	
+		})
+		.catch(error=>{
+		  console.log("TEST ERROR", error)
+		 
+  })
+
+  }
+
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="hospitalNav">
         <div className="container">
@@ -31,10 +67,10 @@ function HospitalHeader() {
                 <Link  className="nav-link" id="help" to="/HospitalOptions" >Options</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" id="boodbags" href="#" >BloodBags</a>
+                <a className="nav-link" id="boodbags" onClick={(event)=>AxiosB(event)} >BloodBags</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" id="processes" href="#" >Processes</a>
+                <a className="nav-link" id="processes" onClick={(event)=>AxiosP(event)}>Processes</a>
               </li>
               <li><i className="icon fa-2x"><FontAwesomeIcon icon="hospital"/></i></li>
               <NavDropdown
@@ -49,5 +85,6 @@ function HospitalHeader() {
       </nav>
     );
   }
+
   
   export default HospitalHeader;
