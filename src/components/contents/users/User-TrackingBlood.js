@@ -46,7 +46,7 @@ class userTrackingBlood extends Component{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
-          this.setState({cookie: "R1002"})
+          this.setState({cookie: "D1002"})
           this.setState({current: output2[len-1].Value.currentState})
 
           if(this.state.cookie.includes("D")){
