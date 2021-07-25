@@ -9,6 +9,8 @@ import axios from 'axios'
 import {Redirect} from 'react-router-dom'
 import ReactDOM from "react-dom"
 import $ from 'jquery'
+import Cookies from 'js-cookie';
+
 
 
 
@@ -17,27 +19,10 @@ class userTrackingBlood extends Component{
         super(props)
         this.state={
           current: null,
-          cookie: null,
+          cookie: Cookies.get('id'),
           owner: null
         }
       }
-
-      JqueryBagNotExist(){
-        const button = ReactDOM.findDOMNode(this.refs.track)
-        $(button).css("transform","scale(1.2)")
-        $(button).html("Bag doesn't exist")
-        $(button).css("text-transform","uppercase")
-        $(button).css("border-radius","10px")
-        $(button).css("width","220px")
-        } 
-    JqueryNotTheOwner(){
-        const button = ReactDOM.findDOMNode(this.refs.track)
-        $(button).css("transform","scale(1.2)")
-        $(button).html("Not your bag")
-        $(button).css("text-transform","uppercase")
-        $(button).css("border-radius","10px")
-        $(button).css("width","200px")
-    }
 
     TrigerAxios(event, data){
         event.preventDefault();
@@ -46,26 +31,17 @@ class userTrackingBlood extends Component{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
-          this.setState({cookie: "D1002"})
           this.setState({current: output2[len-1].Value.currentState})
-
           if(this.state.cookie.includes("D")){
             this.setState({owner: output2[len-1].Value.donorID})
           }
           else{
             this.setState({owner: output2[len-1].Value.patientID})
           }
-          alert(this.state.owner)
-          if(this.state.owner !== this.state.cookie ){
-            this.JqueryNotTheOwner()
-           }else{
-            this.setState({out:JSON.stringify(output2)})
-           }
           console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
-          this.JqueryBagNotExist()
         })
       }
 
