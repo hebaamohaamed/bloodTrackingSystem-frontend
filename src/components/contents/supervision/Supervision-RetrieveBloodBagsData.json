@@ -18,24 +18,6 @@
 	},
 	{
 		"class": "org.blood",
-		"key": "BD1002:A-",
-		"DIN": "BD1002",
-		"currentOwner": "H100",
-		"currentState": "DELIEVERED",
-		"date": "2021-07-15",
-		"donorID": "D1002",
-		"expired": "2021-07-31",
-		"location": "HOSPITAL",
-		"mm": "250",
-		"ownerID": "BB100",
-		"patientID": "NONE",
-		"temperature": "3",
-		"test": "SAFE",
-		"timeStamp": "24/7/2021 20:16:28",
-		"type": "A-"
-	},
-	{
-		"class": "org.blood",
 		"key": "BD101:AB+",
 		"DIN": "BD101",
 		"currentState": "USED",
@@ -8499,5 +8481,22 @@
 		"test": "SAFE",
 		"timeStamp": "19-May-2021 4:00:00",
 		"type": "O-"
+	},
+	{
+		"class": "org.blood",
+		"key": "BD903:AB-",
+		"DIN": "BD903",
+		"currentState": "READY",
+		"date": "17-July-2021",
+		"donorID": "D1002",
+		"expired": "1-Sep-2021",
+		"location": "BLOOD_BANK",
+		"mm": "400",
+		"ownerID": "BB102",
+		"patientID": "NONE",
+		"temperature": "4",
+		"test": "SAFE",
+		"timeStamp": "11:00:00",
+		"type": "AB-"
 	}
 ]
