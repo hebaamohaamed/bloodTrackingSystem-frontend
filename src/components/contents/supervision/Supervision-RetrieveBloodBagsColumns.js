@@ -1,8 +1,11 @@
 import {FilterCol} from '../filterBloodBags'
+import {FilterCol3} from '../filterBloodBags'
+import {Link} from 'react-router-dom'
+
 export const COLUMNS = [
     {
         Header: 'Bag ID',
-        accessor: 'id',
+        accessor: 'DIN',
         Filter: FilterCol
     },
     {
@@ -12,12 +15,39 @@ export const COLUMNS = [
     },
     {
         Header: 'Safe',
-        accessor: 'safe',
+        accessor: 'test',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Mili',
+        accessor: 'mm',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Temprature',
+        accessor: 'temperature',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Donor',
+        accessor: 'donorID',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Date',
+        accessor: 'date',
         Filter: FilterCol
     },
     {
         Header: 'Expired',
-        accessor: 'exp',
+        accessor: 'expired',
         Filter: FilterCol
+    }
+    ,
+    {
+        Header: '',
+        accessor: 'key',
+        Cell: e =><Link to={{pathname: "/superVisionbaghistory", data: e.value}} style={{color: "#C31313", paddingLeft:"50px"}}>history</Link>,
+        Filter: FilterCol3
     }
 ]

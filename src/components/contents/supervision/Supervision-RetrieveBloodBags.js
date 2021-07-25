@@ -34,11 +34,7 @@ export const SupervisionRetrieveBloodBags = () =>{
             <div class="card">
                 <div class="card-header">
                     All Bags
-                    <br></br>
-					<input className="trackBagID" placeholder="Enter the Bag ID you want to view it's history"/>
-					<a href="/">
-					<i style={{marginLeft:"8px", color:"#C31313"}}  data-toggle="tooltip" title="Press to view history"><FontAwesomeIcon icon={['fa' ,'info-circle']}/></i>
-					</a>
+				
 				</div>
                 <div class="card-body">
                        
@@ -46,7 +42,7 @@ export const SupervisionRetrieveBloodBags = () =>{
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
+						<tr {...headerGroup.getHeaderGroupProps()} >
 							{headerGroup.headers.map((column)=>(
 									
 									<th {...column.getHeaderProps()}>
@@ -57,7 +53,7 @@ export const SupervisionRetrieveBloodBags = () =>{
 									</th>
 								))
 							}
-							<th style={{paddingTop: "5.8px", paddingLeft:"50px"}}><br></br><br></br>Track</th>
+						
 						</tr>
 					))
 				}
@@ -73,7 +69,7 @@ export const SupervisionRetrieveBloodBags = () =>{
 										return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
 									})
 								}
-								<td><a href="/" style={{color: "#C31313", paddingLeft:"50px"}}>track</a></td>
+								
 							</tr>
 						)
 					})

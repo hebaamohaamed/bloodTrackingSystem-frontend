@@ -1,8 +1,8 @@
 import {FilterCol} from '../filterBloodBags'
 export const COLUMNS = [
     {
-        Header: 'Bag Number',
-        accessor: 'key',
+        Header: 'Bag ID',
+        accessor: 'DIN',
         Filter: FilterCol
     },
     {
@@ -16,8 +16,34 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
+        Header: 'Mili',
+        accessor: 'mm',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Temprature',
+        accessor: 'temperature',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Donor',
+        accessor: 'donorID',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Patient',
+        accessor: 'patientID',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Date',
+        accessor: 'date',
+        Filter: FilterCol
+    },
+    {
         Header: 'Expired',
         accessor: 'expired',
         Filter: FilterCol
     }
+    
 ]

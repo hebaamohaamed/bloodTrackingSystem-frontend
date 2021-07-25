@@ -4,7 +4,7 @@ import GoogleLogout from 'react-google-login'
 import { Cookies,useCookies } from 'react-cookie';
 import { wait } from '@testing-library/react';
 
-function UserLogout() {
+function SuperVisionAuthorityLogout() {
     
   let history = useHistory();
   function handleRemoveCookie() {
@@ -23,7 +23,7 @@ function UserLogout() {
         <div>
           <UserHeader/>
           <div className="login-box">
-            <h2>Patient/Donor Logout</h2>
+            <h2>Ministry Logout</h2>
             <form>
             <center>
                     <a href="#" onClick={ handleRemoveCookie}>
@@ -40,4 +40,4 @@ function UserLogout() {
     );
   }
   
-  export default UserLogout;
+  export default SuperVisionAuthorityLogout;

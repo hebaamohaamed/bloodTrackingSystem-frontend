@@ -3,7 +3,7 @@ export const FilterCol = ({ column }) => {
      return(
          <span>
              {' '}
-             <input className="filter" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter Column" />
+             <input className="filter" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter" style={{width:"200px"}}/>
          </span>
      )
 }

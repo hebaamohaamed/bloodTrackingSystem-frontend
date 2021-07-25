@@ -28,7 +28,8 @@ import BloodBankBagHistory from './components/contents/bloodbank/Blood-Bank-BagH
 import BloodBankTrackBloodBagInfo from './components/contents/bloodbank/Blood-Bank-TrackingBloodInfo'
 
 //supervision
-import superVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
+import SuperVisionAuthorityLogin from './components/contents/supervision/SuperVisionAuthority-Login'
+import SuperVisionAuthorityLogout from './components/contents/supervision/Supervision-Logout'
 import SupervisionOptions from './components/contents/supervision/Supervision-options'
 import SupervisionRetrieveBloodBags from './components/contents/supervision/Supervision-RetrieveBloodBags'
 import SupervisionBagHistory from './components/contents/supervision/Supervision-BagHistory'
@@ -82,7 +83,8 @@ function App() {
         <Route exact path="/bloodBanktrackingbloodinfo" component={BloodBankTrackBloodBagInfo}></Route>
 
 
-        <Route exact path="/SupervisionLogin" component ={superVisionAuthorityLogin}></Route>
+        <Route exact path="/SupervisionLogin" component ={SuperVisionAuthorityLogin}></Route>
+        <Route exact path="/SupervisionLogout" component ={SuperVisionAuthorityLogout}></Route>
         <Route exact path="/superVisionOptions" component={SupervisionOptions}></Route>
         <Route exact path="/superVisionretrievebags" component={SupervisionRetrieveBloodBags}></Route>
         <Route exact path="/superVisionretrieveprocesses" component={SupervisionRetrieveProcesses}></Route>

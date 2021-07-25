@@ -132,7 +132,7 @@ class HomeContent extends Component {
           <Card className="col-md-3">
             <Card.Img variant="top" src={supervision} />
             <Card.Body>
-              <Card.Title>SUPERVISION</Card.Title>
+              <Card.Title>MINISTRY OF HEALTH</Card.Title>
               <Card.Text>
               login as Ministry organization to track blood hisotry with no ristrictions.
               </Card.Text>
@@ -186,23 +186,37 @@ class HomeContent extends Component {
 
             
             <div class="wrapper_tabcontent">
+            <div id="Tracking" class="tabcontent">
+                  <h3>Tracking</h3>
+                  <p>Blood Tracking system processes involving recording blood donors, blood bag collection, will be systematized and organized, hence, improving the healthcare management for blood banks.
+                    <br></br>
+                    -The ministry can supervise the whole data with no restrictions
+                    <br></br>
+                    -The blood banks can keep track of thier donated blood
+                    <br></br>
+                    -The hospitals can trace tha blood to the blood bank to make sure it's safe and not expired
+                    <br></br>
+                    -The donors can track thier blood to make sure it goes to the right places
+                    <br></br>
+                    -The patients can trace the bloos to make sure it's safe
+                     </p>
+              </div>
+
               <div id="Technology" class="tabcontent active">
                   <b>
                   <h3>Technology</h3>
-                  <p> </p>
+                  <p>We implemented a comprehensive prototype of the blockchain-based blood chain system using Private blockchain network
+    We use in blood donation (BTS) System Private Block chain because the system wants to restricted read permissions also provide a greater level of privacy to the users, a feature not available in Public Blockchains not allow users to have access to read the data
+    The organization in control has the power to change the rules of a Private Blockchain and may also decline transactions based on their established rules and regulations. </p>
                   </b>
               </div>
 
               <div id="Search" class="tabcontent">
                   <h3>Search</h3>
-                  <p>As a patient or a donor you can search for blood type in your city with blockchain technology </p>
+                  <p>As a patient or a donor you Users can search for the type of there available blood in hospitals and look for it in google maps </p>
               </div>
 
-              <div id="Tracking" class="tabcontent">
-                  <h3>Tracking</h3>
-                  <p>Barcelona has been an urban laboratory since the high Medieval Ages. A place of diversity, a backdrop for a multiplicity of social and cultural processes on multiple scales that reflect different ways of constructing the future, a city with a long experience of urban life and social innovations. </p>
-              </div>
-
+             
             </div>
         </div>
       </section>

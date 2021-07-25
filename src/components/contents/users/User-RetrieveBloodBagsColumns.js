@@ -3,7 +3,7 @@ import {FilterCol3} from '../filterBloodBags'
 import {Link} from 'react-router-dom'
 export const COLUMNS = [
     {
-        Header: 'Bag Number',
+        Header: 'Bag ID',
         accessor: 'DIN',
         Filter: FilterCol
     },
@@ -18,10 +18,26 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
+        Header: 'Mili',
+        accessor: 'mm',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Temprature',
+        accessor: 'temperature',
+        Filter: FilterCol
+    },
+    {
+        Header: 'Date',
+        accessor: 'date',
+        Filter: FilterCol
+    },
+    {
         Header: 'Expired',
         accessor: 'expired',
         Filter: FilterCol
-    },
+    }
+    ,
     {
         Header: '',
         accessor: 'key',
