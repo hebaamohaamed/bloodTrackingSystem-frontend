@@ -6,14 +6,38 @@ import usedImg from '../../../imgs/used.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Component } from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
+import ReactDOM from "react-dom"
+import $ from 'jquery'
+
+
 
 class userTrackingBlood extends Component{
     constructor(props){
         super(props)
         this.state={
           current: null,
+          cookie: null,
+          owner: null
         }
       }
+
+      JqueryBagNotExist(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Bag doesn't exist")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","220px")
+        } 
+    JqueryNotTheOwner(){
+        const button = ReactDOM.findDOMNode(this.refs.track)
+        $(button).css("transform","scale(1.2)")
+        $(button).html("Not your bag")
+        $(button).css("text-transform","uppercase")
+        $(button).css("border-radius","10px")
+        $(button).css("width","200px")
+    }
 
     TrigerAxios(event, data){
         event.preventDefault();
@@ -22,16 +46,35 @@ class userTrackingBlood extends Component{
           let output1 = Object.values(response.data)
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
+          this.setState({cookie: "D1002"})
           this.setState({current: output2[len-1].Value.currentState})
+
+          if(this.state.cookie.includes("D")){
+            this.setState({owner: output2[len-1].Value.donorID})
+          }
+          else{
+            this.setState({owner: output2[len-1].Value.patientID})
+          }
+          alert(this.state.owner)
+          if(this.state.owner !== this.state.cookie ){
+            this.JqueryNotTheOwner()
+           }else{
+            this.setState({out:JSON.stringify(output2)})
+           }
           console.log("Process Completed")
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
+          this.JqueryBagNotExist()
         })
       }
 
     render(){
-        const data =null;
+        const { data } = this.props.location
+        if(data == null){
+            return <Redirect to={"/UserRetrieveBloodBags"} />
+        }
+        
     return(
         <div>
             <UserHeader/>
@@ -44,10 +87,11 @@ class userTrackingBlood extends Component{
             </a>
           </div>
             <div className="container">
-                <h5>Bag ID: <span class="text-danger font-weight-bold">5168496</span></h5>
-                <button className="trackButtonInTrackingBlood" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
+                <h5>Bag ID: <span class="text-danger font-weight-bold">{data}</span></h5>
+                <button className="trackButtonInTrackingBlood" ref="track" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div>
+        { this.state.owner === this.state.cookie && 
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&
@@ -84,6 +128,7 @@ class userTrackingBlood extends Component{
             }
             </div>
         </div>
+        }
         <div className="row justify-content-between top">
             <div className="row d-flex icon-content"> <img class="icon" src={readyImg}/>
                 <div className="d-flex flex-column">
