@@ -553,7 +553,7 @@
 	 transition: all 1s ease;
 	 animation: fadeEffect 0.6s ease;
 	 width: 100%;
-	 font-size: 16px;
+	 font-size: 20px;
 	 font-family: "IBM Plex Sans", sans-serif;
 }
  @media screen and (max-width: 512px) {

@@ -12,7 +12,6 @@ function UserHeader() {
   if(cookies.name == null){
     history.push('/home')
   }
-  const name = cookies.name;
   const id = cookies.id;
   function getHospitals(event){
     event.preventDefault();
@@ -88,7 +87,7 @@ function UserHeader() {
               <li><i className="icon fa-2x"><FontAwesomeIcon icon="user"/></i></li>
               <NavDropdown
                   id ="userName"
-                  title={name}
+                  title={id}
                 >
                   <NavDropdown.Item><Link to='/UserLogout' >Logout </Link> </NavDropdown.Item>
                 </NavDropdown> 

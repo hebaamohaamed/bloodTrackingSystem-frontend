@@ -80,7 +80,6 @@ class BloodBankDonation extends Component {
     $(message).css("background-color","white")
     $(message).css("font-size","large")
     $(message).css("text-align","center")
-    $(message).css("border-radius","10px")
     $(message).css("font-weight","bold")
   }
   JqueryBlood(){
@@ -90,7 +89,6 @@ class BloodBankDonation extends Component {
     $(message).css("background-color","white")
     $(message).css("font-size","large")
     $(message).css("text-align","center")
-    $(message).css("border-radius","10px")
     $(message).css("font-weight","bold")
     //yellow
   }
@@ -101,7 +99,6 @@ class BloodBankDonation extends Component {
     $(message).css("background-color","white")
     $(message).css("font-size","large")
     $(message).css("text-align","center")
-    $(message).css("border-radius","10px")
     $(message).css("font-weight","bold")
     //yellow
   }
@@ -119,7 +116,6 @@ class BloodBankDonation extends Component {
     $(message).css("background-color","white")
     $(message).css("font-size","medium")
     $(message).css("text-align","center")
-    $(message).css("border-radius","10px")
     $(message).css("font-weight","bold")
     //green
   }
@@ -143,7 +139,12 @@ class BloodBankDonation extends Component {
       this.JqueryDate()
       
     }else if(this.state.Expired < this.state.Date ){
+      alert(this.state.Expired - this.state.Date)
       alert("Expire Date can't be before Donation Date")
+      valid = false
+      this.JqueryDate()
+    }else if(this.state.Expired - this.state.Date > 42){
+      alert("Expire Date can't be after 42 days")
       valid = false
       this.JqueryDate()
     }
@@ -163,6 +164,7 @@ class BloodBankDonation extends Component {
     }
   }
   ValidateNew(event){
+    alert("1")
     event.preventDefault();  
     let valid = true;
     const RegExp = /^[\w-\.]+@(gmail.com)$/g
@@ -214,6 +216,7 @@ class BloodBankDonation extends Component {
     })
   }
   TrigerdbCheck2(event){
+    alert("2")
     event.preventDefault();
     axios.get("http://localhost:5004/check/donor?email="+this.state.donorEmail)
     .then(response =>{
@@ -229,6 +232,7 @@ class BloodBankDonation extends Component {
     this.checkGo(event)
   }
   checkGo(event){
+    alert("3")
     event.preventDefault();
     if(this.state.go){
       this.TrigerAxiosLastUser(event)
@@ -236,9 +240,11 @@ class BloodBankDonation extends Component {
   }
 
   TrigerAxiosLastUser(event){
+    alert("4")
     event.preventDefault();
-    axios.get("http://localhost:5003/get/last")
+    axios.get("http://localhost:5000/get/last")
     .then(response =>{
+      alert("insert")
       let lastNumber = Object.values(response.data);
       this.TrigerdbInsert(event,lastNumber);
       lastNumber = lastNumber +1
@@ -249,6 +255,7 @@ class BloodBankDonation extends Component {
   }
 
   TrigerdbInsert(event, lastNumber){
+    alert("5")
     event.preventDefault();
     const finalNumber = Number(lastNumber) +1
     const dID = "D" + finalNumber
@@ -370,41 +377,45 @@ class BloodBankDonation extends Component {
     <div id="BBDonationCard" className='signup-container'>
       <div className='right-container'>
         <header>
-        <div style={{marginBottom:"10px"}} ref="msg"></div>
-          <h1>Blood Info, Be careful!</h1>
+         <div  ref="msg" ></div>
+          <h1>Blood Info</h1>
+          <hr style={{border:"1px solid white"}} />
+     
           <div className='set'>
             <div className='Date'>
-              <label for='Date'>Date</label>
+              <label for='Date'  style={{color:"white"}}><b>Date</b></label>
               <input id='Date' required placeholder="MM/DD/YYYY" ref="date" type='date' value={this.state.Date} onChange={(e) =>{this.handleInputChange(e.target.value)}}/>
             </div>
             <div className='Expire'>
-              <label for='Expire'>Expire</label>
+              <label for='Expire'  style={{color:"white"}}><b>Expire</b></label>
               <input id='Expire' required placeholder='MM/DD/YYYY' ref="date" type='date' value={this.state.Expired} onChange={(e) =>{this.handleInputChange2(e.target.value)}} />
             </div>
           </div>
+          <br></br>
           <div className='set'>
               <div className='Test' >
-                <label for='Test'>Test</label>
+                <label for='Test' style={{color:"white"}}><b>Test</b></label>
                 <input list="safety" required id='Test' ref='test' placeholder="Double Click To Dropdown" type='text' value={this.state.Test} onChange={(e) =>{this.handleInputChange3(e.target.value)}}/>
                 <datalist id="safety" >
                   <option value="SAFE"/>
                   <option value="NOT_SAFE" />
                 </datalist>
-              
               </div>
               <div className='Temperature'>
-                <label for='Temperature'>Temperature</label>
+                <label for='Temperature'  style={{color:"white"}}><b>Temperature</b></label>
                 <input id='Temperature' required placeholder='max 5c' ref="temp" type='text' value={this.state.Temperature} onChange={(e) =>{this.handleInputChange4(e.target.value)}} />
               </div>
             </div>
+            <br></br>
           <div className='longInput'>
-              <label for='Millimeters'>MilliLiter</label>
+              <label for='Millimeters'  style={{color:"white"}}><b>MilliLiter</b></label>
               <div className='radio-container'>
                   <input id='Millimeters' required placeholder='max 500ml' ref="ML" type='text' value={this.state.milliMeters} onChange={(e) =>{this.handleInputChange5(e.target.value)}} />
               </div>   
           </div>
+          <br></br>
           <div className='longInput'>
-              <label for='A+'>Blood Type</label>
+              <label for='A+'  style={{color:"white"}}><b>Blood Type</b></label>
               <div className='radio-container' >
                 <input id='A+' name='pet-weight' type='radio' value='A%2B' ref='type' onChange={(e) =>{this.handleInputChange6(e.target.value)}}/>
                 <label for='A+'>A+</label>
@@ -431,8 +442,9 @@ class BloodBankDonation extends Component {
                 <label for='AB-'>AB-</label>
               </div>
             </div>
+            <br></br>
           <div className='longInput'>
-              <label for='Email'>Email</label>
+              <label for='Email'  style={{color:"white"}}><b>Email</b></label>
               <div className='radio-container'>
                   <input id='Email' ref="email" required placeholder="Write Donor's Email" type='text' value={this.state.donorEmail} onChange={(e) =>{this.handleInputChange7(e.target.value)}} />
               </div>   

@@ -3,6 +3,8 @@ import Data from './Hospital-RetrieveProcessesData.json'
 import {COLUMNS} from './Hospital-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 import HospitalHeader from '../../headers/hospital'
+import BTable from 'react-bootstrap/Table';
+
 
 export const HospitalRetrieveProcesses = () =>{
 	
@@ -25,17 +27,18 @@ export const HospitalRetrieveProcesses = () =>{
 	return(
 		<div>
 			<HospitalHeader/>
-	<main class="py-4">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
+			
+			<main className="py-4 RetrieveAllBloodBags">
+    <div className="container">
+        <div className="row justify-content-center">
+            <div className="col-md-12">
+            <div className="card">
+                <div className="card-header">
                     All Processes
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                        
-		<table {...getTableProps()} >
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -71,7 +74,7 @@ export const HospitalRetrieveProcesses = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

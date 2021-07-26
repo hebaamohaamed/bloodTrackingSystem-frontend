@@ -14,11 +14,18 @@ class hospitalBagHistory extends Component{
         //console.log(JSON.parse(data)[len-1].Value.currentOwner)
         let menuItems = [];
          for (var i = 0; i < len; i++) {
+             let location =""
+             if(JSON.parse(data)[i].Value.location == "PATIENT")
+             {
+                location ="USED"
+             }else{
+                 location = JSON.parse(data)[i].Value.location
+             }
             if(JSON.parse(data)[i].Value.currentOwner != null){
                 menuItems.push(<tr>
                     <td>{JSON.parse(data)[i].Value.currentOwner}</td>
                     <td>{JSON.parse(data)[i].Value.currentState}</td>
-                    <td>{JSON.parse(data)[i].Value.location}</td>
+                    <td>{location}</td>
                     <td>{JSON.parse(data)[i].Value.patientID}</td>
                     <td>{JSON.parse(data)[i].Value.timeStamp}</td>
                     </tr>)
@@ -26,7 +33,7 @@ class hospitalBagHistory extends Component{
             menuItems.push(<tr>
                 <td>{JSON.parse(data)[i].Value.ownerID}</td>
                 <td>{JSON.parse(data)[i].Value.currentState}</td>
-                <td>{JSON.parse(data)[i].Value.location}</td>
+                <td>{location}</td>
                 <td>{JSON.parse(data)[i].Value.patientID}</td>
                 <td>{JSON.parse(data)[i].Value.timeStamp}</td>
                 </tr>)

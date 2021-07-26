@@ -4,6 +4,8 @@ import {COLUMNS} from './Supervision-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import SuperHeader  from '../../headers/supervision'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import BTable from 'react-bootstrap/Table';
+
 
 export const SupervisionRetrieveBloodBags = () =>{
 	
@@ -38,7 +40,7 @@ export const SupervisionRetrieveBloodBags = () =>{
 				</div>
                 <div class="card-body">
                        
-		<table {...getTableProps()} >
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -75,7 +77,7 @@ export const SupervisionRetrieveBloodBags = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

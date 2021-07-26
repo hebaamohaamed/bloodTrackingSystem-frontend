@@ -31,11 +31,6 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
-        Header: 'Patient',
-        accessor: 'patientID',
-        Filter: FilterCol
-    },
-    {
         Header: 'Date',
         accessor: 'date',
         Filter: FilterCol

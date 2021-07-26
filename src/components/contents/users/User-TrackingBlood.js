@@ -10,7 +10,7 @@ import {Redirect} from 'react-router-dom'
 import ReactDOM from "react-dom"
 import $ from 'jquery'
 import Cookies from 'js-cookie';
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -20,7 +20,8 @@ class userTrackingBlood extends Component{
         this.state={
           current: null,
           cookie: Cookies.get('id'),
-          owner: null
+          owner: null,
+          out: null
         }
       }
 
@@ -38,6 +39,7 @@ class userTrackingBlood extends Component{
           else{
             this.setState({owner: output2[len-1].Value.patientID})
           }
+          this.setState({out:output2})
           console.log("Process Completed")
         })
         .catch(error=>{
@@ -59,7 +61,9 @@ class userTrackingBlood extends Component{
         <div className="row d-flex justify-content-between px-3 top">
         <div className="info">
             <a href="/">
-              <i className="info fa-2x" data-toggle="tooltip" title="Press to view Bag history"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
+            <Link to={{pathname: "/UserBagHistory", data: this.state.out}}>
+            <i className="info fa-2x" title="Press here to view bag history"><FontAwesomeIcon icon = {['fa' ,'info-circle']}/></i>
+            </Link>
             </a>
           </div>
             <div className="container">
@@ -67,7 +71,6 @@ class userTrackingBlood extends Component{
                 <button className="trackButtonInTrackingBlood" ref="track" onClick={(event)=>this.TrigerAxios(event,data)}>Track</button>
             </div>
         </div>
-        { this.state.owner === this.state.cookie && 
         <div className="row d-flex justify-content-center">
             <div className="col-12">
             {this.state.current == "READY" &&
@@ -104,7 +107,6 @@ class userTrackingBlood extends Component{
             }
             </div>
         </div>
-        }
         <div className="row justify-content-between top">
             <div className="row d-flex icon-content"> <img class="icon" src={readyImg}/>
                 <div className="d-flex flex-column">

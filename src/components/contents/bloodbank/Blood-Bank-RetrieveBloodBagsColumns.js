@@ -12,12 +12,12 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
-        Header: 'Safe',
+        Header: 'Test Results',
         accessor: 'test',
         Filter: FilterCol
     },
     {
-        Header: 'Mili',
+        Header: 'Capacity ',
         accessor: 'mm',
         Filter: FilterCol
     },
@@ -32,17 +32,12 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
-        Header: 'Patient',
-        accessor: 'patientID',
-        Filter: FilterCol
-    },
-    {
         Header: 'Date',
         accessor: 'date',
         Filter: FilterCol
     },
     {
-        Header: 'Expired',
+        Header: 'Expiry Date',
         accessor: 'expired',
         Filter: FilterCol
     }

@@ -3,6 +3,8 @@ import Data from './Hospital-RetrieveBloodBagsData.json'
 import {COLUMNS} from './Hospital-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import HospitalHeader from '../../headers/hospital'
+import BTable from 'react-bootstrap/Table';
+
 
 export const HospitalRetrieveBloodBags = () =>{
 	
@@ -36,7 +38,7 @@ export const HospitalRetrieveBloodBags = () =>{
                 </div>
                 <div className="card-body">
                        
-		<table {...getTableProps()} >
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -73,7 +75,7 @@ export const HospitalRetrieveBloodBags = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

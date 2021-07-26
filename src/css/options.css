@@ -24,11 +24,12 @@
 /*---------------------Supervision options-------------------------*/
 #carouselMultiItemExample3 .carousel-inner{
     position: relative;
-    top: 80px;
+    margin-bottom: 30px
+    
 }
 #carouselMultiItemExample3 #sRow1{
-    position: relative; height: 300px; left: 150px;
+    position: relative; height: 650px; 
 }
 #carouselMultiItemExample3 #sRow2{
-    position: relative; height: 600px; left: 250px;
+    position: relative; height: 650px; 
 }

@@ -3,6 +3,8 @@ import Data from './Blood-Bank-RetrieveProcessesData.json'
 import {COLUMNS2} from './Blood-Bank-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 import BloodBankHeader from '../../headers/bloodbank'
+import BTable from 'react-bootstrap/Table';
+
 
 
 export const BloodBankRetrieveProcesses = () =>{
@@ -37,7 +39,7 @@ export const BloodBankRetrieveProcesses = () =>{
                 </div>
                 <div className="card-body">
                        
-		<table {...getTableProps()} >
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -80,7 +82,7 @@ export const BloodBankRetrieveProcesses = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

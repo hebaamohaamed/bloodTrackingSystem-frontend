@@ -1,21 +1,20 @@
 [
 	{
 		"class": "org.blood",
-		"key": "BD1002:A-",
-		"DIN": "BD1002",
-		"currentOwner": "BB100",
-		"currentState": "UNDER_TRANSPORTATION",
-		"date": "2021-07-15",
-		"donorID": "D1002",
+		"key": "BD1004:AB+",
+		"DIN": "BD1004",
+		"currentState": "READY",
+		"date": "2021-06-29",
+		"donorID": "D1003",
 		"expired": "2021-07-31",
-		"location": "TRANSPORTATION_CAR",
+		"location": "BLOOD_BANK",
 		"mm": "250",
 		"ownerID": "BB100",
 		"patientID": "NONE",
-		"temperature": "3",
-		"test": "SAFE",
-		"timeStamp": "24/7/2021 20:10:0",
-		"type": "A-"
+		"temperature": "4",
+		"test": "safe",
+		"timeStamp": "26/7/2021 14:33:2",
+		"type": "AB+"
 	},
 	{
 		"class": "org.blood",
@@ -30,7 +29,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "3",
-		"test": "NOT_SAFE",
+		"test": "not safe",
 		"timeStamp": "31-Oct-2020 1:00:00",
 		"type": "AB-"
 	},
@@ -47,7 +46,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "3",
-		"test": "NOT_SAFE",
+		"test": "not safe",
 		"timeStamp": "31-Oct-2020 1:00:00",
 		"type": "AB-"
 	},
@@ -64,7 +63,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "3",
-		"test": "NOT_SAFE",
+		"test": "not safe",
 		"timeStamp": "17-Nov-2020 14:00:00",
 		"type": "O-"
 	},
@@ -81,7 +80,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "NOT_SAFE",
+		"test": "not safe",
 		"timeStamp": "21-Nov-2020 17:00:00",
 		"type": "A-"
 	},
@@ -98,7 +97,7 @@
 		"ownerID": "H107",
 		"patientID": "R102",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "29-Nov-2020 15:00:00",
 		"type": "AB-"
 	},
@@ -115,7 +114,7 @@
 		"ownerID": "H107",
 		"patientID": "R102",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "29-Nov-2020 15:00:00",
 		"type": "AB-"
 	},
@@ -132,7 +131,7 @@
 		"ownerID": "H105",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "4-Dec-2020 5:00:00",
 		"type": "A-"
 	},
@@ -149,7 +148,7 @@
 		"ownerID": "H105",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "4-Dec-2020 5:00:00",
 		"type": "A-"
 	},
@@ -166,7 +165,7 @@
 		"ownerID": "H103",
 		"patientID": "R103",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-Dec-2020 7:00:00",
 		"type": "O+"
 	},
@@ -183,7 +182,7 @@
 		"ownerID": "H103",
 		"patientID": "R103",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-Dec-2020 7:00:00",
 		"type": "O+"
 	},
@@ -200,7 +199,7 @@
 		"ownerID": "H103",
 		"patientID": "R103",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-Dec-2020 7:00:00",
 		"type": "O+"
 	},
@@ -217,7 +216,7 @@
 		"ownerID": "H103",
 		"patientID": "R100",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "7-Dec-2020 1:00:00",
 		"type": "B-"
 	},
@@ -234,7 +233,7 @@
 		"ownerID": "H103",
 		"patientID": "R100",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "7-Dec-2020 1:00:00",
 		"type": "B-"
 	},
@@ -251,7 +250,7 @@
 		"ownerID": "H103",
 		"patientID": "R100",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "7-Dec-2020 1:00:00",
 		"type": "B-"
 	},
@@ -268,7 +267,7 @@
 		"ownerID": "H104",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "9-Dec-2020 17:00:00",
 		"type": "A-"
 	},
@@ -285,7 +284,7 @@
 		"ownerID": "H104",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "9-Dec-2020 17:00:00",
 		"type": "A-"
 	},
@@ -302,7 +301,7 @@
 		"ownerID": "H100",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "15-Dec-2020 6:00:00",
 		"type": "A-"
 	},
@@ -319,7 +318,7 @@
 		"ownerID": "H100",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "15-Dec-2020 6:00:00",
 		"type": "A-"
 	},
@@ -336,7 +335,7 @@
 		"ownerID": "H107",
 		"patientID": "R101",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-Dec-2020 2:00:00",
 		"type": "A-"
 	},
@@ -353,7 +352,7 @@
 		"ownerID": "H106",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "24-Dec-2020 16:00:00",
 		"type": "AB-"
 	},
@@ -370,7 +369,7 @@
 		"ownerID": "H106",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "24-Dec-2020 16:00:00",
 		"type": "AB-"
 	},
@@ -387,7 +386,7 @@
 		"ownerID": "H106",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "24-Dec-2020 16:00:00",
 		"type": "AB-"
 	},
@@ -404,7 +403,7 @@
 		"ownerID": "H109",
 		"patientID": "R111",
 		"temperature": "2",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "30-Dec-2020 3:00:00",
 		"type": "A+"
 	},
@@ -421,7 +420,7 @@
 		"ownerID": "H105",
 		"patientID": "R103",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-Jan-2021 7:00:00",
 		"type": "O+"
 	},
@@ -438,7 +437,7 @@
 		"ownerID": "H105",
 		"patientID": "R103",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-Jan-2021 7:00:00",
 		"type": "O+"
 	},
@@ -455,7 +454,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "8-Jan-2021 17:00:00",
 		"type": "O-"
 	},
@@ -472,7 +471,7 @@
 		"ownerID": "H106",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Jan-2021 23:00:00",
 		"type": "A+"
 	},
@@ -489,7 +488,7 @@
 		"ownerID": "H101",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "18-Jan-2021 9:00:00",
 		"type": "AB-"
 	},
@@ -506,7 +505,7 @@
 		"ownerID": "H101",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "18-Jan-2021 9:00:00",
 		"type": "AB-"
 	},
@@ -523,7 +522,7 @@
 		"ownerID": "H106",
 		"patientID": "R123",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "31-Jan-2021 0:00:00",
 		"type": "B+"
 	},
@@ -540,7 +539,7 @@
 		"ownerID": "H105",
 		"patientID": "R101",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-Feb-2021 5:00:00",
 		"type": "A-"
 	},
@@ -557,7 +556,7 @@
 		"ownerID": "H101",
 		"patientID": "R111",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "14-Feb-2021 10:00:00",
 		"type": "A+"
 	},
@@ -574,7 +573,7 @@
 		"ownerID": "H108",
 		"patientID": "R101",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Feb-2021 16:00:00",
 		"type": "A-"
 	},
@@ -591,7 +590,7 @@
 		"ownerID": "H104",
 		"patientID": "R123",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "21-Feb-2021 12:00:00",
 		"type": "B+"
 	},
@@ -608,7 +607,7 @@
 		"ownerID": "H104",
 		"patientID": "R123",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "21-Feb-2021 12:00:00",
 		"type": "B+"
 	},
@@ -625,7 +624,7 @@
 		"ownerID": "H107",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-Feb-2021 18:00:00",
 		"type": "A+"
 	},
@@ -642,7 +641,7 @@
 		"ownerID": "H107",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-Feb-2021 18:00:00",
 		"type": "A+"
 	},
@@ -659,7 +658,7 @@
 		"ownerID": "H105",
 		"patientID": "R103",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "26-Feb-2021 18:00:00",
 		"type": "O+"
 	},
@@ -676,7 +675,7 @@
 		"ownerID": "H105",
 		"patientID": "R103",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "26-Feb-2021 18:00:00",
 		"type": "O+"
 	},
@@ -693,7 +692,7 @@
 		"ownerID": "H107",
 		"patientID": "R123",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "4-Mar-2021 3:00:00",
 		"type": "B+"
 	},
@@ -710,7 +709,7 @@
 		"ownerID": "H107",
 		"patientID": "R123",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "4-Mar-2021 3:00:00",
 		"type": "B+"
 	},
@@ -727,7 +726,7 @@
 		"ownerID": "H100",
 		"patientID": "R101",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "10-Mar-2021 18:00:00",
 		"type": "A-"
 	},
@@ -744,7 +743,7 @@
 		"ownerID": "H103",
 		"patientID": "R102",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "13-Mar-2021 1:00:00",
 		"type": "AB-"
 	},
@@ -761,7 +760,7 @@
 		"ownerID": "H107",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Mar-2021 0:00:00",
 		"type": "AB+"
 	},
@@ -778,7 +777,7 @@
 		"ownerID": "H107",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Mar-2021 0:00:00",
 		"type": "AB+"
 	},
@@ -795,7 +794,7 @@
 		"ownerID": "H107",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Mar-2021 0:00:00",
 		"type": "AB+"
 	},
@@ -812,7 +811,7 @@
 		"ownerID": "H107",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "16-Mar-2021 0:00:00",
 		"type": "AB+"
 	},
@@ -829,7 +828,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "17-Mar-2021 16:00:00",
 		"type": "O-"
 	},
@@ -846,7 +845,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "17-Mar-2021 16:00:00",
 		"type": "O-"
 	},
@@ -863,7 +862,7 @@
 		"ownerID": "H107",
 		"patientID": "R102",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-Mar-2021 6:00:00",
 		"type": "AB-"
 	},
@@ -880,7 +879,7 @@
 		"ownerID": "H107",
 		"patientID": "R102",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-Mar-2021 6:00:00",
 		"type": "AB-"
 	},
@@ -897,7 +896,7 @@
 		"ownerID": "H104",
 		"patientID": "R123",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "20-Mar-2021 17:00:00",
 		"type": "B+"
 	},
@@ -914,7 +913,7 @@
 		"ownerID": "H104",
 		"patientID": "R123",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "20-Mar-2021 17:00:00",
 		"type": "B+"
 	},
@@ -931,7 +930,7 @@
 		"ownerID": "H103",
 		"patientID": "R123",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-Mar-2021 10:00:00",
 		"type": "B+"
 	},
@@ -948,7 +947,7 @@
 		"ownerID": "H103",
 		"patientID": "R123",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-Mar-2021 10:00:00",
 		"type": "B+"
 	},
@@ -965,7 +964,7 @@
 		"ownerID": "H105",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-Mar-2021 20:00:00",
 		"type": "A+"
 	},
@@ -982,7 +981,7 @@
 		"ownerID": "H109",
 		"patientID": "R100",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-Apr-2021 23:00:00",
 		"type": "B-"
 	},
@@ -999,7 +998,7 @@
 		"ownerID": "H100",
 		"patientID": "R102",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-Apr-2021 15:00:00",
 		"type": "AB-"
 	},
@@ -1016,7 +1015,7 @@
 		"ownerID": "H101",
 		"patientID": "R111",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "15-Apr-2021 0:00:00",
 		"type": "A+"
 	},
@@ -1033,7 +1032,7 @@
 		"ownerID": "H101",
 		"patientID": "R111",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "15-Apr-2021 0:00:00",
 		"type": "A+"
 	},
@@ -1050,7 +1049,7 @@
 		"ownerID": "H101",
 		"patientID": "R111",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "15-Apr-2021 0:00:00",
 		"type": "A+"
 	},
@@ -1067,7 +1066,7 @@
 		"ownerID": "H109",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-May-2021 9:00:00",
 		"type": "A+"
 	},
@@ -1084,7 +1083,7 @@
 		"ownerID": "H109",
 		"patientID": "R111",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-May-2021 9:00:00",
 		"type": "A+"
 	},
@@ -1101,7 +1100,7 @@
 		"ownerID": "H103",
 		"patientID": "R103",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "6-May-2021 7:00:00",
 		"type": "O+"
 	},
@@ -1118,7 +1117,7 @@
 		"ownerID": "H103",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-May-2021 5:00:00",
 		"type": "AB+"
 	},
@@ -1135,7 +1134,7 @@
 		"ownerID": "H103",
 		"patientID": "R107",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-May-2021 5:00:00",
 		"type": "AB+"
 	},
@@ -1152,7 +1151,7 @@
 		"ownerID": "H103",
 		"patientID": "R123",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "12-May-2021 11:00:00",
 		"type": "B+"
 	},
@@ -1169,7 +1168,7 @@
 		"ownerID": "H103",
 		"patientID": "R123",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "12-May-2021 11:00:00",
 		"type": "B+"
 	},
@@ -1186,7 +1185,7 @@
 		"ownerID": "H103",
 		"patientID": "R123",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "12-May-2021 11:00:00",
 		"type": "B+"
 	},
@@ -1203,7 +1202,7 @@
 		"ownerID": "H107",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "14-May-2021 6:00:00",
 		"type": "A-"
 	},
@@ -1220,7 +1219,7 @@
 		"ownerID": "H107",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "14-May-2021 6:00:00",
 		"type": "A-"
 	},
@@ -1237,7 +1236,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-May-2021 4:00:00",
 		"type": "O-"
 	},
@@ -1254,7 +1253,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-May-2021 4:00:00",
 		"type": "O-"
 	},
@@ -1271,7 +1270,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-May-2021 4:00:00",
 		"type": "O-"
 	},
@@ -1288,7 +1287,7 @@
 		"ownerID": "H101",
 		"patientID": "R106",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-May-2021 4:00:00",
 		"type": "O-"
 	},
@@ -1305,7 +1304,7 @@
 		"ownerID": "H103",
 		"patientID": "R106",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "22-May-2021 23:00:00",
 		"type": "O-"
 	},
@@ -1322,7 +1321,7 @@
 		"ownerID": "H101",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-May-2021 10:00:00",
 		"type": "A-"
 	},
@@ -1339,7 +1338,7 @@
 		"ownerID": "H101",
 		"patientID": "R101",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-May-2021 10:00:00",
 		"type": "A-"
 	},
@@ -1356,7 +1355,7 @@
 		"ownerID": "H100",
 		"patientID": "R123",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "29-May-2021 4:00:00",
 		"type": "B+"
 	},
@@ -1373,7 +1372,7 @@
 		"ownerID": "H109",
 		"patientID": "R102",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-Jun-2021 8:00:00",
 		"type": "AB-"
 	},
@@ -1390,7 +1389,7 @@
 		"ownerID": "H109",
 		"patientID": "R102",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "5-Jun-2021 8:00:00",
 		"type": "AB-"
 	},
@@ -1407,7 +1406,7 @@
 		"ownerID": "H103",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "9-Jun-2021 11:00:00",
 		"type": "A-"
 	},
@@ -1424,7 +1423,7 @@
 		"ownerID": "H103",
 		"patientID": "R101",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "9-Jun-2021 11:00:00",
 		"type": "A-"
 	},
@@ -1441,7 +1440,7 @@
 		"ownerID": "H109",
 		"patientID": "NONE",
 		"temperature": "2",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "19-Jun-2021 4:00:00",
 		"type": "O-"
 	},
@@ -1458,7 +1457,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "23-Jun-2021 22:00:00",
 		"type": "AB+"
 	},
@@ -1475,7 +1474,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "23-Jun-2021 22:00:00",
 		"type": "AB+"
 	},
@@ -1492,7 +1491,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "23-Jun-2021 22:00:00",
 		"type": "AB+"
 	},
@@ -1509,7 +1508,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "23-Jun-2021 22:00:00",
 		"type": "AB+"
 	},
@@ -1526,7 +1525,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "6",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "23-Jun-2021 22:00:00",
 		"type": "AB+"
 	},
@@ -1543,7 +1542,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-Jun-2021 18:00:00",
 		"type": "B-"
 	},
@@ -1560,7 +1559,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-Jun-2021 18:00:00",
 		"type": "B-"
 	},
@@ -1577,7 +1576,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-Jun-2021 18:00:00",
 		"type": "B-"
 	},
@@ -1594,7 +1593,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "25-Jun-2021 18:00:00",
 		"type": "B-"
 	},
@@ -1611,7 +1610,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "27-Jun-2021 1:00:00",
 		"type": "A-"
 	},
@@ -1628,7 +1627,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "3",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "27-Jun-2021 1:00:00",
 		"type": "A-"
 	},
@@ -1645,7 +1644,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "3-Jul-2021 9:00:00",
 		"type": "AB+"
 	},
@@ -1662,7 +1661,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "3-Jul-2021 9:00:00",
 		"type": "AB+"
 	},
@@ -1679,7 +1678,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "3-Jul-2021 9:00:00",
 		"type": "AB+"
 	},
@@ -1696,7 +1695,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "5",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "3-Jul-2021 9:00:00",
 		"type": "AB+"
 	},
@@ -1713,7 +1712,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-Jul-2021 6:00:00",
 		"type": "O-"
 	},
@@ -1730,7 +1729,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-Jul-2021 6:00:00",
 		"type": "O-"
 	},
@@ -1747,7 +1746,7 @@
 		"ownerID": "BB100",
 		"patientID": "NONE",
 		"temperature": "4",
-		"test": "SAFE",
+		"test": "safe",
 		"timeStamp": "11-Jul-2021 6:00:00",
 		"type": "O-"
 	}

@@ -118,7 +118,6 @@ class hospitalBagUsed extends Component{
     //yellow
   }
   JqueryPass(){
-    alert("jquery")
     let blood = null
     if(this.state.bNumber.includes("%")){
       blood = this.state.bNumber.replace("%2B","+")

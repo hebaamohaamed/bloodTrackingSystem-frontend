@@ -95,11 +95,15 @@ body {
   background: #807182;
 }
 
+
 #BBDonationCard .Date label, .Expire label, .Test label, .Temperature label, .longInput label {
   display: block;
   margin-bottom: 5px;
-}
 
+}
+#Date, #Expire, #Test, #Temperature{
+  width: 200px
+}
 #BBDonationCard .radio-container {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -129,6 +133,7 @@ body {
 #BBDonationCard .radio-container input[type=radio]:checked + label {
   background: #C31313;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  color: white
 }
 
 #BBDonationCard .radio-container #Millimeters{
@@ -136,4 +141,41 @@ body {
 }
 #BBDonationCard .radio-container #Email{
     border: black;
+}
+
+.loader {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid darkorange;
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin-left:50px;
+  float: left;
+}
+
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+:root {
+  --borderWidth: 3px;
+  --height: 25px;
+  --width: 10px;
+  --borderColor: darkgreen ;
+}
+.check {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: var(--height);
+  width: var(--width);
+  border-bottom: var(--borderWidth) solid var(--borderColor);
+  border-right: var(--borderWidth) solid var(--borderColor);
+  margin-left: 50px
 }

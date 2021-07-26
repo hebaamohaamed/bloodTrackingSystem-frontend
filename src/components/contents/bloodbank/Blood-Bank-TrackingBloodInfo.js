@@ -32,10 +32,8 @@ class BloodBankTrackBloodBagInfo extends Component{
     const RegExp = /^BD\d{3,4}:(AB|A|O|B)[+-]$/g;
     const valid = RegExp.test(upper)
     if(valid == true){
-      alert("la2")
       this.setState({ redirect: "/bloodBankbloodTracking" });
     }else{
-      alert("ah")
       this.ErrorJquery()
     }
   }

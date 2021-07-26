@@ -26,6 +26,7 @@
 .RetrieveAllBloodBags .filter{
   padding-right: 40px;
   padding-left: 40px;
+  width: 160px;
 }
 
 .RetrieveAllBloodBags .userTrackIcon{

@@ -1,5 +1,5 @@
 
-.BTSfooter .site-footer
+.site-footer
 {
   position: fixed;
   bottom: 0;
@@ -9,17 +9,18 @@
   font-size:15px;
   line-height:10px;
   color:#737373;
+  left: 0px;
 }
-.BTSfooter .site-footer hr
+.site-footer hr
 {
   border-top-color:#bbb;
   opacity:0.5
 }
-.BTSfooter .site-footer hr.small
+.site-footer hr.small
 {
   margin:20px 0
 }
-.BTSfooter .site-footer h6
+.site-footer h6
 {
   color:#fff;
   font-size:16px;
@@ -27,21 +28,21 @@
   margin-top:5px;
   letter-spacing:2px
 }
-.BTSfooter .site-footer a
+.site-footer a
 {
   color:#737373;
 }
-.BTSfooter .site-footer a:hover
+.site-footer a:hover
 {
   color:#3366cc;
   text-decoration:none;
 }
 
-.BTSfooter .site-footer .social-icons
+.site-footer .social-icons
 {
   text-align:right
 }
-.BTSfooter .site-footer .social-icons a
+.site-footer .social-icons a
 {
   width:40px;
   height:40px;
@@ -51,7 +52,7 @@
   border-radius:100%;
   background-color:#33353d
 }
-.BTSfooter .copyright-text
+.copyright-text
 {
   position: relative;
   bottom: 20px;
@@ -59,24 +60,24 @@
 }
 @media (max-width:991px)
 {
-  .BTSfooter .site-footer [class^=col-]
+  .site-footer [class^=col-]
   {
     margin-bottom:30px
   }
 }
 @media (max-width:767px)
 {
-  .BTSfooter .site-footer
+  .site-footer
   {
     padding-bottom:0
   }
-  .BTSfooter .site-footer .copyright-text,.site-footer .social-icons
+  .site-footer .copyright-text,.site-footer .social-icons
   {
     text-align:center
   }
 }
 
-.BTSfooter .social-icons
+.social-icons
 {
   position: absolute;
   padding-left:0;
@@ -85,12 +86,12 @@
   margin-left: 160px;
   list-style:none
 }
-.BTSfooter .social-icons li
+.social-icons li
 {
   display:inline-block;
   margin-bottom:4px
 }
-.BTSfooter .social-icons li.title
+.social-icons li.title
 {
   margin-right:15px;
   text-transform:uppercase;
@@ -98,7 +99,7 @@
   font-weight:700;
   font-size:13px
 }
-.BTSfooter .social-icons a{
+.social-icons a{
   background-color:#eceeef;
   color:white;
   font-size:16px;
@@ -113,12 +114,12 @@
   -o-transition:all .2s linear;
   transition:all .2s linear
 }
-.BTSfooter .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:black;
   background-color:#FFFAF0
 }
-.BTSfooter .social-icons.size-sm a
+.social-icons.size-sm a
 {
   line-height:34px;
   height:34px;
@@ -128,14 +129,14 @@
 
 @media (max-width:767px)
 {
-  .BTSfooter .social-icons li.title
+  .social-icons li.title
   {
     display:block;
     margin-right:0;
     font-weight:600
   }
 }
-.BTSfooter #f , .BTSfooter #t , .BTSfooter #i , .BTSfooter #l{
+#f , #t ,  #i , #l{
 
     background-color:#C31313;
 }

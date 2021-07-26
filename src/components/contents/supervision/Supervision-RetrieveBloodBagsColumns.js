@@ -1,4 +1,4 @@
-import {FilterCol} from '../filterBloodBags'
+import {FilterCol7} from '../filterBloodBags'
 import {FilterCol3} from '../filterBloodBags'
 import {Link} from 'react-router-dom'
 
@@ -6,48 +6,59 @@ export const COLUMNS = [
     {
         Header: 'Bag ID',
         accessor: 'DIN',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
         Header: 'Blood Type',
         accessor: 'type',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
-        Header: 'Safe',
+        Header: 'Test Results',
         accessor: 'test',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
-        Header: 'Mili',
+        Header: 'Capacity',
         accessor: 'mm',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
         Header: 'Temprature',
         accessor: 'temperature',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
         Header: 'Donor',
         accessor: 'donorID',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
+    {
+        Header: 'Patient',
+        accessor: 'patientID',
+        Filter: FilterCol7
+    },
+    {
+        Header: 'Owner',
+        accessor: 'currentOwner',
+        Filter: FilterCol7
+    },
+    
     {
         Header: 'Date',
         accessor: 'date',
-        Filter: FilterCol
+        Filter: FilterCol7
     },
     {
         Header: 'Expired',
         accessor: 'expired',
-        Filter: FilterCol
+        Filter: FilterCol7
     }
     ,
     {
-        Header: '',
+        Header: 'Bag History',
         accessor: 'key',
-        Cell: e =><Link to={{pathname: "/superVisionbaghistory", data: e.value}} style={{color: "#C31313", paddingLeft:"50px"}}>history</Link>,
+        Cell: e =><Link to={{pathname: "/superVisionbaghistory", data: e.value}} style={{color: "#C31313", paddingLeft:"50px"}}>Show</Link>,
         Filter: FilterCol3
     }
 ]

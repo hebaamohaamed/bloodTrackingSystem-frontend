@@ -2,12 +2,22 @@
 	{
 		"class": "org.process",
 		"key": "P1002:donate",
-		"bloodNumber": "BD1002:A-",
-		"date": "24/7/2021 20:9:14",
+		"bloodNumber": "BD1002:B+",
+		"date": "25/7/2021 3:20:33",
 		"ownerID": "BB100",
 		"processID": "P1002",
 		"type": "donate",
-		"userID": "D1002"
+		"userID": "D100"
+	},
+	{
+		"class": "org.process",
+		"key": "P1002:recieve",
+		"bloodNumber": "BD1002:B+",
+		"date": "25/7/2021 3:25:44",
+		"ownerID": "H100",
+		"processID": "P1002",
+		"type": "recieve",
+		"userID": "R1002"
 	},
 	{
 		"class": "org.process",

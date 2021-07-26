@@ -13,18 +13,13 @@ export const COLUMNS = [
         Filter: FilterCol
     },
     {
-        Header: 'Safe',
+        Header: 'Test Results',
         accessor: 'test',
         Filter: FilterCol
     },
     {
         Header: 'Mili',
         accessor: 'mm',
-        Filter: FilterCol
-    },
-    {
-        Header: 'Temprature',
-        accessor: 'temperature',
         Filter: FilterCol
     },
     {

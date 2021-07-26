@@ -14,6 +14,8 @@ import catherine from '../../imgs/catherine.jpg'
 import heba from '../../imgs/heba.jpeg'
 import omar from '../../imgs/omar.jpeg'
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class HomeContent extends Component {
  
   componentDidMount() {
@@ -25,7 +27,6 @@ class HomeContent extends Component {
     document.body.appendChild(script);
     var tabLinks = document.querySelectorAll(".tablinks");
     var tabContent = document.querySelectorAll(".tabcontent");
-
 
     tabLinks.forEach(function(el) {
       el.addEventListener("click", openTabs);
@@ -56,6 +57,7 @@ class HomeContent extends Component {
     render(){
        
     return (
+      <div>
       <div id="home">
         <HomeHeader />
         <div >
@@ -319,7 +321,9 @@ class HomeContent extends Component {
                 <br></br>
             </div>
         </section>
-     </div>   
+     </div>
+         
+     </div>
     );
   } 
 }

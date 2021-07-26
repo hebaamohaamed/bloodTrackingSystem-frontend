@@ -59,15 +59,18 @@ class hospitalTrackingBlood extends Component{
           let output2 = JSON.parse(output1)
           var len = Object.keys(output2).length
           this.setState({current: output2[len-1].Value.currentState})
-          this.setState({owner2: output2[3].Value.ownerID})
-          if(output2[len-1].Value.currentOwner == null){
-            this.setState({owner: output2[len-1].Value.ownerID})
+          if(output2[len-1].Value.currentOwner != null){
+            if(this.state.current == "DELIEVERED"){
+            this.setState({owner: output2[len-1].Value.currentOwner})
+            }
+            else{
+                this.setState({owner: output2[len-2].Value.currentOwner})
+            }
           }else{
-            this.setState({owner: output2[len-1].Value.currentOwner}) 
+            this.setState({owner: output2[len-1].Value.ownerID}) 
           }
-          //alert(this.state.cookie)
-          //alert(this.state.owner)
            if(this.state.owner !== this.state.cookie ){
+               alert(this.state.owner )
             this.JqueryNotTheOwner()
            }else{
             this.setState({out:JSON.stringify(output2)})
@@ -76,7 +79,6 @@ class hospitalTrackingBlood extends Component{
         })
         .catch(error=>{
           console.log("TEST ERROR", error)
-          alert("bag doesn't exist")
           this.JqueryBagNotExist()
         })
       }

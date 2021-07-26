@@ -16,9 +16,15 @@ class BloodBankBagHistory extends Component{
         
         let menuItems = [];
         for (var i = 0; i < data.length; i++) {
+            let owner =""
+            if(data[i].Value.location == "TRANSPORTATION_CAR"){
+                owner = "TRANSPORTATION"
+            }else{
+                owner = data[i].Value.ownerID
+            }
         menuItems.push(
         <tr>
-            <td>{data[i].Value.ownerID}</td>
+            <td>{owner}</td>
             <td>{data[i].Value.currentState}</td>
             <td>{data[i].Value.location}</td>
             <td>{data[i].Value.patientID}</td>
@@ -26,6 +32,7 @@ class BloodBankBagHistory extends Component{
         </tr>
 
         );
+        
         }
         console.log(menuItems)
     return(
