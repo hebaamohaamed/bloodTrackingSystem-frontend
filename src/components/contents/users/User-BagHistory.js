@@ -1,6 +1,28 @@
 import UserHeader from "../../headers/user";
+import { Component } from "react";
+import {Redirect} from 'react-router-dom'
 
-function UserBagHistory(){
+class UserBagHistory extends Component{
+    render(){
+        const { data } = this.props.location
+        console.log(data)
+
+        if(data == null){
+            return <Redirect to={"/UserRetrieveBloodBags"} />
+        }
+        let menuItems = [];
+        for (var i = 0; i < data.length; i++) {
+        menuItems.push(
+        <tr>
+            <td>{data[i].Value.ownerID}</td>
+            <td>{data[i].Value.currentState}</td>
+            <td>{data[i].Value.location}</td>
+            <td>{data[i].Value.patientID}</td>
+            <td>{data[i].Value.timeStamp}</td>
+        </tr>
+        );
+        }
+        console.log(menuItems)
     return(
         <div>
             <UserHeader/>
@@ -22,25 +44,11 @@ function UserBagHistory(){
                                 <th>Owner</th>
                                 <th>State</th>
                                 <th>Location</th>
-                                <th>Date</th>
-                                <th>Hour</th>
+                                <th>TimeStamp</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Central Blood Bank</td>
-                                <td>Ready</td>
-                                <td>Blood Bank</td>
-                                <td>22/5/2019</td>
-                                <td>1 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Giza Hospital</td>
-                                <td>Delivered</td>
-                                <td>Hospital</td>
-                                <td>10/7/2019</td>
-                                <td>10 AM</td>
-                            </tr>
+                            {menuItems}
                         </tbody>
                     </table>
                 </div>
@@ -51,5 +59,6 @@ function UserBagHistory(){
 
         </div>
     );
+    }
 }
 export default UserBagHistory;

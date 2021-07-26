@@ -47,6 +47,7 @@ import UserLogout from './components/contents/users/User-Logout'
 
 //footer
 import Footer from './components/footer'
+import UserBagHistory from './components/contents/users/User-BagHistory';
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
         <Route exact path="/UserTrackingBlood" component={userTrackingBlood}></Route>
         <Route exact path="/ViewHospitalBloodType" component={ViewHospitalByBloodType}></Route>
         <Route exact path="/UserLogout" component={UserLogout}></Route>
+        <Route exavt path="/UserBagHistory" component={UserBagHistory}></Route>
 
 
       </Router>
