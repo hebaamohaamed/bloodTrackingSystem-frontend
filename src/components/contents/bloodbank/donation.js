@@ -140,7 +140,6 @@ class BloodBankDonation extends Component {
       this.JqueryDate()
       
     }else if(this.state.Expired < this.state.Date ){
-      alert(this.state.Expired - this.state.Date)
       alert("Expire Date can't be before Donation Date")
       valid = false
       this.JqueryDate()

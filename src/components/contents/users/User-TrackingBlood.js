@@ -25,8 +25,14 @@ class userTrackingBlood extends Component{
         }
       }
 
-    TrigerAxios(event, data){
+    TrigerAxios(event, data2){
         event.preventDefault();
+        let data = null
+        if(data2.includes("+")){
+            data = data2.replace("+","%2b");
+        }else{
+            data = data2
+        }
         axios.get(`http://localhost:5003/get/history?id=${data}`)
         .then(response =>{
           let output1 = Object.values(response.data)

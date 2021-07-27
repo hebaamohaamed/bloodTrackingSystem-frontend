@@ -16,15 +16,16 @@ function UserHeader() {
   function getHospitals(event){
     event.preventDefault();
     var finalOut = "["
+   alert(`http://localhost:5003/query/hospital/blood`)
     axios.get(`http://localhost:5003/query/hospital/blood`)
         .then(response =>{
           var blood = response.data.out.substr(0,response.data.out.length-1)
           var bloodArray = blood.split(":")
           console.log(bloodArray)
+          alert("http://localhost:5004/api/get/hospitals")
           axios.get("http://localhost:5004/api/get/hospitals")
             .then(response =>{
               var data =response.data
-              //console.log(response.data)
               console.log("All Hospitals Fetched")
               console.log(data);  
               var output ="["

@@ -1,21 +1,21 @@
 [
 	{
 		"class": "org.blood",
-		"key": "BD1006:O+",
-		"DIN": "BD1006",
+		"key": "BD1005:B-",
+		"DIN": "BD1005",
 		"currentOwner": "R101",
 		"currentState": "USED",
-		"date": "2021-07-07",
-		"donorID": "D1003",
-		"expired": "2021-08-07",
+		"date": "2021-07-28",
+		"donorID": "D1004",
+		"expired": "2021-09-23",
 		"location": "PATIENT",
-		"mm": "400",
+		"mm": "250",
 		"ownerID": "BB100",
 		"patientID": "R101",
-		"temperature": "3",
+		"temperature": "5",
 		"test": "SAFE",
-		"timeStamp": "26/7/2021 16:35:5",
-		"type": "O+"
+		"timeStamp": "27/7/2021 9:4:2",
+		"type": "B-"
 	},
 	{
 		"class": "org.blood",

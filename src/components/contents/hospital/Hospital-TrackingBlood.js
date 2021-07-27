@@ -70,7 +70,7 @@ class hospitalTrackingBlood extends Component{
             this.setState({owner: output2[len-1].Value.ownerID}) 
           }
            if(this.state.owner !== this.state.cookie ){
-               alert(this.state.owner )
+               //alert(this.state.owner )
             this.JqueryNotTheOwner()
            }else{
             this.setState({out:JSON.stringify(output2)})
