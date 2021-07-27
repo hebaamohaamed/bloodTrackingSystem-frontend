@@ -9,7 +9,7 @@ function UserHeader() {
 
   let history = useHistory();
   const [cookies] = useCookies(['user']);
-  if(cookies.name == null){
+  if(cookies.id == null){
     history.push('/home')
   }
   const id = cookies.id;

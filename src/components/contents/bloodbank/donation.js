@@ -25,6 +25,7 @@ class BloodBankDonation extends Component {
       cookie: Cookies.get('id')
     }
   }
+ 
 
   //jquery
   JqueryDate(){
@@ -143,10 +144,6 @@ class BloodBankDonation extends Component {
       alert("Expire Date can't be before Donation Date")
       valid = false
       this.JqueryDate()
-    }else if(this.state.Expired - this.state.Date > 42){
-      alert("Expire Date can't be after 42 days")
-      valid = false
-      this.JqueryDate()
     }
     if(!RegExp.test(this.state.donorEmail) ||this.state.donorEmail === null){
       valid = false
@@ -164,7 +161,6 @@ class BloodBankDonation extends Component {
     }
   }
   ValidateNew(event){
-    alert("1")
     event.preventDefault();  
     let valid = true;
     const RegExp = /^[\w-\.]+@(gmail.com)$/g
@@ -216,7 +212,6 @@ class BloodBankDonation extends Component {
     })
   }
   TrigerdbCheck2(event){
-    alert("2")
     event.preventDefault();
     axios.get("http://localhost:5004/check/donor?email="+this.state.donorEmail)
     .then(response =>{
@@ -232,7 +227,6 @@ class BloodBankDonation extends Component {
     this.checkGo(event)
   }
   checkGo(event){
-    alert("3")
     event.preventDefault();
     if(this.state.go){
       this.TrigerAxiosLastUser(event)
@@ -240,11 +234,9 @@ class BloodBankDonation extends Component {
   }
 
   TrigerAxiosLastUser(event){
-    alert("4")
     event.preventDefault();
     axios.get("http://localhost:5000/get/last")
     .then(response =>{
-      alert("insert")
       let lastNumber = Object.values(response.data);
       this.TrigerdbInsert(event,lastNumber);
       lastNumber = lastNumber +1
@@ -255,7 +247,6 @@ class BloodBankDonation extends Component {
   }
 
   TrigerdbInsert(event, lastNumber){
-    alert("5")
     event.preventDefault();
     const finalNumber = Number(lastNumber) +1
     const dID = "D" + finalNumber
@@ -289,7 +280,7 @@ class BloodBankDonation extends Component {
   TrigerAxiosCreateBag(event, dID, lastDIN){
     event.preventDefault();
     const currentDate2 = new Date();
-    const date = currentDate2.getDate() +'/'+(currentDate2.getMonth()+1) +'/'+currentDate2.getFullYear()
+    const date = currentDate2.getDate() +'-'+(currentDate2.getMonth()+1) +'-'+currentDate2.getFullYear()
     const time = currentDate2.getHours() +':'+currentDate2.getMinutes() +':'+currentDate2.getSeconds()
     const currentDate = date + " " + time 
     let ownerID = this.state.cookie;

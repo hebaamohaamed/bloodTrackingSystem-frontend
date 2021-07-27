@@ -3,6 +3,8 @@ import Data from './Supervision-RetrieveProcessesData.json'
 import {COLUMNS} from './Supervision-RetrieveProcessesColumns'
 import { useMemo } from 'react'
 import SuperHeader from '../../headers/supervision'
+import BTable from 'react-bootstrap/Table';
+
 
 export const SupervisionRetrieveProcesses = () =>{
 	
@@ -34,8 +36,9 @@ export const SupervisionRetrieveProcesses = () =>{
                     All Processes
                 </div>
                 <div class="card-body">
+				<h6 style={{color:"darkorange", float:"left"}}><b>Note: you can search the columns from the input bars</b></h6>
                        
-		<table {...getTableProps()} >
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -71,7 +74,7 @@ export const SupervisionRetrieveProcesses = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

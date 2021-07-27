@@ -41,11 +41,19 @@ class SupervisionBagHistory extends Component{
           console.log("TEST ERROR", error)
         })
       }
+
       fillTable(data){
+         let menuItems2=[] 
         for (var i = 0; i < data.length; i++) {
-        this.state.menuItems.push(
+            let owner =null
+            if(data[i].Value.currentOwner != null){
+                owner = data[i].Value.currentOwner
+            }else{
+                owner = data[i].Value.ownerID
+            }
+        menuItems2.push(
         <tr>
-            <td>{data[i].Value.ownerID}</td>
+            <td>{owner}</td>
             <td>{data[i].Value.currentState}</td>
             <td>{data[i].Value.location}</td>
             <td>{data[i].Value.patientID}</td>
@@ -53,6 +61,7 @@ class SupervisionBagHistory extends Component{
         </tr>
         );
         }
+        this.setState({menuItems:menuItems2})
       }
     render(){
         const { data } = this.props.location
@@ -73,8 +82,8 @@ class SupervisionBagHistory extends Component{
                 <div className="panel-heading">
                     <div className="row">
                         <div className="col col-sm-3 col-xs-12 container">
-                            <button onClick={(event)=>this.TrigerAxios(event,data)}>Show</button>
                             <h4 className="title">Bag <span>History</span></h4>
+                            <button className="button-three" onClick={(event)=>this.TrigerAxios(event,data)}>Show</button>
                         </div>
                     </div>
                 </div>
@@ -85,6 +94,7 @@ class SupervisionBagHistory extends Component{
                                 <th>Owner</th>
                                 <th>State</th>
                                 <th>Location</th>
+                                <th>Patient</th>
                                 <th>Timestamp</th>
                             </tr>
                         </thead>

@@ -17,7 +17,6 @@ class UserBagHistory extends Component{
             <td>{data[i].Value.ownerID}</td>
             <td>{data[i].Value.currentState}</td>
             <td>{data[i].Value.location}</td>
-            <td>{data[i].Value.patientID}</td>
             <td>{data[i].Value.timeStamp}</td>
         </tr>
         );

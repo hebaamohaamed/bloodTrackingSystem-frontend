@@ -1,15 +1,16 @@
-import {FilterCol3} from '../filterBloodBags'
+import {FilterCol9} from '../filterBloodBags'
 import {FilterCol4} from '../filterBloodBags'
+import {FilterCol3} from '../filterBloodBags'
 export const COLUMNS = [
     {
         Header: 'Hospital',
         accessor: 'hName',
-        Filter: FilterCol3
+        Filter: FilterCol9
     },
     {
         Header: 'Address',
         accessor: 'hAddress',
-        Filter: FilterCol3
+        Filter: FilterCol9
     },
     {
         Header: 'Blood Type',

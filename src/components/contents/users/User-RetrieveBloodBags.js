@@ -4,6 +4,8 @@ import {COLUMNS} from './User-RetrieveBloodBagsColumns'
 import { useMemo } from 'react'
 import UserHeader from '../../headers/user'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import BTable from 'react-bootstrap/Table';
+
 
 export const UserRetrieveBloodBags = () =>{
 	
@@ -36,8 +38,8 @@ export const UserRetrieveBloodBags = () =>{
                     All Bags
                 </div>
                 <div class="card-body">
-                       
-		<table {...getTableProps()} >
+                <h6 style={{color:"darkorange", float:"left"}}><b>Note: you can search the columns from the input bars</b></h6>       
+		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -74,7 +76,7 @@ export const UserRetrieveBloodBags = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

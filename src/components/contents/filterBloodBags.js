@@ -21,7 +21,17 @@ export const FilterCol4 = ({ column }) => {
      return(
          <span>
              {' '}
-             <input className="filter2" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Filter Column" />
+             <input list="Types" className="filter4" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="Blood Type" />
+             <datalist>
+                <option value="A+" />
+                <option value="A-" />
+                <option value="B+" />
+                <option value="B-" />
+                <option value="O+" />
+                <option value="O-" />
+                <option value="AB+" />
+                <option value="AB-" />
+             </datalist>
          </span>
      )
 }
@@ -31,6 +41,15 @@ export const FilterCol7 = ({ column }) => {
          <span>
              {' '}
              <input className="filter" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="" style={{width:"120px"}}/>
+         </span>
+     )
+}
+export const FilterCol9 = ({ column }) => {
+    const {filterValue, setFilter } = column
+     return(
+         <span>
+             {' '}
+             <input className="filter" value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} placeholder="" style={{width:"400px"}} hidden/>
          </span>
      )
 }

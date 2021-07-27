@@ -3,6 +3,9 @@ import Data from './ViewHospitalByBloodTypeData.json'
 import {COLUMNS} from './ViewHospitalByBloodTypeColumn'
 import { useMemo } from 'react'
 import UserHeader from '../../headers/user'
+import BTable from 'react-bootstrap/Table';
+
+
 
 export const ViewHospitalByBloodType = () =>{
 	
@@ -34,8 +37,8 @@ export const ViewHospitalByBloodType = () =>{
                     Hospitals
                 </div>
                 <div class="card-body">
-                       
-		<table {...getTableProps()}  style={{width: "1100px"}} >
+				<h6 style={{color:"darkorange", float:"left"}}><b>Note: you can search the blood from the dropdown bar</b></h6>          
+		<BTable bordered hover size="sm" {...getTableProps()}   >
 			<thead>
 				{
 					headerGroups.map(headerGroup => (
@@ -72,7 +75,7 @@ export const ViewHospitalByBloodType = () =>{
 					})
 				}
 			</tbody>
-		</table>
+		</BTable>
 		</div>
             </div>    
             </div>

@@ -36,6 +36,7 @@ export const BloodBankRetrieveBloodBags = () =>{
                     All Bags
                 </div>
                 <div className="card-body">
+					<h6 style={{color:"darkorange", float:"left"}}><b>Note: you can search the columns from the input bars</b></h6>
                        
 		<BTable bordered hover size="sm" {...getTableProps()} >
 			<thead>

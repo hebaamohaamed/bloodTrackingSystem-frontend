@@ -13,18 +13,16 @@ function UserLogin(){
   function TrigerAxios(email){
     axios.get("http://localhost:5004/get/donor?email="+email)
     .then(response =>{
-      const id=response.data[0].dId;
-      const name =response.data[0].dName;
+      const id=response.data[0].dID;
       console.log(response)
-      handleCookie(id,name,email)
+      handleCookie(id,email)
     })
     .catch(error=>{
       axios.get("http://localhost:5004/get/patient?email="+email)
       .then(response =>{
-        const id=response.data[0].pId;
-        const name =response.data[0].pName;
+        const id=response.data[0].pID;
         console.log(response)
-        handleCookie(id,name,email)
+        handleCookie(id,email)
       })
       .catch(error=>{
         console.log("TEST ERROR", error)
@@ -32,8 +30,7 @@ function UserLogin(){
       })
     })
   }
-  function handleCookie(id,name,email){
-    setCookie('name',name , { path: '/' });
+  function handleCookie(id,email){
     setCookie('id', id, { path: '/' });
     setCookie('email',email, { path: '/' }); 
     console.log(cookies)
